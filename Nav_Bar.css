@@ -1,0 +1,74 @@
+/************************************************/
+/*               Navigation Bar                 */
+/************************************************/
+/*Navigation Bar Space*/
+.navbar {
+  background-color: #23263B !important;
+  height: 61px !important;
+  z-index: 9 !important;
+  border-width: 0 !important;
+}
+
+/*Company Label on Navigation Bar*/
+.navbar-brand {
+  position: relative !important;
+  font-family: Georgia !important;
+  color: white !important;
+  top: 5px !important;
+  font-size: 36px !important;
+}
+
+/*Navigation Menu Items*/
+.nav a {
+  position: relative !important;
+  top: 4px !important;
+  color: #B1B6C7 !important;
+  font-family: 'Ubuntu', Tahoma, sans-serif;
+  font-size: 11px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  letter-spacing: 1px;
+  transition: all 0.2s ease 0s;
+}
+
+/*Menu Items Mouse-Hovering Configuration*/
+.nav a:hover {
+  color: #DFE2EB !important;
+}
+
+/*Menu Item Divider*/
+#nav_divider {
+  position: relative !important;
+  font-size: 20px !important;
+  top: 13px !important;
+  color: #B1B6C7 !important;
+}
+
+/*Collapsed Menu Configuration*/
+.navbar-collapse {
+  background-color: #23263B !important;
+  border-width: 11px !important;
+  border-color: #23263B !important;
+}
+
+/*Navbar Minimized Configuration*/
+.navbar-toggle {
+  position: relative;
+  top: 4px;
+  transition: all 0.3s ease 0s;
+}
+
+/*Navbar Icon Bars*/
+.icon-bar {
+  background-color: white !important;
+}
+
+.navbar-toggle:focus {
+  background: none !important;
+}
+
+.navbar-toggle:hover {
+  background: none !important;
+}

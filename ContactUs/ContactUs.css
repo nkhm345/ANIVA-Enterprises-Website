@@ -1,0 +1,131 @@
+/************************************************/
+/*                  Contact Us                  */
+/************************************************/
+/*********************Header*********************/
+.header {
+  position: relative;
+  text-align: center;
+  top: 120px;
+  font-family: 'Ubuntu', Tahoma, sans-serif;
+}
+
+.header h1 {
+  color: black;
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  letter-spacing: 5px;
+}
+
+/**************Contact Information***************/
+.info {
+  position: relative;
+  text-align: left;
+  top: 175px;
+  font-family: 'Ubuntu', Tahoma, sans-serif;
+}
+.info h2 {
+  color: black;
+  font-size: 25px;
+}
+
+.line {
+  background-color: orange;
+  position: relative;
+  height: 2px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.info p {
+  color: #636363;
+  font-size: 15px;
+}
+
+.info a {
+  text-decoration: none;
+  color: #006699;
+}
+
+.info a:hover {
+  color: orange;
+}
+
+.line2 {
+  background-color: #D1D1D1;
+  position: relative;
+  height: 2px;
+  margin: auto;
+  width: 85%;
+  max-width: 1074px;
+  top: 220px;
+}
+
+/******************Contact Form******************/
+.reachout {
+  position: relative;
+  top: 250px;
+  font-family: 'Ubuntu', Tahoma, sans-serif;
+}
+
+.reachout h1 {
+  font-size: 26px;
+  color: black;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.reachout h2 {
+  color: #636363;
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.reachout p {
+  color: #636363;
+  font-size: 12px;
+  padding-top: 35px;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+}
+
+.reachout input, .reachout textarea, .reachout select {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  color: #636363;
+  font-size: 15px;
+  width: 45%;
+  min-width: 200px;
+  resize: none;
+  border: #ADADAD 1px solid;
+}
+
+span {
+  color: red;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.reachout input[type="submit"], .reachout input[type="reset"] {
+  background-color: transparent;
+  border: 2px gray solid;
+  color: #636363;
+  font-size: 15px;
+  font-weight: bold;
+  margin-right: 10px;
+  min-width: 0px;
+  width: 70px;
+  transition: all 0.3s ease 0s;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover {
+  background-color: #B1B6C7 !important;
+  color: #23263B;
+  border-color: #23263B;
+}
+
+input[type="submit"]:focus, input[type="reset"]:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Contact Us
+    </title>
+    <link rel="shortcut icon" href="../browser_icon.ico"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../Nav_Bar.css"/>
+    <link rel="stylesheet" href="../Footer.css"/>
+    <link rel="stylesheet" href="ContactUs.css"/>
+  </head>
+
+  <body>
+    <!--Navigation Bar-->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" id="home-button" href="../Home/Home.html">ANIVA</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../LogisticsandSupplyChain/LSC.html">Logistics &amp; Supply Chain</a></li>
+            <li><a href="../TranslationServices/TranslationServices.html">Translation Services</a></li>
+            <li id="nav_divider" class="hidden-xs">|</li>
+            <li><a href="../AboutUs/AboutUs.html">About Us</a></li>
+            <li><a href="ContactUs.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!--Header Text-->
+    <div class="header">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <div style="position: relative; margin: auto; height: 3px; max-width: 230px; background-color: black"></div>
+      </div>
+    </div>
+
+    <!--Address & Email-->
+    <div class="info">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-5 col-xs-offset-1">
+            <h2>Address</h2>
+            <div class="line" style="width: 180px"></div>
+            <p><b>ANIVA Enterprises, LLC</b></p>
+            <p>Novi, MI 48374</p>
+            <p>USA</p>
+          </div>
+          <div class="col-sm-5 col-xs-offset-1 col-sm-offset-0">
+            <h2>Email</h2>
+            <div class="line" style="max-width: 403px; width: 100%"></div>
+            <p><b>Supply Chain Consulting, Logistics Design and Planning</b></p>
+            <p>Dr. Mani Manivannan: <a href="mailto:mani@anivaenterprises.com">mani@anivaenterprises.com</a></p>
+            <p><b>Chinese &harr; English Translation Services</b></p>
+            <p>Ms. Heju Huang: <a href="mailto:heju@anivaenterprises.com">heju@anivaenterprises.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="line2"></div>
+
+    <!--Reach Out To Us-->
+    <div class="reachout">
+      <div class="container">
+        <div class="row">
+          <form method="post" action="ContactUs.php">
+            <div class="col-md-5 col-xs-offset-1">
+              <h1>Reach Out To Us</h1>
+              <h2>Name<span>*</span></h2>
+              <input required id="firstname" type="text" name="firstname" placeholder=" First" style="margin-right: 25px;"/><div class="visible-xs visible-md" style="height:15px"></div><input required type="text" name="lastname" placeholder=" Last"/>
+              <h2>Phone</h2>
+              <input type="tel" name="phone"/>
+              <h2>Email<span>*</span></h2>
+              <input required type="email" name="email"/>
+              <h2>Business Segment<span>*</span></h2>
+              <select required name="dropdown">
+                <option disabled selected style="display: none;" value="">Select...</option>
+                <option value="logistics">Logistics &amp; Supply Chain</option>
+                <option value="translation">Translation Services</option>
+              </select>
+              <p><span>*</span> = Required</p>
+            </div>
+            <div class="col-md-5 col-xs-offset-1 col-md-offset-0">
+              <h2 style="padding-top: 78px">Subject</h2>
+              <input type="text" name="subject" style="width:95%"/>
+              <h2>Message<span>*</span></h2>
+              <textarea required name="body" rows="9" style="width:95%"></textarea>
+              <br><br>
+              <input type="submit" value="Submit"/>
+              <input type="reset" value="Reset"/>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!--Footer-->
+    <footer class="footer" style="top: 330px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6">
+            <a href="../AboutUs/AboutUs.html">About</a>
+            <a href="ContactUs.html">Contact</a>
+          </div>
+          <div class="col-xs-6">
+            <p>Copyright &copy; 2015 Aniva Enterprises, LLC</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>

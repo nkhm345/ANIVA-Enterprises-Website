@@ -1,0 +1,39 @@
+/************************************************/
+/*                    Footer                    */
+/************************************************/
+.footer {
+  position: relative;
+  width: 100%;
+  min-height: 80px;
+  background-color: #23263B;
+  font-family: 'Ubuntu', Tahoma, sans-serif;
+}
+
+.footer .row {
+  margin-top: 30px;
+}
+
+.footer a {
+  text-align: left;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 12px;
+  margin-right: 40px;
+  transition: all 0.2s ease 0s;
+}
+
+.footer a:hover {
+  color: orange;
+}
+
+.footer p {
+  text-align: right;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #B1B6C7;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
