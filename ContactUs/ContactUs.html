@@ -26,7 +26,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" id="home-button" href="../Home/Home.html">ANIVA</a>
+          <a class="navbar-brand" id="home-button" href="../Home/Home.html">ANIVA <span style="font-size:16px;">Enterprises<span></a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -80,24 +80,24 @@
           <form method="post" action="ContactUs.php">
             <div class="col-md-5 col-xs-offset-1">
               <h1>Reach Out To Us</h1>
-              <h2>Name<span>*</span></h2>
+              <h2>Name<span class="asterisk">*</span></h2>
               <input required id="firstname" type="text" name="firstname" placeholder=" First" style="margin-right: 25px;"/><div class="visible-xs visible-md" style="height:15px"></div><input required type="text" name="lastname" placeholder=" Last"/>
               <h2>Phone</h2>
               <input type="tel" name="phone"/>
-              <h2>Email<span>*</span></h2>
+              <h2>Email<span class="asterisk">*</span></h2>
               <input required type="email" name="email"/>
-              <h2>Business Segment<span>*</span></h2>
+              <h2>Business Segment<span class="asterisk">*</span></h2>
               <select required name="dropdown">
                 <option disabled selected style="display: none;" value="">Select...</option>
                 <option value="logistics">Logistics &amp; Supply Chain</option>
                 <option value="translation">Translation Services</option>
               </select>
-              <p><span>*</span> = Required</p>
+              <p><span class="asterisk">*</span> = Required</p>
             </div>
             <div class="col-md-5 col-xs-offset-1 col-md-offset-0">
               <h2 style="padding-top: 78px">Subject</h2>
               <input type="text" name="subject" style="width:95%"/>
-              <h2>Message<span>*</span></h2>
+              <h2>Message<span class="asterisk">*</span></h2>
               <textarea required name="body" rows="9" style="width:95%"></textarea>
               <br><br>
               <input type="submit" value="Submit"/>
