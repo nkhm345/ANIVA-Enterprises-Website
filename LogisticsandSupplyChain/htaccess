@@ -1,0 +1,21 @@
+
+RewriteEngine on
+
+RewriteOptions inherit
+
+RewriteCond %{HTTP_HOST} ^anivaenterprises\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.anivaenterprises\.com$
+RewriteRule ^contactus\.html$ "http\:\/\/anivaenterprises\.com\/ContactUs\/ContactUs\.html" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^anivaenterprises\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.anivaenterprises\.com$
+RewriteRule ^logisticssupplychain\.html$ "http\:\/\/anivaenterprises\.com\/LogisticsandSupplyChain\/LSC\.html" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^anivaenterprises\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.anivaenterprises\.com$
+RewriteRule ^translationservices\.html$ "http\:\/\/anivaenterprises\.com\/TranslationServices\/TranslationServices\.html" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^anivaenterprises\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.anivaenterprises\.com$
+RewriteRule ^aboutus\.html$ "http\:\/\/anivaenterprises\.com\/AboutUs\/AboutUs\.html" [R=301,L]
+
