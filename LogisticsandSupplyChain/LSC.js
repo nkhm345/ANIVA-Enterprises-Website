@@ -34,7 +34,7 @@ $(document).ready(function() {
 	});
 
 	$('#costs .caret').click(function() {
-		$('#costs p').next().slideToggle(300);
+		$(this).parent().next().slideToggle(300);
 	});
 
 	$('#strhowitworksexpand').click(function() {
