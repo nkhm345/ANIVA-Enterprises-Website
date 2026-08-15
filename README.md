@@ -81,12 +81,6 @@ Email and website are fully independent — a website change can never affect ma
 
 ## Known issues
 
-- **The homepage appears blank below the navigation bar.** Every page loads
-  jQuery and the Ubuntu font over `http://`, which browsers block on an HTTPS
-  site ("mixed content"); the homepage content fades in via jQuery, so it never
-  appears, and the About Us carousel breaks the same way. The fix: change
-  `http://` to `https://` in the `<script src=...>` and font `<link href=...>`
-  tags of the six HTML files — a good first practice commit.
 - **The contact form does not send yet.** It posts to Web3Forms, but the access
   keys in `ContactUs/ContactUs.html` are placeholders (`WEB3FORMS_KEY_...`).
   Finishing it requires a free Web3Forms account and real keys. The direct
