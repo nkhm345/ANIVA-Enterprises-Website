@@ -37,7 +37,25 @@ git push -u origin my-change
 
 Cloudflare builds every branch at its own **preview URL** — find it in the
 Pages dashboard under the deployment, or on the pull request if you open one.
-Check the preview in a browser, then merge to `master` to make it live.
+Check the preview in a browser. When it looks right, merge it into `master`
+(open a pull request on GitHub and merge it there, or locally:)
+
+```bash
+git checkout master
+git merge my-change
+git push            # now it's live in production
+```
+
+Then delete the branch — it did its job:
+
+```bash
+git branch -d my-change              # delete your local copy
+git push origin --delete my-change   # delete it on GitHub
+```
+
+(Merging a pull request on GitHub offers a "Delete branch" button that does the
+second command for you.) Deleting the branch stops future preview builds for
+it; old preview deployments linger harmlessly in the Pages deployment history.
 
 ## Domain & DNS
 
