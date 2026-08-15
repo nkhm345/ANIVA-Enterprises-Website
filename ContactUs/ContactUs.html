@@ -77,7 +77,10 @@
     <div class="reachout">
       <div class="container">
         <div class="row">
-          <form method="post" action="ContactUs.php">
+          <form id="contact-form" method="post" action="https://api.web3forms.com/submit">
+            <input type="hidden" name="access_key" id="access_key" value="WEB3FORMS_KEY_LOGISTICS"/>
+            <input type="hidden" name="redirect" id="redirect_url" value="https://anivaenterprises.com/ContactUs/ThankYou.html"/>
+            <input type="checkbox" name="botcheck" style="display: none;" tabindex="-1" autocomplete="off"/>
             <div class="col-md-5 col-xs-offset-1">
               <h1>Reach Out To Us</h1>
               <h2>Name<span class="asterisk">*</span></h2>
@@ -125,5 +128,20 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+      // Route submissions to the right recipient's Web3Forms key by business segment.
+      (function () {
+        var KEYS = {
+          logistics: "WEB3FORMS_KEY_LOGISTICS",
+          translation: "WEB3FORMS_KEY_TRANSLATION"
+        };
+        var form = document.getElementById("contact-form");
+        document.getElementById("redirect_url").value = new URL("ThankYou.html", window.location.href).href;
+        form.addEventListener("submit", function () {
+          var key = KEYS[form.elements.dropdown.value];
+          if (key) document.getElementById("access_key").value = key;
+        });
+      })();
+    </script>
   </body>
 </html>
