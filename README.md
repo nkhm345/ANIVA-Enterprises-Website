@@ -1,70 +1,93 @@
 # ANIVA Enterprises Website
 
 Source code for **[anivaenterprises.com](https://anivaenterprises.com)** — a static
-HTML/CSS site, no build step, no frameworks to maintain.
+HTML/CSS site with no build step and no frameworks.
 
-## How updates work
+## How the site is hosted
 
-**Anything pushed to the `master` branch goes live automatically in about 15
-seconds.** Cloudflare Pages watches this repository and redeploys on every push —
-there is no server to upload to and nothing else to do.
+The site is served by **Cloudflare Pages** (project `anivaenterprises`, on
+Cloudflare's free plan). Pages watches this GitHub repository: **every push to
+the `master` branch automatically deploys to production in about 15 seconds.**
+There is no server, nothing to upload, and no other deploy mechanism.
 
+- Production URLs: <https://anivaenterprises.com>, <https://www.anivaenterprises.com>,
+  and the permanent alias <https://anivaenterprises.pages.dev> (same deployment)
+- HTTPS certificates are issued and renewed automatically
+- Deployment history and logs: Cloudflare dashboard → Workers & Pages → `anivaenterprises`
+
+## Making and previewing changes
+
+For a change you're confident in:
+
+```bash
+git pull
+# edit files
+git commit -am "Describe the change"
+git push            # live on anivaenterprises.com ~15 seconds later
 ```
-edit files  →  git commit  →  git push  →  live
+
+To **preview before going live**, push to a branch instead of `master`:
+
+```bash
+git checkout -b my-change
+# edit files
+git commit -am "Describe the change"
+git push -u origin my-change
 ```
 
-**Not sure about a change?** Push it to any other branch instead. Cloudflare
-builds every branch at its own preview URL (shown in the Pages dashboard or on
-the pull request) so you can look at it in a browser before merging to `master`.
+Cloudflare builds every branch at its own **preview URL** — find it in the
+Pages dashboard under the deployment, or on the pull request if you open one.
+Check the preview in a browser, then merge to `master` to make it live.
+
+## Domain & DNS
+
+- `anivaenterprises.com` is **registered at Cloudflare** (Registrar), renewing
+  automatically each December at Cloudflare's at-cost price (~$10.45/yr).
+  WHOIS privacy is included.
+- **DNS is hosted in the same Cloudflare account.** The apex and `www` records
+  point at the Pages project; the MX/SPF/DKIM records route email to Zoho.
+  Don't edit DNS casually — the website and email both depend on it.
+
+## Email
+
+`mani@anivaenterprises.com` and `heju@anivaenterprises.com` are hosted on
+**Zoho Mail Lite** (~$30/yr for both, renews each August 15).
+
+- Webmail: <https://mail.zoho.com>
+- Mail apps: IMAP `imap.zoho.com:993` (SSL), SMTP `smtp.zoho.com:465` (SSL),
+  username = full email address
+- Admin console: <https://mailadmin.zoho.com>
+
+Email and website are fully independent — a website change can never affect mail.
+
+## Accounts & access
+
+| What | Where |
+|---|---|
+| Cloudflare (hosting + DNS + domain) | Account `mani@anivaenterprises.com`; `anivamani@gmail.com` is a second member with admin access (backup login) |
+| Zoho Mail | Administered by `mani@anivaenterprises.com`; `anivamani@gmail.com` is the recovery address |
+| GitHub repo | Owned by `nkhm345`; `smanivannan` has write access |
+
+**Enable two-factor authentication on all of these accounts** if not already done.
 
 ## Repository layout
 
 | Path | What it is |
 |---|---|
-| `index.html` | Root page — just redirects to `Home/Home.html` |
+| `index.html` | Root page — redirects to `Home/Home.html` |
 | `Home/`, `AboutUs/`, `ContactUs/`, `LogisticsandSupplyChain/`, `TranslationServices/` | One folder per page: its HTML, CSS, JS, and images together |
 | `Nav_Bar.css`, `Footer.css` | Shared styles for the navigation bar and footer |
-| `_redirects` | Cloudflare Pages redirect rules (the short vanity URLs like `/contactus.html`) |
+| `_redirects` | Cloudflare Pages redirect rules (short vanity URLs like `/contactus.html`) |
 
-## Where everything lives
-
-| Piece | Provider | Notes |
-|---|---|---|
-| Website hosting | Cloudflare Pages (project `anivaenterprises`) | Free plan; deploys from this repo |
-| DNS | Cloudflare | Same account |
-| Email (mani@ / heju@) | Zoho Mail Lite | Webmail at mail.zoho.com; IMAP `imap.zoho.com:993`, SMTP `smtp.zoho.com:465` |
-| Domain registration | Cloudflare Registrar (~$10.45/yr) | Transferred from Network Solutions Nov 2026 |
-
-Account access: the Cloudflare and Zoho accounts are administered as
-`mani@anivaenterprises.com`, with `anivamani@gmail.com` as the independent
-backup (second Cloudflare member; Zoho recovery address). The GitHub repo is
-owned by `nkhm345`; `smanivannan` has write access. **Enabling two-factor
-authentication on all of these is recommended and pending.**
-
-Annual running costs: Zoho ~$30 (renews Aug 15) + domain ~$10.45 (renews Dec).
-Everything else is free.
-
-## Known issues (inherited from the 2016 site)
+## Known issues
 
 - **The homepage appears blank below the navigation bar.** Every page loads
   jQuery and the Ubuntu font over `http://`, which browsers block on an HTTPS
-  site ("mixed content"). The homepage content fades in via jQuery, so it never
-  appears; the About Us carousel is broken the same way. **The fix** is changing
+  site ("mixed content"); the homepage content fades in via jQuery, so it never
+  appears, and the About Us carousel breaks the same way. The fix: change
   `http://` to `https://` in the `<script src=...>` and font `<link href=...>`
-  tags of all six HTML files — a great first practice commit.
+  tags of the six HTML files — a good first practice commit.
 - **The contact form does not send yet.** It posts to Web3Forms, but the access
   keys in `ContactUs/ContactUs.html` are placeholders (`WEB3FORMS_KEY_...`).
-  Finishing it requires a free Web3Forms account and swapping in real keys. The
-  direct email links on the contact page work regardless.
-
-## Migration status — August 2026 (delete this section when complete)
-
-- [x] DNS moved to Cloudflare
-- [x] Old mail copied to Zoho (Mani done; Heju in progress)
-- [x] DKIM configured
-- [ ] MX cutover — the moment new mail starts arriving at Zoho
-- [ ] Post-cutover migration re-run (catches mail that arrived during the switch)
-- [ ] Reconnect Outlook / phone mail apps to Zoho
-- [ ] Point anivaenterprises.com at Cloudflare Pages (site currently still served by SiteGround)
-- [ ] Cancel SiteGround (paid through Jan 9, 2027 — cancel "at expiration" by December)
-- [ ] Transfer domain to Cloudflare Registrar (initiate by mid-November; approval email goes to the registrant contact, then switch that contact to anivamani@gmail.com)
+  Finishing it requires a free Web3Forms account and real keys. The direct
+  email links on the contact page work regardless.
