@@ -97,9 +97,3 @@ Email and website are fully independent — a website change can never affect ma
 | `Nav_Bar.css`, `Footer.css` | Shared styles for the navigation bar and footer |
 | `_redirects` | Cloudflare Pages redirect rules (short vanity URLs like `/contactus.html`) |
 
-## Known issues
-
-- **The contact form does not send yet.** It posts to Web3Forms, but the access
-  keys in `ContactUs/ContactUs.html` are placeholders (`WEB3FORMS_KEY_...`).
-  Finishing it requires a free Web3Forms account and real keys. The direct
-  email links on the contact page work regardless.

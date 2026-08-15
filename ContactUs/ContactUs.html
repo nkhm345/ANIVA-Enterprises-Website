@@ -71,46 +71,6 @@
       </div>
     </div>
 
-    <div class="line2"></div>
-
-    <!--Reach Out To Us-->
-    <div class="reachout">
-      <div class="container">
-        <div class="row">
-          <form id="contact-form" method="post" action="https://api.web3forms.com/submit">
-            <input type="hidden" name="access_key" id="access_key" value="WEB3FORMS_KEY_LOGISTICS"/>
-            <input type="hidden" name="redirect" id="redirect_url" value="https://anivaenterprises.com/ContactUs/ThankYou.html"/>
-            <input type="checkbox" name="botcheck" style="display: none;" tabindex="-1" autocomplete="off"/>
-            <div class="col-md-5 col-xs-offset-1">
-              <h1>Reach Out To Us</h1>
-              <h2>Name<span class="asterisk">*</span></h2>
-              <input required id="firstname" type="text" name="firstname" placeholder=" First" style="margin-right: 25px;"/><div class="visible-xs visible-md" style="height:15px"></div><input required type="text" name="lastname" placeholder=" Last"/>
-              <h2>Phone</h2>
-              <input type="tel" name="phone"/>
-              <h2>Email<span class="asterisk">*</span></h2>
-              <input required type="email" name="email"/>
-              <h2>Business Segment<span class="asterisk">*</span></h2>
-              <select required name="dropdown">
-                <option disabled selected style="display: none;" value="">Select...</option>
-                <option value="logistics">Logistics &amp; Supply Chain</option>
-                <option value="translation">Translation Services</option>
-              </select>
-              <p><span class="asterisk">*</span> = Required</p>
-            </div>
-            <div class="col-md-5 col-xs-offset-1 col-md-offset-0">
-              <h2 style="padding-top: 78px">Subject</h2>
-              <input type="text" name="subject" style="width:95%"/>
-              <h2>Message<span class="asterisk">*</span></h2>
-              <textarea required name="body" rows="9" style="width:95%"></textarea>
-              <br><br>
-              <input type="submit" value="Submit"/>
-              <input type="reset" value="Reset"/>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
     <!--Footer-->
     <footer class="footer" style="top: 330px;">
       <div class="container">
@@ -128,20 +88,5 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script>
-      // Route submissions to the right recipient's Web3Forms key by business segment.
-      (function () {
-        var KEYS = {
-          logistics: "WEB3FORMS_KEY_LOGISTICS",
-          translation: "WEB3FORMS_KEY_TRANSLATION"
-        };
-        var form = document.getElementById("contact-form");
-        document.getElementById("redirect_url").value = new URL("ThankYou.html", window.location.href).href;
-        form.addEventListener("submit", function () {
-          var key = KEYS[form.elements.dropdown.value];
-          if (key) document.getElementById("access_key").value = key;
-        });
-      })();
-    </script>
   </body>
 </html>
