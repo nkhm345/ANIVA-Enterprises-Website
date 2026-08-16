@@ -16,7 +16,7 @@
 }
 
 .segment-card .segment-lede {
-  font-size: 15px;
+  font-size: 17px;
   color: #23263B;
   line-height: 1.6;
   margin-bottom: 18px;
@@ -24,7 +24,7 @@
 
 .segment-card ul {
   text-align: left;
-  font-size: 13px;
+  font-size: 15px;
   padding-left: 22px;
 }
 
@@ -34,7 +34,7 @@
 
 .segment-highlight {
   margin-top: 26px;
-  font-size: 15px;
+  font-size: 16px;
   color: #23263B;
   background-color: #FFF4E0;
   border: 1px solid #FFE1A8;
@@ -45,7 +45,7 @@
 .segment-link {
   margin-top: 22px;
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 /*****************Founder profile****************/
@@ -83,7 +83,7 @@
 }
 
 .founder-role {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.5;
   color: #636363;
   margin-bottom: 14px;
@@ -102,7 +102,7 @@
 }
 
 .founder-bio p {
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.75;
   color: #4A4F63;
 }
@@ -131,7 +131,7 @@
 }
 
 .founder-details ul li {
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.55;
   margin-bottom: 6px;
 }
@@ -146,7 +146,7 @@
 }
 
 .founder-clients {
-  font-size: 13px;
+  font-size: 15px;
   font-style: italic;
   line-height: 1.8;
   margin: 8px 0 0 0;
@@ -160,7 +160,7 @@
 
 .about-cta h3 {
   color: white;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
   line-height: 1.4;
   max-width: 760px;

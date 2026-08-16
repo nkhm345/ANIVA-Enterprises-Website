@@ -2,15 +2,18 @@
 <html>
   <head>
     <title>
-      ANIVA Enterprises, LLC
+      ANIVA Enterprises
     </title>
     <link rel="shortcut icon" href="../browser_icon.ico"/>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ANIVA Enterprises, LLC - a nimble, innovative, value-adding company offering logistics & supply chain consulting and Chinese-English translation & interpretation services. Novi, Michigan.">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,400italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../Nav_Bar.css"/>
+    <link rel="stylesheet" href="../Footer.css"/>
+    <link rel="stylesheet" href="../Site.css"/>
     <link rel="stylesheet" href="Home.css"/>
   </head>
 
@@ -25,7 +28,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" id="home-button" href="../Home/Home.html">ANIVA <span style="font-size:16px;">Enterprises<span></a>
+          <a class="navbar-brand" id="home-button" href="Home.html">ANIVA <span style="font-size:16px;">Enterprises<span></a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -39,20 +42,183 @@
       </div>
     </div>
 
-    <!--Home Page Welcome-->
-    <div class="home_page">
-      <img id="background" src="main-page.jpg" alt="Background"/>
+    <!--Hero-->
+    <section class="hero hero-photo home-hero">
       <div class="container">
-        <img id="logo" style="display: none" src="ANIVA_logo.png" alt="Logo"/>
-        <h1 id="welcome">Welcome to <br class="visible-md visible-lg">ANIVA Enterprises, LLC</h1>
-        <div class="line">
+        <img class="home-logo" src="ANIVA_logo.png" alt="ANIVA Enterprises logo"/>
+        <p class="eyebrow eyebrow-light">Welcome to</p>
+        <h1>ANIVA Enterprises, LLC</h1>
+        <p class="hero-lede home-slogan">We provide <span class="acr">A</span> <span class="acr">N</span>imble, <span class="acr">I</span>nnovative, <span class="acr">V</span>alue-<span class="acr">A</span>dding service through relentless customer interface and supplier collaboration</p>
+        <div class="hero-actions">
+          <a class="cta cta-solid" href="../LogisticsandSupplyChain/LSC.html">Logistics &amp; Supply Chain</a>
+          <a class="cta cta-ghost" href="../TranslationServices/TranslationServices.html">Translation Services</a>
         </div>
-        <p id="slogan">We provide <u>A</u> <u>N</u>imble, <u>I</u>nnovative, <u>V</u>alue-<u>A</u>dding service through relentless <br class="visible-md visible-lg">customer interface and supplier collaboration</p>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num">2007</span>
+            <span class="stat-label">founded &mdash; a Delaware corporation based in Novi, Michigan</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">42<sup>+</sup></span>
+            <span class="stat-label">years of logistics &amp; supply chain leadership</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">5&ndash;10<sup>%</sup></span>
+            <span class="stat-label">typical savings on logistics &amp; supply chain spend</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">中 &harr; EN</span>
+            <span class="stat-label">Chinese &harr; English translation &amp; interpretation</span>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <!--Two segments-->
+    <section class="section" id="segments">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">What we do</p>
+          <h2>Two ways we help</h2>
+          <p class="section-lede">ANIVA Enterprises is a Delaware Corporation that focuses on two core business segments</p>
+        </div>
+        <div class="row card-row">
+          <div class="col-md-6">
+            <a class="segment-link-card" href="../LogisticsandSupplyChain/LSC.html">
+              <div class="site-card card-topline home-segment">
+                <div class="icon-circle"><img src="../LogisticsandSupplyChain/focus.png" alt="Logistics"/></div>
+                <h3>Logistics &amp; Supply Chain Consulting</h3>
+                <p>Logistics network optimization, carrier procurement and bid strategy, process redesign, performance measurement and supply chain compliance &mdash; delivered on-site by a senior practitioner.</p>
+                <ul>
+                  <li>Strategic (3&ndash;5 year) network and supply chain design</li>
+                  <li>Tactical (1&ndash;3 month) quick-win cost reduction</li>
+                  <li>Customer engagements &amp; value creation across oil &amp; gas, chemicals, automotive, beverage and retail</li>
+                </ul>
+                <span class="text-link">Explore Logistics &amp; Supply Chain &rarr;</span>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6">
+            <a class="segment-link-card" href="../TranslationServices/TranslationServices.html">
+              <div class="site-card card-topline-orange home-segment">
+                <div class="icon-circle"><span class="home-cn">中</span></div>
+                <h3>Translation &amp; Interpretation Services</h3>
+                <p>Chinese &harr; English translation and interpretation for hospitals, clinics, emergency centers, business-to-business, travel services and universities.</p>
+                <ul>
+                  <li>Mandarin, Shanghainese and Ningbo dialects</li>
+                  <li>Face-to-face, over-the-phone, video and transcription</li>
+                  <li>Medical, science, legal, business and travel subject fields</li>
+                </ul>
+                <span class="text-link">Explore Translation Services &rarr;</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--A N I V A-->
+    <section class="section section-soft" id="values">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Our name is our promise</p>
+          <h2>A Nimble, Innovative, Value-Adding company</h2>
+        </div>
+        <div class="row card-row">
+          <div class="col-md-4">
+            <div class="site-card value-card">
+              <span class="value-letter">N</span>
+              <h3>Nimble</h3>
+              <p>We become an integral part of the client's organization, work on-site at their facilities and move at the pace of the business &mdash; typically 30&ndash;90 days from kick-off to an implementable solution.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="site-card value-card">
+              <span class="value-letter">I</span>
+              <h3>Innovative</h3>
+              <p>Proven, repeatable methods &mdash; a 4-phase, 16-step design process, "what-if" scenario modelling, large-scale optimization tools and network-value thinking now productized in Valora by ANIVA AI.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="site-card value-card">
+              <span class="value-letter">V</span>
+              <h3>Value-Adding</h3>
+              <p>Cost savings of 5&ndash;10% of logistics and supply chain spend, measured against a baseline the client agrees to before the work begins &mdash; and a repeatable process the client owns when we leave.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--People-->
+    <section class="section" id="people">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">People</p>
+          <h2>Who you will work with</h2>
+        </div>
+        <div class="row card-row">
+          <div class="col-md-6">
+            <div class="site-card people-card">
+              <img src="../AboutUs/founder.png" alt="Dr. Mani Manivannan"/>
+              <div class="people-text">
+                <h3>Dr. Mani Manivannan</h3>
+                <p class="people-role">President &amp; Principal Consultant &middot; Logistics &amp; Supply Chain</p>
+                <p>42+ years of leadership across consulting, defense, automotive, manufacturing and 3PL/4PL; Ph.D. in Industrial Engineering (Penn State); former Georgia Tech faculty.</p>
+                <p><a class="text-link" href="../AboutUs/AboutUs.html#founder">Full profile &rarr;</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="site-card people-card">
+              <img src="../TranslationServices/translator.png" alt="Ms. Heju Huang"/>
+              <div class="people-text">
+                <h3>Ms. Heju Huang</h3>
+                <p class="people-role">Translator &amp; Interpreter &middot; Chinese &harr; English</p>
+                <p>Graduate education and extensive work experience in both China and the United States; member of the American Translators Association; specialized in medical and science research.</p>
+                <p><a class="text-link" href="../TranslationServices/TranslationServices.html#translator">Full profile &rarr;</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Contact band-->
+    <section class="band-navy home-cta">
+      <div class="container">
+        <p class="eyebrow">Let's talk</p>
+        <h3>Ready to start a conversation?</h3>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="home-cta-label">Supply Chain Consulting, Logistics Design and Planning</p>
+            <a class="cta cta-solid" href="mailto:mani@anivaenterprises.com">mani@anivaenterprises.com</a>
+          </div>
+          <div class="col-sm-6">
+            <p class="home-cta-label">Chinese &harr; English Translation Services</p>
+            <a class="cta cta-ghost" href="mailto:heju@anivaenterprises.com">heju@anivaenterprises.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Footer-->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6">
+            <a href="../AboutUs/AboutUs.html">About</a>
+            <a href="../ContactUs/ContactUs.html">Contact</a>
+          </div>
+          <div class="col-xs-6">
+            <p>Copyright &copy; 2026 Aniva Enterprises, LLC</p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="Home.js"></script>
+    <script src="../Site.js"></script>
   </body>
 </html>

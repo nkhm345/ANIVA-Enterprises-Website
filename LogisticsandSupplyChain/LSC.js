@@ -17,7 +17,7 @@ $(document).ready(function() {
 	window.onresize = sizeChart;
 
 	/* Section navigator + hero buttons: smooth scroll to anchors */
-	$('.section-nav a, .hero-actions a[href^="#"]').click(function(e) {
+	$('.section-nav a').click(function(e) {
 		var href = $(this).attr('href');
 		if (href && href.charAt(0) === '#' && $(href).length) {
 			e.preventDefault();

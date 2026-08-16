@@ -34,14 +34,14 @@
 }
 
 .contact-card h3 {
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.4;
   min-height: 50px;
   margin-bottom: 14px;
 }
 
 .contact-card p {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
   margin-bottom: 6px;
 }
@@ -49,7 +49,7 @@
 .contact-main {
   font-weight: bold;
   color: #23263B;
-  font-size: 17px !important;
+  font-size: 18px !important;
 }
 
 .contact-card .cta {
@@ -60,7 +60,7 @@
 
 .contact-more {
   margin-top: 18px;
-  font-size: 13px !important;
+  font-size: 14px !important;
 }
 
 .contact-more a {

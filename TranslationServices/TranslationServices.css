@@ -28,7 +28,7 @@
 }
 
 .dialect-card h3 {
-  font-size: 17px;
+  font-size: 18px;
   color: #636363;
   font-weight: normal;
   margin-bottom: 0;
@@ -55,7 +55,7 @@
 }
 
 .tile-card h3 {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.4;
   color: #23263B;
   margin-bottom: 0;
@@ -91,7 +91,7 @@
 .ts-quote-text {
   font-family: Georgia, serif;
   font-style: italic;
-  font-size: 24px;
+  font-size: 26px;
   line-height: 1.6;
   color: white;
   max-width: 820px;
@@ -129,7 +129,7 @@
 }
 
 .profile-role {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.5;
   color: #636363;
   margin-bottom: 14px;
@@ -148,7 +148,7 @@
 }
 
 .profile-bio p {
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.75;
   color: #4A4F63;
 }
