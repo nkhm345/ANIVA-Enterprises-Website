@@ -1,11 +1,19 @@
 /************************************************/
 /*           Logistics & Supply Chain           */
 /************************************************/
+/* Palette: navy #23263B, orange accent, grey text #636363,
+   page tint #F4F6FA, border #E1E5EC                          */
+
+body {
+  font-family: 'Ubuntu', Tahoma, sans-serif;
+  color: #636363;
+}
+
 /*********************Header*********************/
 .header {
   position: relative;
   text-align: center;
-  top: 120px;
+  margin-top: 120px;
   font-family: 'Ubuntu', Tahoma, sans-serif;
 }
 
@@ -17,48 +25,86 @@
   letter-spacing: 5px;
 }
 
+.header-rule {
+  position: relative;
+  margin: auto;
+  height: 3px;
+  max-width: 745px;
+  width: 90%;
+  background-color: black;
+}
+
+.header-tagline {
+  margin: 28px auto 0 auto;
+  max-width: 760px;
+  width: 90%;
+  color: #636363;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
 /**************Introduction Buttons**************/
 .intro {
-	position: relative;
-	top: 140px;
-	text-align: center;
+  position: relative;
+  margin-top: 10px;
+  text-align: center;
 }
 
 .btn {
   width: 100%;
-  background-color: AliceBlue !important;
+  background-color: white !important;
   margin-top: 30px;
-  padding-top: 15px;
-  border-radius: 25px;
-  border: 2px #B1B6C7 solid !important;
-  transition: all 0.3s ease 0s;
+  padding: 28px 15px 22px 15px;
+  border-radius: 12px;
+  border: 1px #E1E5EC solid !important;
+  box-shadow: 0 2px 10px rgba(35, 38, 59, 0.06);
+  transition: all 0.25s ease 0s;
+  white-space: normal;
 }
 
 .btn:hover {
-  background-color: #B1B6C7 !important;
+  border-color: #23263B !important;
+  box-shadow: 0 6px 18px rgba(35, 38, 59, 0.12);
+  transform: translateY(-2px);
 }
 
 .btn:focus {
   outline: none !important;
-  box-shadow: none !important;
+  box-shadow: 0 2px 10px rgba(35, 38, 59, 0.06) !important;
 }
 
 .button-title {
-  font-size: 30px;
+  display: block;
+  font-size: 24px;
   color: black;
   font-family: 'Ubuntu', Tahoma, sans-serif;
 }
 
+.button-hint {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #9AA0B3;
+}
+
 .active {
-  background-color: AliceBlue !important;
-  box-shadow: none !important;
+  background-color: white !important;
+  border-color: #23263B !important;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   border-bottom: none !important;
+  transform: none !important;
+  box-shadow: 0 2px 10px rgba(35, 38, 59, 0.06) !important;
+}
+
+.active .button-hint {
+  color: orange;
 }
 
 .intro img {
-  width: 101px;
+  width: 72px;
 }
 
 .intro-description {
@@ -66,12 +112,15 @@
   color: #636363;
   display: none;
   text-align: left;
-  padding: 5px 20px;
-  background-color: AliceBlue !important;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
-  border: 2px #B1B6C7 solid;
+  padding: 5px 24px 18px 24px;
+  background-color: white !important;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border: 1px #23263B solid;
   border-top: none !important;
+  box-shadow: 0 2px 10px rgba(35, 38, 59, 0.06);
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .intro-description ol {
@@ -91,6 +140,7 @@
   color: #636363;
   font-family: 'Ubuntu', Tahoma, sans-serif;
   font-size: 20px;
+  line-height: 1.5;
   margin: auto;
   width: 75%;
   max-width: 950px;
@@ -105,72 +155,101 @@
   color: orange;
 }
 
+.process-lead {
+  margin-top: 70px;
+}
+
+.contact-lead {
+  margin-top: 30px;
+  font-size: 18px;
+}
+
 .jumbotron {
   position: relative !important;
-  top: 230px;
+  margin: 30px auto 0 auto;
   background-image: url(approach-diagram.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-color: white;
-  margin: 0 auto;
   max-width: 883px;
   width: 80%;
+  padding: 0;
 }
 
 .jumbotron .container {
   position: relative;
-  top: 120px;
   margin: auto !important;
   text-align: center;
-  vertical-align: middle !important;
 }
 
 /********Tactical/Strategic Descriptions*********/
 .details {
   position: relative;
-  top: 340px;
-  background-color: AliceBlue;
-  border-top: 1px #D1D1D1 solid;
-  border-bottom: 1px #D1D1D1 solid;
+  margin-top: 70px;
+  background-color: #F4F6FA;
+  border-top: 1px #E1E5EC solid;
   font-family: 'Ubuntu', Tahoma, sans-serif;
+  padding-bottom: 0;
 }
 
 .tacstr {
   position: relative;
   font-family: 'Ubuntu', Tahoma, sans-serif;
   margin: auto;
-  margin-top: 0;
   padding-top: 50px;
 }
 
+.tacstr-lead {
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #9AA0B3;
+  margin-bottom: 0;
+}
+
+.tab-card {
+  background-color: white;
+  border: 1px #E1E5EC solid;
+  border-top: 4px solid #23263B;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(35, 38, 59, 0.06);
+  padding: 28px 22px 18px 22px;
+  margin-top: 25px;
+  text-align: center;
+  min-height: 330px;
+}
+
 .tacstr h2 {
-  font-size: 26px;
+  font-size: 24px;
   color: black;
   font-weight: bold;
+  margin-top: 0;
 }
 
 .tacstr h3 {
   margin-top: 0;
-  font-size: 18px;
+  font-size: 15px;
   color: #636363;
   font-style: italic;
 }
 
 .tacstr button {
   position: relative;
-  font-size: 13px;
-  color: #636363;
-  background-color: AliceBlue;
-  border: 2px #636363 solid;
+  font-size: 12px;
+  color: white;
+  background-color: #23263B;
+  border: 2px #23263B solid;
+  border-radius: 20px;
+  padding: 7px 22px;
   letter-spacing: 2px;
   font-weight: bold;
-  transition: all 0.3s ease 0s;
+  transition: all 0.25s ease 0s;
 }
 
 .tacstr button:hover {
-  background-color: #B1B6C7 !important;
+  background-color: white !important;
   color: #23263B;
-  border-color: #23263B;
 }
 
 .tacstr button:focus {
@@ -183,28 +262,39 @@
   background-color: orange;
   position: relative;
   height: 2px;
-  margin-top: 15px;
+  margin-top: 18px;
   margin-bottom: 15px;
-  width: 90%;
+  width: 60px;
 }
 
 .tacstr ul {
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 1.5;
   color: #636363;
   list-style: square;
   text-align: left;
+  padding-left: 22px;
+  margin-bottom: 0;
 }
 
-.strategic, .tactical {
+.tacstr ul li {
+  margin-bottom: 5px;
+}
+
+.strategic, .tactical, .engagements {
   position: relative;
   background-color: white;
-  border: 1px #D1D1D1 solid;
+  border: 1px #E1E5EC solid;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(35, 38, 59, 0.06);
+  overflow: hidden;
   width: 93%;
   max-width: 1200px;
+  margin: 60px auto 0 auto;
   padding-bottom: 50px;
 }
 
-.strategic .container, .tactical .container {
+.strategic .container, .tactical .container, .engagements .container {
   width: 100%;
 }
 
@@ -218,11 +308,11 @@
 }
 
 .strategic .col-md-8, .tactical .col-md-8 {
-  background-color: #FFEBE9;
+  background-color: #F7F8FB;
 }
 
 .strategic ol, .tactical ol {
-  font-size: 20px;
+  font-size: 19px;
   font-family: 'Ubuntu', Tahoma, sans-serif;
   color: black;
   text-align: left;
@@ -256,57 +346,59 @@
   margin-top: 60px;
 }
 
-.strategic {
-  top: 75px;
-  margin: auto;
-}
-
-.tactical {
-  margin: 200px auto 150px auto;
-}
-
 .tactical h6 {
-  margin-bottom: -20px;
+  margin-bottom: 0;
   text-align: center;
   font-size: 25px;
   color: black;
 }
 
+.sample-row {
+  margin-top: 60px;
+}
+
+.costs-note {
+  margin-top: 30px;
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+
 .line3 {
-  background-color: #23263B;
+  background-color: #E1E5EC;
   position: relative;
-  height: 2px;
-  margin: auto;
-  margin-top: 40px;
+  height: 1px;
+  margin: 50px auto 0 auto;
   width: 90%;
   max-width: 1074px;
 }
 
 .titlerow {
-  background-color: #FFEFD3;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  border-bottom: 1px #d1d1d1 solid;
+  background-color: #23263B;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .title {
   text-align: center;
-  font-size: 30px;
+  font-size: 26px;
   font-family: 'Ubuntu', Tahoma, sans-serif;
-  color: black;
+  color: white;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   font-weight: bold;
+  margin: 0;
 }
 
 .subtitle {
   text-align: center;
-  font-size: 27px;
+  font-size: 20px;
   font-family: 'Ubuntu', Tahoma, sans-serif;
-  color: black;
-  margin-top: 65px;
-  text-decoration: underline;
+  color: #23263B;
+  margin-top: 55px;
+  margin-bottom: 8px;
+  letter-spacing: 3px;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 .line2 {
@@ -348,9 +440,9 @@
 }
 
 #costs {
-  background-color: #FFEBE9;
-  border-top: 1px #D1D1D1 solid;
-  border-bottom: 1px #D1D1D1 solid;
+  background-color: #F7F8FB;
+  border-top: 1px #E1E5EC solid;
+  border-bottom: 1px #E1E5EC solid;
   padding-bottom: 20px;
   padding-top: 20px;
 }
@@ -363,8 +455,10 @@
 .expandall, .collapseall {
   font-size: 11px;
   font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   background-color: transparent;
-  color: gray;
+  color: #9AA0B3;
   border: none;
   margin: auto;
   margin-bottom: 10px;
@@ -380,10 +474,15 @@
   box-shadow: none !important;
 }
 
+.backtotop-row {
+  position: relative;
+  margin-top: 18px;
+}
+
 .backtotop {
   position: relative;
-  font-size: 13px;
-  color: gray;
+  font-size: 12px;
+  color: #9AA0B3;
   background-color: transparent;
   border: none;
   letter-spacing: 1px;
@@ -393,7 +492,6 @@
 
 /*Button Mouse-Hover Configuration*/
 .backtotop:hover {
-  background-color: AliceBlue !important;
   color: #23263B;
 }
 
@@ -401,4 +499,292 @@
 .backtotop:focus {
   outline: none !important;
   box-shadow: none !important;
+}
+
+/**************Selected Engagements**************/
+.panel-intro {
+  text-align: center;
+  color: #636363;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 40px auto 20px auto;
+  width: 85%;
+  max-width: 900px;
+}
+
+.eng-grid {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.eng-grid > [class*="col-"] {
+  margin-bottom: 30px;
+}
+
+.eng-card {
+  position: relative;
+  border: 1px #E1E5EC solid;
+  border-left: 4px solid orange;
+  border-radius: 8px;
+  background-color: #FCFCFD;
+  padding: 22px 24px 20px 24px;
+  text-align: left;
+  height: 100%;
+}
+
+.eng-meta {
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #9AA0B3;
+  margin-bottom: 10px;
+}
+
+.eng-tag {
+  display: inline-block;
+  background-color: #EEF1F7;
+  color: #23263B;
+  border-radius: 12px;
+  padding: 3px 10px;
+  margin-right: 8px;
+  margin-bottom: 4px;
+}
+
+.eng-year {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.eng-card h4 {
+  color: black;
+  font-size: 19px;
+  font-weight: bold;
+  line-height: 1.35;
+  margin: 4px 0 12px 0;
+}
+
+.eng-summary {
+  color: #636363;
+  font-size: 14px;
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+.eng-toggle {
+  display: block;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #23263B;
+  transition: color 0.2s ease 0s;
+}
+
+.eng-toggle:hover {
+  color: orange;
+}
+
+.eng-toggle:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.eng-chevron {
+  display: inline-block;
+  margin-left: 4px;
+  transition: transform 0.3s ease 0s;
+}
+
+.eng-card.open .eng-chevron {
+  transform: rotate(180deg);
+}
+
+.eng-details {
+  display: none;
+  margin-top: 14px;
+  border-top: 1px #E1E5EC solid;
+  padding-top: 6px;
+}
+
+.eng-details h5 {
+  color: #23263B;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 16px 0 6px 0;
+}
+
+.engagements .eng-details ul {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #636363;
+  list-style: square;
+  padding-left: 18px;
+  margin-bottom: 0;
+}
+
+.engagements .eng-details ul li {
+  margin-bottom: 5px;
+}
+
+.eng-card-note {
+  border-left-color: #23263B;
+  background-color: #F4F6FA;
+}
+
+.eng-card-note h4 {
+  margin-top: 0;
+}
+
+.engagements .eng-card-note ul {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #636363;
+  list-style: square;
+  padding-left: 18px;
+}
+
+.engagements .eng-card-note ul li {
+  margin-bottom: 8px;
+}
+
+.eng-cta {
+  font-size: 14px;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+.eng-cta a, .valora-cta a {
+  color: #23263B;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 2px solid orange;
+}
+
+.eng-cta a:hover, .valora-cta a:hover {
+  color: orange;
+}
+
+/* Equal-height cards on medium and larger screens */
+@media (min-width: 992px) {
+  .eng-grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .eng-grid > [class*="col-"] {
+    display: flex;
+    float: none;
+  }
+  .eng-grid .eng-card {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+}
+
+/****************Valora by ANIVA AI**************/
+.valora {
+  position: relative;
+  margin-top: 60px;
+  background-color: #23263B;
+  color: #DFE2EB;
+  padding: 60px 0 55px 0;
+  font-family: 'Ubuntu', Tahoma, sans-serif;
+}
+
+.valora-head {
+  text-align: center;
+}
+
+.valora-kicker {
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: orange;
+  margin-bottom: 6px;
+}
+
+.valora h3 {
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0 0 14px 0;
+}
+
+.valora h3 span {
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  color: #B1B6C7;
+}
+
+.valora-lede {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #DFE2EB;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.valora-cols {
+  margin-top: 40px;
+}
+
+.valora h4 {
+  color: orange;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 20px 0 12px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.valora p, .valora li {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #DFE2EB;
+}
+
+.valora ul, .valora ol {
+  padding-left: 18px;
+}
+
+.valora ul {
+  list-style: square;
+}
+
+.valora li {
+  margin-bottom: 7px;
+}
+
+.valora b {
+  color: white;
+}
+
+.valora-cta {
+  text-align: center;
+  font-size: 17px;
+  margin: 40px 0 0 0;
+  color: white;
+}
+
+.valora-cta a {
+  color: white;
+}
+
+.valora-cta a:hover {
+  color: orange;
+}
+
+/* Footer sits directly under the Valora band */
+.footer {
+  margin-top: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
 }

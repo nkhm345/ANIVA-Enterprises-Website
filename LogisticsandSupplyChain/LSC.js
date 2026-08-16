@@ -28,6 +28,12 @@ $(document).ready(function() {
 		}, 1000);
 	});
 
+	$("#engbutton").click(function() {
+		$('html, body').animate( {
+			scrollTop: parseInt($(".engagements").offset().top) - 100
+		}, 1200);
+	});
+
 	$('.caret').click(function() {
 		$(this).next().slideToggle(300);
         $(this).toggleClass("caret caret-up");
@@ -85,15 +91,25 @@ $(document).ready(function() {
 		$("#costs b").removeClass("caret-up");
 	});
 
-	$('.backtotop').first().click(function() {
+	/* Selected Engagements: per-card toggle and expand / collapse all */
+	$('.eng-toggle').click(function() {
+		$(this).next('.eng-details').slideToggle(300);
+		$(this).closest('.eng-card').toggleClass('open');
+	});
+
+	$('#engexpand').click(function() {
+		$('.eng-details').slideDown(300);
+		$('.eng-card').addClass('open');
+	});
+
+	$('#engcollapse').click(function() {
+		$('.eng-details').slideUp(300);
+		$('.eng-card').removeClass('open');
+	});
+
+	$('.backtotop').click(function() {
 		$('html, body').animate( {
 			scrollTop: parseInt($(".details").offset().top) - 60
 		}, 1000);
-	});
-
-	$('.backtotop').last().click(function() {
-		$('html, body').animate( {
-			scrollTop: parseInt($(".details").offset().top) - 60
-		}, 1200);
 	});
 });
