@@ -76,26 +76,96 @@
 
 /*******************Quote band*******************/
 .ts-quote {
-  padding: 56px 0 60px 0;
+  position: relative;
+  padding: 90px 0 84px 0;
   text-align: center;
+  color: white;
+  background-image: url(large_picture.jpg);
+  background-size: cover;
+  background-position: center 40%;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.ts-quote:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(26, 29, 46, 0.86) 0%, rgba(35, 38, 59, 0.74) 55%, rgba(46, 51, 82, 0.66) 100%);
+}
+
+.ts-watermark {
+  position: absolute;
+  right: 4%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 340px;
+  line-height: 1;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+  user-select: none;
+}
+
+.ts-quote .container {
+  position: relative;
+}
+
+.ts-quote-inner {
+  max-width: 860px;
+  margin: 0 auto;
 }
 
 .ts-quote-mark {
   font-family: Georgia, serif;
-  font-size: 90px;
+  font-size: 96px;
   line-height: 0.6;
   color: orange;
-  margin: 0 0 6px 0;
+  margin: 0 0 8px 0;
 }
 
 .ts-quote-text {
   font-family: Georgia, serif;
   font-style: italic;
-  font-size: 26px;
+  font-size: 27px;
   line-height: 1.6;
   color: white;
-  max-width: 820px;
-  margin: 0 auto;
+  margin: 0 auto 18px auto;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+.ts-quote-by {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #F5C56B;
+  margin: 0 0 26px 0;
+}
+
+.ts-quote-points {
+  margin-bottom: 30px;
+}
+
+.ts-point {
+  display: inline-block;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 6px 14px;
+  margin: 0 5px 8px 5px;
+}
+
+@media (max-width: 991px) {
+  .ts-quote {
+    background-attachment: scroll;
+  }
+  .ts-watermark {
+    font-size: 220px;
+    right: -20px;
+  }
 }
 
 /****************Translator profile**************/

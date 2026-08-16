@@ -197,15 +197,27 @@
 
 /*******************Contact band*****************/
 .home-cta {
-  padding: 60px 0 56px 0;
+  padding: 90px 0 80px 0;
   text-align: center;
+}
+
+.home-cta .container {
+  max-width: 960px;
+}
+
+.home-cta .eyebrow {
+  margin-bottom: 14px;
 }
 
 .home-cta h3 {
   color: white;
   font-size: 30px;
   font-weight: bold;
-  margin: 0 0 30px 0;
+  margin: 0 0 40px 0;
+}
+
+.home-cta .row {
+  padding: 0 4%;
 }
 
 .home-cta-label {
