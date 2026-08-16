@@ -15,47 +15,58 @@ There is no server, nothing to upload, and no other deploy mechanism.
 - HTTPS certificates are issued and renewed automatically
 - Deployment history and logs: Cloudflare dashboard → Workers & Pages → `anivaenterprises`
 
-## Making and previewing changes
+## Making changes — always preview first
 
-For a change you're confident in:
+**Rule: never push directly to `master`.** Every push to `master` changes the
+live website within seconds, with no review step. Instead, make every change on
+a branch, check Cloudflare's preview of that branch in a browser, and only then
+merge into `master`. This applies to all changes, including one-line text fixes.
 
-```bash
-git pull
-# edit files
-git commit -am "Describe the change"
-git push            # live on anivaenterprises.com ~15 seconds later
-```
+1. Start from an up-to-date `master` and create a branch for the change:
 
-To **preview before going live**, push to a branch instead of `master`:
+   ```bash
+   git checkout master
+   git pull
+   git checkout -b my-change
+   ```
 
-```bash
-git checkout -b my-change
-# edit files
-git commit -am "Describe the change"
-git push -u origin my-change
-```
+2. Edit files, commit, and push the **branch** (not `master`):
 
-Cloudflare builds every branch at its own **preview URL** — find it in the
-Pages dashboard under the deployment, or on the pull request if you open one.
-Check the preview in a browser. When it looks right, merge it into `master`
-(open a pull request on GitHub and merge it there, or locally:)
+   ```bash
+   git commit -am "Describe the change"
+   git push -u origin my-change
+   ```
 
-```bash
-git checkout master
-git merge my-change
-git push            # now it's live in production
-```
+3. Cloudflare builds every branch at its own **preview URL** — find it in the
+   Pages dashboard under the deployment, or on the pull request if you open one.
+   Open the preview in a browser and check the change. Nothing on the live site
+   has changed yet.
 
-Then delete the branch — it did its job:
+4. When the preview looks right, merge into `master` — that is the moment the
+   change goes live. Open a pull request on GitHub and merge it there, or
+   locally:
 
-```bash
-git branch -d my-change              # delete your local copy
-git push origin --delete my-change   # delete it on GitHub
-```
+   ```bash
+   git checkout master
+   git merge my-change
+   git push            # now it's live on anivaenterprises.com
+   ```
 
-(Merging a pull request on GitHub offers a "Delete branch" button that does the
-second command for you.) Deleting the branch stops future preview builds for
-it; old preview deployments linger harmlessly in the Pages deployment history.
+5. Delete the branch — it did its job:
+
+   ```bash
+   git branch -d my-change              # delete your local copy
+   git push origin --delete my-change   # delete it on GitHub
+   ```
+
+   (Merging a pull request on GitHub offers a "Delete branch" button that does
+   the second command for you.) Deleting the branch stops future preview builds
+   for it; old preview deployments linger harmlessly in the Pages deployment
+   history.
+
+If a bad change does reach `master`, the fastest fix is to revert it
+(`git revert <commit>` then push) — or, in the Cloudflare Pages dashboard, open
+the previous good deployment and choose **Rollback to this deployment**.
 
 ## Domain & DNS
 
