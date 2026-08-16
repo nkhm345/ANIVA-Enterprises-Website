@@ -1,38 +1,53 @@
 $(document).ready(function() {
-	$(".intro .btn").click(function() {
-		$(this).next().slideToggle(500);
-		$(this).toggleClass("active");
+	var NAV_OFFSET = 125; /* fixed navbar (61px) + sticky section navigator */
 
-		if ($(this).hasClass("active")) {
-		    $('html, body').animate( {
-		    	scrollTop: parseInt($(this).offset().top) - 100
-		    }, 400);
+	function scrollToTarget(selector, duration) {
+		var $t = $(selector);
+		if (!$t.length) { return; }
+		$('html, body').animate( {
+			scrollTop: parseInt($t.offset().top) - NAV_OFFSET + 20
+		}, duration || 700);
+	}
+
+	/* Flow chart keeps its aspect ratio at any width */
+	function sizeChart() {
+		$(".jumbotron").css("height", parseInt($(".jumbotron").css("width")) * 657 / 883);
+	}
+	sizeChart();
+	window.onresize = sizeChart;
+
+	/* Section navigator + hero buttons: smooth scroll to anchors */
+	$('.section-nav a, .hero-actions a[href^="#"]').click(function(e) {
+		var href = $(this).attr('href');
+		if (href && href.charAt(0) === '#' && $(href).length) {
+			e.preventDefault();
+			scrollToTarget(href, 700);
 		}
 	});
 
-	$(".jumbotron").css("height", parseInt($(".jumbotron").css("width")) * 657 / 883);
+	/* Highlight the section currently in view */
+	var $navLinks = $('.section-nav a');
+	var sections = $navLinks.map(function() {
+		var href = $(this).attr('href');
+		return $(href).length ? $(href) : null;
+	}).get();
 
-	window.onresize = function(event) {
-		$(".jumbotron").css("height", parseInt($(".jumbotron").css("width")) * 657 / 883);
-	};
+	function updateActive() {
+		var pos = $(window).scrollTop() + NAV_OFFSET + 40;
+		var current = -1;
+		for (var i = 0; i < sections.length; i++) {
+			if (sections[i].offset().top <= pos) { current = i; }
+		}
+		$navLinks.removeClass('active');
+		if (current >= 0) { $navLinks.eq(current).addClass('active'); }
+	}
+	$(window).on('scroll', updateActive);
+	updateActive();
 
-	$("#strbutton").click(function() {
-		$('html, body').animate( {
-			scrollTop: parseInt($(".strategic").offset().top) - 100
-		}, 700);
-	});
-
-	$("#tacbutton").click(function() {
-		$('html, body').animate( {
-			scrollTop: parseInt($(".tactical").offset().top) - 100
-		}, 1000);
-	});
-
-	$("#engbutton").click(function() {
-		$('html, body').animate( {
-			scrollTop: parseInt($(".engagements").offset().top) - 100
-		}, 1200);
-	});
+	/* Tab cards: Learn More */
+	$("#strbutton").click(function() { scrollToTarget(".strategic", 700); });
+	$("#tacbutton").click(function() { scrollToTarget(".tactical", 900); });
+	$("#engbutton").click(function() { scrollToTarget(".engagements", 700); });
 
 	$('.caret').click(function() {
 		$(this).next().slideToggle(300);
@@ -91,7 +106,7 @@ $(document).ready(function() {
 		$("#costs b").removeClass("caret-up");
 	});
 
-	/* Selected Engagements: per-card toggle and expand / collapse all */
+	/* Customer Engagements: per-card toggle and expand / collapse all */
 	$('.eng-toggle').click(function() {
 		$(this).next('.eng-details').slideToggle(300);
 		$(this).closest('.eng-card').toggleClass('open');
@@ -108,8 +123,6 @@ $(document).ready(function() {
 	});
 
 	$('.backtotop').click(function() {
-		$('html, body').animate( {
-			scrollTop: parseInt($(".details").offset().top) - 60
-		}, 1000);
+		scrollToTarget(".details", 900);
 	});
 });
