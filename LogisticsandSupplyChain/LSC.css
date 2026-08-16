@@ -221,10 +221,21 @@ body {
 }
 
 .tacstr h2 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 62px;
   font-size: 24px;
+  line-height: 1.2;
   color: black;
   font-weight: bold;
   margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.tacstr h2.tab-title-long {
+  font-size: 20px;
+  line-height: 1.3;
 }
 
 .tacstr h3 {
