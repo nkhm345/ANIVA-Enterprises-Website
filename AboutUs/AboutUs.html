@@ -9,9 +9,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,400italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../Nav_Bar.css"/>
     <link rel="stylesheet" href="../Footer.css"/>
+    <link rel="stylesheet" href="../Site.css"/>
     <link rel="stylesheet" href="AboutUs.css"/>
   </head>
 
@@ -40,159 +41,177 @@
       </div>
     </div>
 
-    <!--Header Text-->
-    <div class="header">
+    <!--Hero-->
+    <section class="hero hero-compact">
       <div class="container">
+        <p class="eyebrow eyebrow-light">ANIVA Enterprises, LLC</p>
         <h1>About Us</h1>
-        <div style="position: relative; margin: auto; height: 3px; max-width: 184px; background-color: black"></div>
-        <p>ANIVA Enterprises is a Delaware Corporation that focuses <br class="visible-sm visible-md visible-lg">on two core business segments</p>
+        <p class="hero-lede">ANIVA Enterprises is a Delaware Corporation that focuses on two core business segments</p>
+        <div class="hero-actions">
+          <a class="cta cta-solid" href="#segments">Our two segments</a>
+          <a class="cta cta-ghost" href="#founder">Meet the founder</a>
+        </div>
       </div>
-    </div>
-
-    <div class="line2" style="top:140px"></div>
-
-    <!--Slider Navigator-->
-    <div class="slider-nav">
-      <div class="container">
-        <button class="arrow-prev"><img src="leftarrow.png" alt="Left"></button>
-        <ul class="slider-dots">
-          <li class="dot active-dot">&bull;</li>
-          <li class="dot">&bull;</li>
-        </ul>
-        <button class="arrow-next"><img src="rightarrow.png" alt="Right"></button>
-      </div>
-    </div>
+    </section>
 
     <!--Business Segments-->
-    <div class="slider" id="segments">
-      <div class="slide" id="logistics">
-        <div class="container">
-          <div class="row">
-            <img src="one.png" alt="One" style="width:45px"/>
-            <h1>Logistics &amp; Supply Chain</h1>
-            <h2>Focus on logistics, transportation and supply chain consulting, cost reduction projects, performance measurement and business process management services through relentless customer interface and supplier/service provider collaboration</h2>
-            <div class="col-sm-6">
-              <ul >
+    <section class="section" id="segments">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">What we do</p>
+          <h2>Two core business segments</h2>
+        </div>
+        <div class="row card-row">
+          <div class="col-md-6" id="logistics">
+            <div class="site-card card-topline segment-card">
+              <div class="icon-circle"><img src="one.png" alt="One"/></div>
+              <h3>Logistics &amp; Supply Chain</h3>
+              <p class="segment-lede">Focus on logistics, transportation and supply chain consulting, cost reduction projects, performance measurement and business process management services through relentless customer interface and supplier/service provider collaboration</p>
+              <ul>
                 <li>We become an integral part of the customer organization and work on-site at their facilities</li>
                 <li>We work closely with the leadership and several functional groups and develop operational strategies, process redesigns, benchmarks, strategic and tactical supply chain/logistics network solutions in addition to setting up new capabilities (people, process, systems and tools)</li>
-              </ul>
-            </div>
-            <div class="col-sm-6">
-              <ul >
                 <li>We support our clients in developing new bid proposals as well as help improve under-performing business operations</li>
                 <li>We have a proven track-record of generating cost savings of the order of 5-10% of logistics spend depending on the consulting engagement</li>
                 <li>We support clients in automotive, manufacturing &amp; assembly, and 3PL (third-party logistics) industry</li>
               </ul>
+              <p class="segment-link"><a class="text-link" href="../LogisticsandSupplyChain/LSC.html">Explore Logistics &amp; Supply Chain &rarr;</a></p>
+            </div>
+          </div>
+          <div class="col-md-6" id="translation">
+            <div class="site-card card-topline-orange segment-card">
+              <div class="icon-circle"><img src="two.png" alt="Two"/></div>
+              <h3>Translation Services</h3>
+              <p class="segment-lede">Focus on Chinese &harr; English Translation services for Hospitals, Clinics, Emergency Centers, Business to Business (B2B), Travel Services, and Universities</p>
+              <p class="segment-highlight"><b>This is the fastest growing service and the most-active business area for ANIVA Enterprises</b></p>
+              <p class="segment-link"><a class="text-link" href="../TranslationServices/TranslationServices.html">Explore Translation Services &rarr;</a></p>
             </div>
           </div>
         </div>
       </div>
-      <div class="slide" id="translation">
-        <div class="container">
-          <div class="row">
-            <img src="two.png" alt="Two" style="width:45px"/>
-            <h1>Translation Services</h1>
-            <h2>Focus on Chinese &harr; English Translation services for Hospitals, Clinics, Emergency Centers, Business to Business (B2B), Travel Services, and Universities<br><br><br><b>This is the fastest growing service and the most-active business area for ANIVA Enterprises</b></h2>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="line2" style="top:200px;"></div>
+    </section>
 
     <!--About the Founder-->
-    <div id="founder">
+    <section class="section section-soft" id="founder">
       <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <h3>
-              About the President &amp; Founder
-            </h3>
-            <div class="line">
+        <div class="section-head">
+          <p class="eyebrow">Leadership</p>
+          <h2>About the President &amp; Founder</h2>
+        </div>
+
+        <div class="row founder-intro">
+          <div class="col-md-4">
+            <div class="founder-photo-card">
+              <img src="founder.png" alt="Dr. Mani Manivannan"/>
+              <p class="founder-name">Dr. Mani Manivannan</p>
+              <p class="founder-role">Logistics &amp; Supply Chain Executive<br>Principal Consultant, ANIVA Enterprises LLC</p>
+              <div class="founder-quick">
+                <span class="chip chip-orange">42+ years</span>
+                <span class="chip chip-orange">Ph.D., Penn State</span>
+                <span class="chip chip-orange">~25 papers</span>
+              </div>
+              <a class="cta cta-navy" href="mailto:mani@anivaenterprises.com">Email Dr. Manivannan</a>
+              <a class="cta cta-navy" href="https://www.linkedin.com/in/manimanivannan-b19516b" target="_blank" rel="noopener">LinkedIn</a>
             </div>
-            <p class="founder-title">Dr. Mani Manivannan<br><span>Logistics &amp; Supply Chain Executive &nbsp;|&nbsp; Principal Consultant, ANIVA Enterprises LLC</span></p>
-            <p>
-              Dr. Mani Manivannan is a seasoned logistics and supply chain executive with more than 42 years of progressive leadership spanning consulting, defense, automotive, manufacturing, and 3PL/4PL sectors. As President and Principal Consultant of ANIVA Enterprises LLC &mdash; a Delaware-based firm he founded in 2007 &mdash; he delivers high-impact engagements that drive cost savings, revenue growth, and operational transformation for clients across the transportation, beverage/retail, chemical, oil &amp; gas, and defense industries.
-            </p>
-            <p>
-              He brings a rare combination of executive depth and analytical precision. He holds a Ph.D. in Industrial Engineering from Penn State and has led teams of 80 to 110 professionals throughout his career. His consulting work is grounded in decades of hands-on executive roles at world-class organizations, including XPO Logistics, BAE Systems, Walker SCM, Rush Group, and Venture Logistics.
-            </p>
-            <p>
-              Before entering industry he served on the faculty of the School of Industrial and Systems Engineering at Georgia Tech, and later as Adjunct Associate Professor at the Oregon Graduate Institute and Portland State University. He has published some 25 peer-reviewed papers on logistics, supply chain, simulation, artificial intelligence, and robotics, served as a panel member for the National Science Foundation, and was Program Chair of the 1998 Winter Simulation Conference.
-            </p>
           </div>
-          <div class="col-md-6">
-            <div class="visible-md visible-lg"><br></div>
-            <img src="founder.png" alt="Dr. Mani Manivannan"/>
+          <div class="col-md-8">
+            <div class="site-card site-card-static founder-bio">
+              <p>
+                Dr. Mani Manivannan is a seasoned logistics and supply chain executive with more than 42 years of progressive leadership spanning consulting, defense, automotive, manufacturing, and 3PL/4PL sectors. As President and Principal Consultant of ANIVA Enterprises LLC &mdash; a Delaware-based firm he founded in 2007 &mdash; he delivers high-impact engagements that drive cost savings, revenue growth, and operational transformation for clients across the transportation, beverage/retail, chemical, oil &amp; gas, and defense industries.
+              </p>
+              <p>
+                He brings a rare combination of executive depth and analytical precision. He holds a Ph.D. in Industrial Engineering from Penn State and has led teams of 80 to 110 professionals throughout his career. His consulting work is grounded in decades of hands-on executive roles at world-class organizations, including XPO Logistics, BAE Systems, Walker SCM, Rush Group, and Venture Logistics.
+              </p>
+              <p>
+                Before entering industry he served on the faculty of the School of Industrial and Systems Engineering at Georgia Tech, and later as Adjunct Associate Professor at the Oregon Graduate Institute and Portland State University. He has published some 25 peer-reviewed papers on logistics, supply chain, simulation, artificial intelligence, and robotics, served as a panel member for the National Science Foundation, and was Program Chair of the 1998 Winter Simulation Conference.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div class="row founder-details">
+        <div class="row card-row founder-details">
           <div class="col-md-5">
-            <h4>Consulting Focus Areas</h4>
-            <ul>
-              <li>Logistics Network Design, Optimization &amp; Transformation</li>
-              <li>Truckload, LTL, 3PL &amp; 4PL Strategy and Management</li>
-              <li>New Business Launch &amp; Bid Development</li>
-              <li>Business Development &amp; Revenue/Margin Improvement</li>
-              <li>Supply Chain Cost Reduction &amp; Transit Time Improvement</li>
-              <li>Process Excellence, Lean Implementation &amp; IT Strategy</li>
-              <li>DoD / Government Supply Chain Compliance (CPSR)</li>
-            </ul>
+            <div class="site-card site-card-static">
+              <h4 class="mini-head">Consulting Focus Areas</h4>
+              <ul>
+                <li>Logistics Network Design, Optimization &amp; Transformation</li>
+                <li>Truckload, LTL, 3PL &amp; 4PL Strategy and Management</li>
+                <li>New Business Launch &amp; Bid Development</li>
+                <li>Business Development &amp; Revenue/Margin Improvement</li>
+                <li>Supply Chain Cost Reduction &amp; Transit Time Improvement</li>
+                <li>Process Excellence, Lean Implementation &amp; IT Strategy</li>
+                <li>DoD / Government Supply Chain Compliance (CPSR)</li>
+              </ul>
+            </div>
           </div>
           <div class="col-md-7">
-            <h4>Career Highlights</h4>
-            <ul>
-              <li>Served clients spanning Saltchuk, DSV, Dow Chemical, Lucid Motors, Walmart, Coca-Cola Consolidated, USA Truck, and EnviroVac.</li>
-              <li>Achieved $30M in cost savings at Coca-Cola Consolidated through dedicated and one-way network design, carrier procurement, and implementation.</li>
-              <li>Closed 12+ new logistics contracts at Venture Logistics with major OEMs including GM, Magna, Nissan, Honda, Niagara Water, Martinelli&rsquo;s, and WestRock Paper.</li>
-              <li>Achieved $200M+ in logistics cost savings redesigning GM&rsquo;s global logistics networks ($4B spend) as Managing Director at XPO Logistics.</li>
-              <li>Delivered 11% freight cost savings at BAE Systems (Land &amp; Armaments) by transforming a supplier-driven model into a least-cost, visible 3PL network across North America.</li>
-              <li>Saved $20M+ in equipment costs at Emery Worldwide Airlines through a strategic automation program for USPS mail sorting facilities.</li>
-              <li>Led a team that won a landmark 4-year, $2B USPS logistics services contract at Menlo Worldwide.</li>
-            </ul>
+            <div class="site-card site-card-static">
+              <h4 class="mini-head">Career Highlights</h4>
+              <ul>
+                <li>Served clients spanning Saltchuk, DSV, Dow Chemical, Lucid Motors, Walmart, Coca-Cola Consolidated, USA Truck, and EnviroVac.</li>
+                <li>Achieved $30M in cost savings at Coca-Cola Consolidated through dedicated and one-way network design, carrier procurement, and implementation.</li>
+                <li>Closed 12+ new logistics contracts at Venture Logistics with major OEMs including GM, Magna, Nissan, Honda, Niagara Water, Martinelli&rsquo;s, and WestRock Paper.</li>
+                <li>Achieved $200M+ in logistics cost savings redesigning GM&rsquo;s global logistics networks ($4B spend) as Managing Director at XPO Logistics.</li>
+                <li>Delivered 11% freight cost savings at BAE Systems (Land &amp; Armaments) by transforming a supplier-driven model into a least-cost, visible 3PL network across North America.</li>
+                <li>Saved $20M+ in equipment costs at Emery Worldwide Airlines through a strategic automation program for USPS mail sorting facilities.</li>
+                <li>Led a team that won a landmark 4-year, $2B USPS logistics services contract at Menlo Worldwide.</li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div class="row founder-details">
+        <div class="row card-row founder-details">
           <div class="col-md-6">
-            <h4>Awards &amp; Recognition</h4>
-            <ul>
-              <li>2024 Performance Achievement Award &mdash; Coca-Cola Consolidated</li>
-              <li>2015 Service Excellence Award &mdash; Saltchuk</li>
-              <li>2010 / 2013 Chairman&rsquo;s Award &mdash; BAE Systems</li>
-              <li>2010 Nunn-Perry Award &mdash; U.S. Department of Defense</li>
-              <li>2003 CEO Speed Demon Award &mdash; General Motors</li>
-              <li>1996 Raymond F. O&rsquo;Brien Award of Excellence &mdash; XPO Logistics Board of Directors</li>
-              <li>1991 Outstanding Young Manufacturing Engineer of the Year &mdash; Society of Manufacturing Engineers (SME)</li>
-            </ul>
+            <div class="site-card site-card-static">
+              <h4 class="mini-head">Awards &amp; Recognition</h4>
+              <ul>
+                <li>2024 Performance Achievement Award &mdash; Coca-Cola Consolidated</li>
+                <li>2015 Service Excellence Award &mdash; Saltchuk</li>
+                <li>2010 / 2013 Chairman&rsquo;s Award &mdash; BAE Systems</li>
+                <li>2010 Nunn-Perry Award &mdash; U.S. Department of Defense</li>
+                <li>2003 CEO Speed Demon Award &mdash; General Motors</li>
+                <li>1996 Raymond F. O&rsquo;Brien Award of Excellence &mdash; XPO Logistics Board of Directors</li>
+                <li>1991 Outstanding Young Manufacturing Engineer of the Year &mdash; Society of Manufacturing Engineers (SME)</li>
+              </ul>
+            </div>
           </div>
           <div class="col-md-6">
-            <h4>Education &amp; Academic Credentials</h4>
-            <ul>
-              <li>Ph.D., Industrial Engineering &mdash; Pennsylvania State University (1988)</li>
-              <li>M.S., Industrial Engineering &amp; Operations Research &mdash; Syracuse University (1985)</li>
-              <li>M.S., Business Administration &amp; Management &mdash; IIT Madras, India (1983)</li>
-              <li>B.S. (Honors), Mechanical Engineering &mdash; Anna University, Madras, India (1979)</li>
-              <li>Faculty, Georgia Institute of Technology (1988&ndash;1993); Adjunct Professor, Oregon Graduate Institute &amp; Portland State University (1994&ndash;1999)</li>
-              <li>Published ~25 peer-reviewed papers in logistics, supply chain, simulation, AI, and robotics</li>
-              <li>Panel Member, National Science Foundation (NSF); Program Chair, Winter Simulation Conference (WSC) 1998</li>
-            </ul>
+            <div class="site-card site-card-static">
+              <h4 class="mini-head">Education &amp; Academic Credentials</h4>
+              <ul>
+                <li>Ph.D., Industrial Engineering &mdash; Pennsylvania State University (1988)</li>
+                <li>M.S., Industrial Engineering &amp; Operations Research &mdash; Syracuse University (1985)</li>
+                <li>M.S., Business Administration &amp; Management &mdash; IIT Madras, India (1983)</li>
+                <li>B.S. (Honors), Mechanical Engineering &mdash; Anna University, Madras, India (1979)</li>
+                <li>Faculty, Georgia Institute of Technology (1988&ndash;1993); Adjunct Professor, Oregon Graduate Institute &amp; Portland State University (1994&ndash;1999)</li>
+                <li>Published ~25 peer-reviewed papers in logistics, supply chain, simulation, AI, and robotics</li>
+                <li>Panel Member, National Science Foundation (NSF); Program Chair, Winter Simulation Conference (WSC) 1998</li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div class="row founder-details">
+        <div class="row">
           <div class="col-md-12">
-            <h4>Selected Clients &amp; Employers</h4>
-            <p class="founder-clients">ANIVA Enterprises &bull; Venture Logistics &bull; Rush Group &bull; BAE Systems &bull; Walker SCM &bull; XPO Logistics &bull; General Motors &bull; Saltchuk &bull; DSV Air &amp; Sea &bull; Dow Chemical &bull; Lucid Motors &bull; Walmart &bull; Coca-Cola Consolidated &bull; USA Truck &bull; Montgomery Transport Group &bull; EnviroVac &bull; U.S. Postal Service &bull; Georgia Institute of Technology</p>
-            <p class="founder-contact">To discuss how ANIVA Enterprises can support your logistics and supply chain objectives, contact <a href="mailto:mani@anivaenterprises.com">mani@anivaenterprises.com</a> or connect on <a href="https://www.linkedin.com/in/manimanivannan-b19516b" target="_blank" rel="noopener">LinkedIn</a>.</p>
+            <div class="site-card site-card-static clients-card">
+              <h4 class="mini-head">Selected Clients &amp; Employers</h4>
+              <p class="founder-clients">ANIVA Enterprises &bull; Venture Logistics &bull; Rush Group &bull; BAE Systems &bull; Walker SCM &bull; XPO Logistics &bull; General Motors &bull; Saltchuk &bull; DSV Air &amp; Sea &bull; Dow Chemical &bull; Lucid Motors &bull; Walmart &bull; Coca-Cola Consolidated &bull; USA Truck &bull; Montgomery Transport Group &bull; EnviroVac &bull; U.S. Postal Service &bull; Georgia Institute of Technology</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!--Contact band-->
+    <section class="band-navy about-cta">
+      <div class="container">
+        <p class="eyebrow">Let's talk</p>
+        <h3>To discuss how ANIVA Enterprises can support your logistics and supply chain objectives</h3>
+        <p><a class="cta cta-solid" href="mailto:mani@anivaenterprises.com">mani@anivaenterprises.com</a> <a class="cta cta-ghost" href="https://www.linkedin.com/in/manimanivannan-b19516b" target="_blank" rel="noopener">Connect on LinkedIn</a></p>
+      </div>
+    </section>
 
     <!--Footer-->
-    <footer class="footer" style="top: 240px;">
+    <footer class="footer">
       <div class="container">
         <div class="row">
           <div class="col-xs-6">
@@ -208,6 +227,13 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="AboutUs.js"></script>
+    <script>
+      $(function() {
+        $('.hero-actions a[href^="#"]').click(function(e) {
+          var t = $($(this).attr('href'));
+          if (t.length) { e.preventDefault(); $('html, body').animate({ scrollTop: t.offset().top - 80 }, 600); }
+        });
+      });
+    </script>
   </body>
 </html>

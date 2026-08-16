@@ -1,220 +1,187 @@
 /************************************************/
 /*            Translation Services              */
+/*   Page-specific styles; shared design in      */
+/*   ../Site.css                                */
 /************************************************/
-/*********************Header*********************/
-.header {
-  position: relative;
+
+/*********************Hero***********************/
+.ts-hero {
+  background-image: url(large_picture.jpg);
+}
+
+.ts-stats {
+  margin-top: 0;
+}
+
+/*******************Dialects*********************/
+.dialect-card {
   text-align: center;
-  top: 120px;
-  font-family: 'Ubuntu', Tahoma, sans-serif;
+  padding: 34px 20px 28px 20px;
 }
 
-.header h1 {
-  color: black;
-  font-size: 30px;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-  letter-spacing: 5px;
+.dialect-card p.foreign_char {
+  color: #23263B;
+  font-size: 56px;
+  line-height: 1.15;
+  font-weight: normal;
+  margin: 0 0 12px 0;
 }
 
-.header p {
-  padding-top: 40px;
+.dialect-card h3 {
+  font-size: 17px;
   color: #636363;
-  font-size: 20px;
-  margin-bottom: -2px;
-}
-
-/**********Translation Details Slider************/
-.slider {
+  font-weight: normal;
+  margin-bottom: 0;
+  padding-top: 12px;
   position: relative;
-  width: 100%;
-  top: 170px;
-  border-top: 1px solid #D1D1D1;
 }
 
-.slide {
-  font-family: 'Ubuntu', Tahoma, sans-serif;
-  display: none;
+.dialect-card h3:before {
+  content: "";
   position: absolute;
   top: 0;
-  left: 0;
-  width: inherit;
-  background-color: AliceBlue;
-  padding-bottom: 50px;
-}
-
-.active-slide {
-  display: block;
-  position: relative;
-}
-
-.slide h2 {
-  color: black;
-  text-align: center;
-  padding-top: 50px;
-}
-
-.line2 {
+  left: 50%;
+  width: 44px;
+  height: 3px;
+  margin-left: -22px;
   background-color: orange;
-  position: relative;
-  width: 75px;
-  height: 2px;
-  top: 10px;
-  margin: auto;
-  margin-bottom: 100px;
+  border-radius: 2px;
 }
 
-.slide img {
-  display: block;
-  margin: auto;
-}
-
-#dialects .foreign_char {
-  color: black;
+/************Service & subject tiles*************/
+.tile-card {
   text-align: center;
-  font-weight: normal;
-  font-size: 50px;
-  padding-bottom: 15px;
+  padding: 30px 14px 22px 14px;
 }
 
-.slide h3 {
-	color: #636363;
-	text-align: center;
-  top: 70px;
-  padding-bottom: 70px;
-}
-
-.slider-nav {
-  position: relative;
-  text-align: center;
-  margin-top: 30px;
-  top: 70px;
-}
-
-.arrow-prev img, .arrow-next img {
-  width: 40px;
-  opacity: 0.5;
-}
-
-.arrow-prev:hover, .arrow-next:hover {
-  opacity: 0.5;
-}
-
-.arrow-prev {
-  margin-right: 20px;
-  display: inline-block;
-  vertical-align: top;
-}
-
-.arrow-next {
-  margin-left: 20px;
-  display: inline-block;
-  vertical-align: top;
-}
-
-.slider-dots {
-  list-style: none;
-  display: inline-block;
-  padding-left: 0;
+.tile-card h3 {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #23263B;
   margin-bottom: 0;
 }
 
-.slider-dots li {
-  color: #bbbcbc;
-  display: inline;
-  font-size: 30px;
-  margin-right: 5px;
+.tile-card .icon-circle {
+  margin-bottom: 16px;
 }
 
-.slider-dots li.active-dot {
-  color: #363636;
+@media (min-width: 992px) {
+  .fields-row {
+    justify-content: center;
+  }
+  .field-col {
+    width: 20%;
+  }
 }
 
-button {
-  border: none;
-  background: none;
-}
-
-.arrow-prev:focus, .arrow-next:focus {
-  outline: none;
-}
-
-.arrow-prev:hover, .arrow-next:hover {
-  border: none;
-}
-
-#services h3 {
-  padding-bottom: 20px;
-}
-
-/*****************Large Picture******************/
-.jumbotron {
-  position: relative !important;
-  top: 45px;
-  background-image: url(large_picture.jpg);
-  height: 540px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-top: 50px;
-  margin-bottom: 70px;
-  width: 100%;
-  overflow: auto;
-}
-
-.jumbotron .container {
-  font-family: Georgia;
-  font-style: italic;
+/*******************Quote band*******************/
+.ts-quote {
+  padding: 56px 0 60px 0;
   text-align: center;
-  position: relative;
-  top: 120px;
 }
 
-.jumbotron p {
-  font-size: 25px;
-  color: white;
-}
-
-/*************Translator Biography***************/
-#translator {
-  position: relative;
-  top: 30px;
-  padding-top: 10px;
-  margin-bottom: 100px;
-  font-family: 'Ubuntu', Tahoma, sans-serif;
-}
-
-#translator h3 {
-  color: black;
-  text-align: center;
-  padding-bottom: 10px;
-}
-
-.line {
-  background-color: orange;
-  position: relative;
-  width: 90px;
-  height: 2px;
-  margin: auto;
-}
-
-#translator p {
-  padding-top: 20px;
-  color: #636363;
-}
-
-#translator img {
-  display: block;
-  margin: auto;
-  margin-top: 55px;
-  width: 100%;
-  border-radius: 200px;
-}
-
-#translator a {
-  text-decoration: none;
-  color: #006699;
-}
-
-#translator a:hover {
+.ts-quote-mark {
+  font-family: Georgia, serif;
+  font-size: 90px;
+  line-height: 0.6;
   color: orange;
+  margin: 0 0 6px 0;
+}
+
+.ts-quote-text {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 24px;
+  line-height: 1.6;
+  color: white;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+/****************Translator profile**************/
+.profile-card {
+  background-color: white;
+  border: 1px #E1E5EC solid;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(35, 38, 59, 0.07);
+  padding: 28px 22px 26px 22px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-card img {
+  display: block;
+  width: 190px;
+  height: 190px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  margin: 0 auto 18px auto;
+  border: 5px solid #F4F6FA;
+  box-shadow: 0 6px 20px rgba(35, 38, 59, 0.15);
+}
+
+.profile-name {
+  font-size: 21px;
+  font-weight: bold;
+  color: #23263B;
+  margin: 0 0 6px 0;
+}
+
+.profile-role {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #636363;
+  margin-bottom: 14px;
+}
+
+.profile-chips {
+  margin-bottom: 14px;
+}
+
+.profile-card .cta {
+  display: block;
+  margin: 8px auto 0 auto;
+  max-width: 260px;
+  padding: 11px 18px;
+  font-size: 11px;
+}
+
+.profile-bio p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #4A4F63;
+}
+
+.profile-bio p:first-child:first-letter {
+  font-size: 40px;
+  font-weight: bold;
+  color: #23263B;
+  float: left;
+  line-height: 0.85;
+  padding-right: 8px;
+  padding-top: 5px;
+}
+
+.profile-contact {
+  margin-bottom: 0;
+  padding-top: 14px;
+  border-top: 1px solid #E1E5EC;
+}
+
+@media (max-width: 991px) {
+  .profile-card {
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .dialect-card p.foreign_char {
+    font-size: 44px;
+  }
+  .ts-quote-text {
+    font-size: 19px;
+  }
 }

@@ -1,53 +1,74 @@
 /************************************************/
 /*                  Contact Us                  */
+/*   Page-specific styles; shared design in      */
+/*   ../Site.css                                */
 /************************************************/
-/*********************Header*********************/
-.header {
-  position: relative;
+
+.contact-section {
+  padding: 70px 0 60px 0;
+  background-color: #F4F6FA;
+  border-bottom: 1px solid #E1E5EC;
+  min-height: 60vh;
+}
+
+.contact-card {
   text-align: center;
-  top: 120px;
-  font-family: 'Ubuntu', Tahoma, sans-serif;
+  padding-top: 32px;
 }
 
-.header h1 {
-  color: black;
-  font-size: 30px;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-  letter-spacing: 5px;
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 auto 16px auto;
+  background-color: #F4F6FA;
+  color: #23263B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/**************Contact Information***************/
-.info {
-  position: relative;
-  text-align: left;
-  top: 175px;
-  font-family: 'Ubuntu', Tahoma, sans-serif;
-}
-.info h2 {
-  color: black;
-  font-size: 25px;
+.contact-icon-orange {
+  background-color: #FFF4E0;
+  color: #D98C00;
 }
 
-.line {
-  background-color: orange;
-  position: relative;
-  height: 2px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+.contact-card h3 {
+  font-size: 18px;
+  line-height: 1.4;
+  min-height: 50px;
+  margin-bottom: 14px;
 }
 
-.info p {
-  color: #636363;
+.contact-card p {
   font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 6px;
 }
 
-.info a {
+.contact-main {
+  font-weight: bold;
+  color: #23263B;
+  font-size: 17px !important;
+}
+
+.contact-card .cta {
+  margin: 16px auto 0 auto;
+  padding: 11px 20px;
+  font-size: 11px;
+}
+
+.contact-more {
+  margin-top: 18px;
+  font-size: 13px !important;
+}
+
+.contact-more a {
+  color: #636363;
   text-decoration: none;
-  color: #006699;
+  transition: color 0.2s ease 0s;
 }
 
-.info a:hover {
+.contact-more a:hover {
   color: orange;
 }
-

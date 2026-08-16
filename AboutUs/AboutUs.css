@@ -1,239 +1,180 @@
 /************************************************/
 /*                   About Us                   */
+/*   Page-specific styles; shared design in      */
+/*   ../Site.css                                */
 /************************************************/
-/*********************Header*********************/
-.header {
-  position: relative;
+
+/*****************Business Segments**************/
+.segment-card {
   text-align: center;
-  top: 120px;
-  font-family: 'Ubuntu', Tahoma, sans-serif;
+  padding-top: 34px;
 }
 
-.header h1 {
-  color: black;
-  font-size: 30px;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-  letter-spacing: 5px;
+.segment-card h3 {
+  font-size: 24px;
+  margin-bottom: 14px;
 }
 
-.header p {
-  padding-top: 40px;
-  color: #636363;
-  font-size: 20px;
-  padding-bottom: 10px;
-}
-
-/**********Service Descriptions Slider***********/
-.line2 {
-  background-color: #23263B;
-  position: relative;
-  height: 2px;
-  margin: auto;
-  width: 85%;
-  max-width: 1074px;
-}
-
-.slider-nav {
-  position: relative;
-  text-align: center;
-  margin-top: 20px;
-  top: 145px;
-}
-
-.arrow-prev, .arrow-next {
-  display: inline;
-  vertical-align: top;
-  position: relative;
-  z-index: 4;
-  border: none;
-  background: none;
-}
-
-.arrow-prev:hover, .arrow-next:hover {
-  opacity: 0.5;
-  border: none;
-}
-
-.arrow-prev:focus, .arrow-next:focus {
-  outline: none;
-}
-
-.arrow-prev img, .arrow-next img {
-  width: 40px;
-  opacity: 0.5;
-}
-
-.arrow-prev {
-  visibility: hidden;
-  margin-right: 20px;
-}
-
-.arrow-next {
-  margin-left: 20px;
-}
-
-.slider-dots {
-  list-style: none;
-  display: inline-block;
-  padding-left: 0;
-  margin-bottom: 0;
-}
-
-.slider-dots li {
-  color: #bbbcbc;
-  display: inline;
-  font-size: 30px;
-  margin-right: 5px;
-}
-
-.slider-dots li.active-dot {
-  color: #363636;
-}
-
-.slider {
-  position: relative;
-  width: 100%;
-  top: 160px;
-  font-family: 'Ubuntu', Tahoma, sans-serif;
-}
-
-.slide {
-  display: none;
-  position: absolute;
-  top: -10px;
-  left: 0;
-  width: inherit;
-}
-
-.active-slide {
-  display: block;
-  position: relative;
-}
-
-.slide img {
-  display: block;
-  margin: auto;
-}
-
-.slide h1 {
-  color: black;
-  text-align: center;
-  font-size: 27px;
-  padding-bottom: 25px;
-}
-
-.slide h2 {
-  color: #636363;
-  top: 70px;
-  text-align: center;
-  padding-bottom: 30px;
-  font-size: 22px;
-  margin: auto;
-  width: 90%;
-}
-
-#logistics ul li {
-  font-size: 13px;
-  color: #636363;
-  list-style: square;
-  text-align: left;
-  margin: auto;
-  margin-bottom: 5px;
-  width: 90%;
-}
-
-/***************Founder Biography****************/
-#founder {
-  position: relative;
-  top: 240px;
-  margin-top: 10px;
-  margin-bottom: 100px;
-  font-family: 'Ubuntu', Tahoma, sans-serif;
-}
-
-#founder h3 {
-  color: black;
-  text-align: center;
-  padding-bottom: 10px;
-}
-
-.line {
-  background-color: orange;
-  position: relative;
-  height: 2px;
-  margin: auto;
-  width: 90px;
-}
-
-#founder p {
-  padding-top: 20px;
-  color: #636363;
-  margin-bottom: 0;
-}
-
-#founder img {
-  display: block;
-  margin: auto;
-  width: 100%;
-  border-radius: 150px;
-  margin-top: 55px;
-}
-
-#founder .founder-title {
-  color: black;
-  font-size: 18px;
-  font-weight: 700;
-  text-align: center;
-  padding-top: 25px;
-  line-height: 1.5;
-}
-
-#founder .founder-title span {
-  color: #636363;
-  font-size: 13px;
-  font-weight: 400;
-}
-
-#founder .founder-details {
-  margin-top: 40px;
-}
-
-#founder .founder-details h4 {
-  color: black;
+.segment-card .segment-lede {
   font-size: 15px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-top: 20px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid orange;
+  color: #23263B;
+  line-height: 1.6;
+  margin-bottom: 18px;
 }
 
-#founder .founder-details ul {
-  padding-left: 18px;
-  margin-bottom: 15px;
-}
-
-#founder .founder-details ul li {
+.segment-card ul {
+  text-align: left;
   font-size: 13px;
+  padding-left: 22px;
+}
+
+.segment-card ul li {
+  margin-bottom: 8px;
+}
+
+.segment-highlight {
+  margin-top: 26px;
+  font-size: 15px;
+  color: #23263B;
+  background-color: #FFF4E0;
+  border: 1px solid #FFE1A8;
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.segment-link {
+  margin-top: 22px;
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+/*****************Founder profile****************/
+.founder-intro {
+  margin-bottom: 10px;
+}
+
+.founder-photo-card {
+  background-color: white;
+  border: 1px #E1E5EC solid;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(35, 38, 59, 0.07);
+  padding: 28px 22px 26px 22px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.founder-photo-card img {
+  display: block;
+  width: 190px;
+  height: 190px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  margin: 0 auto 18px auto;
+  border: 5px solid #F4F6FA;
+  box-shadow: 0 6px 20px rgba(35, 38, 59, 0.15);
+}
+
+.founder-name {
+  font-size: 21px;
+  font-weight: bold;
+  color: #23263B;
+  margin: 0 0 6px 0;
+}
+
+.founder-role {
+  font-size: 13px;
+  line-height: 1.5;
   color: #636363;
-  list-style: square;
-  margin-bottom: 6px;
+  margin-bottom: 14px;
 }
 
-#founder .founder-clients {
-  font-size: 13px;
-  font-style: italic;
+.founder-quick {
+  margin-bottom: 14px;
+}
+
+.founder-photo-card .cta {
+  display: block;
+  margin: 8px auto 0 auto;
+  max-width: 260px;
+  padding: 11px 18px;
+  font-size: 11px;
+}
+
+.founder-bio p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #4A4F63;
+}
+
+.founder-bio p:first-child:first-letter {
+  font-size: 40px;
+  font-weight: bold;
+  color: #23263B;
+  float: left;
+  line-height: 0.85;
+  padding-right: 8px;
   padding-top: 5px;
 }
 
-#founder .founder-contact {
-  font-size: 14px;
-  padding-top: 15px;
+.founder-bio p:last-child {
+  margin-bottom: 0;
 }
 
-#founder .founder-contact a {
-  color: #23263B;
-  font-weight: 700;
+.founder-details .site-card {
+  padding-top: 18px;
+}
+
+.founder-details .mini-head {
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+.founder-details ul li {
+  font-size: 13px;
+  line-height: 1.55;
+  margin-bottom: 6px;
+}
+
+.clients-card {
+  padding-top: 18px;
+  margin-bottom: 0;
+}
+
+.clients-card .mini-head {
+  margin-top: 8px;
+}
+
+.founder-clients {
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.8;
+  margin: 8px 0 0 0;
+}
+
+/*******************Contact band*****************/
+.about-cta {
+  padding: 60px 0 56px 0;
+  text-align: center;
+}
+
+.about-cta h3 {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.4;
+  max-width: 760px;
+  margin: 0 auto 26px auto;
+}
+
+.about-cta p {
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  .founder-photo-card {
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

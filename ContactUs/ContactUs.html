@@ -9,9 +9,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,400italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../Nav_Bar.css"/>
     <link rel="stylesheet" href="../Footer.css"/>
+    <link rel="stylesheet" href="../Site.css"/>
     <link rel="stylesheet" href="ContactUs.css"/>
   </head>
 
@@ -40,39 +41,59 @@
       </div>
     </div>
 
-    <!--Header Text-->
-    <div class="header">
+    <!--Hero-->
+    <section class="hero hero-compact">
       <div class="container">
+        <p class="eyebrow eyebrow-light">ANIVA Enterprises, LLC</p>
         <h1>Contact Us</h1>
-        <div style="position: relative; margin: auto; height: 3px; max-width: 230px; background-color: black"></div>
+        <p class="hero-lede">Reach the right person directly &mdash; email is the fastest way to start a conversation.</p>
       </div>
-    </div>
+    </section>
 
-    <!--Address & Email-->
-    <div class="info">
+    <!--Contact tiles-->
+    <section class="section contact-section">
       <div class="container">
-        <div class="row">
-          <div class="col-sm-5 col-xs-offset-1">
-            <h2>Address</h2>
-            <div class="line" style="width: 180px"></div>
-            <p><b>ANIVA Enterprises, LLC</b></p>
-            <p>Novi, MI 48374</p>
-            <p>USA</p>
+        <div class="row card-row">
+          <div class="col-md-4">
+            <div class="site-card contact-card">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+              </div>
+              <h3>Address</h3>
+              <p class="contact-main">ANIVA Enterprises, LLC</p>
+              <p>Novi, MI 48374<br>USA</p>
+            </div>
           </div>
-          <div class="col-sm-5 col-xs-offset-1 col-sm-offset-0">
-            <h2>Email</h2>
-            <div class="line" style="max-width: 403px; width: 100%"></div>
-            <p><b>Supply Chain Consulting, Logistics Design and Planning</b></p>
-            <p>Dr. Mani Manivannan: <a href="mailto:mani@anivaenterprises.com">mani@anivaenterprises.com</a></p>
-            <p><b>Chinese &harr; English Translation Services</b></p>
-            <p>Ms. Heju Huang: <a href="mailto:heju@anivaenterprises.com">heju@anivaenterprises.com</a></p>
+          <div class="col-md-4">
+            <div class="site-card contact-card card-topline">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 12h18" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+              </div>
+              <h3>Supply Chain Consulting, Logistics Design and Planning</h3>
+              <p class="contact-main">Dr. Mani Manivannan</p>
+              <p><a class="text-link" href="mailto:mani@anivaenterprises.com">mani@anivaenterprises.com</a></p>
+              <a class="cta cta-navy" href="mailto:mani@anivaenterprises.com">Email Dr. Manivannan</a>
+              <p class="contact-more"><a href="../LogisticsandSupplyChain/LSC.html">Logistics &amp; Supply Chain services &rarr;</a></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="site-card contact-card card-topline-orange">
+              <div class="contact-icon contact-icon-orange">
+                <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M4 5h9v7H8l-3 3v-3H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M13 9h7v7h-1v3l-3-3h-3v-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>Chinese &harr; English Translation Services</h3>
+              <p class="contact-main">Ms. Heju Huang</p>
+              <p><a class="text-link" href="mailto:heju@anivaenterprises.com">heju@anivaenterprises.com</a></p>
+              <a class="cta cta-navy" href="mailto:heju@anivaenterprises.com">Email Ms. Huang</a>
+              <p class="contact-more"><a href="../TranslationServices/TranslationServices.html">Translation &amp; Interpretation services &rarr;</a></p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!--Footer-->
-    <footer class="footer" style="top: 330px;">
+    <footer class="footer">
       <div class="container">
         <div class="row">
           <div class="col-xs-6">
