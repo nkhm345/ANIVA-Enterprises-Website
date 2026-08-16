@@ -112,6 +112,18 @@ $(document).ready(function() {
 		$(this).closest('.eng-card').toggleClass('open');
 	});
 
+	/* Theme filters */
+	$('.eng-filter').click(function() {
+		var theme = $(this).data('theme');
+		$('.eng-filter').removeClass('active');
+		$(this).addClass('active');
+		$('.eng-col').each(function() {
+			var mine = $(this).data('theme');
+			var show = (theme === 'all' || mine === 'all' || mine === theme);
+			$(this).toggle(show);
+		});
+	});
+
 	$('#engexpand').click(function() {
 		$('.eng-details').slideDown(300);
 		$('.eng-card').addClass('open');

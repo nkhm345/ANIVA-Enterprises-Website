@@ -722,6 +722,49 @@ body {
   max-width: 900px;
 }
 
+.eng-filters {
+  text-align: center;
+  margin: 6px 4% 22px 4%;
+}
+
+.eng-filter {
+  display: inline-block;
+  background-color: white;
+  color: #23263B;
+  border: 1px solid #D5D9E3;
+  border-radius: 20px;
+  padding: 8px 16px;
+  margin: 0 5px 8px 5px;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease 0s;
+}
+
+.eng-filter:hover {
+  border-color: #23263B;
+}
+
+.eng-filter.active {
+  background-color: #23263B;
+  border-color: #23263B;
+  color: white;
+}
+
+.eng-filter:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.eng-count {
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #9AA0B3;
+  margin: -6px 0 18px 0;
+}
+
 .eng-grid {
   margin-left: 2%;
   margin-right: 2%;
