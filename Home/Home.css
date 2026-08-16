@@ -7,18 +7,42 @@
 /*********************Hero***********************/
 .home-hero {
   background-image: url(main-page.jpg);
+  background-position: center 30%;
   padding-top: 120px;
   min-height: 92vh;
   display: flex;
   align-items: center;
 }
 
+/* Lighter overlay so the handshake photo reads clearly; text keeps
+   contrast via the darker centre band and text shadows below.       */
 .home-hero:after {
-  background: linear-gradient(135deg, rgba(26, 29, 46, 0.90) 0%, rgba(35, 38, 59, 0.82) 55%, rgba(46, 51, 82, 0.76) 100%);
+  background:
+    radial-gradient(ellipse at 50% 55%, rgba(26, 29, 46, 0.55) 0%, rgba(26, 29, 46, 0.35) 45%, rgba(26, 29, 46, 0.15) 75%),
+    linear-gradient(180deg, rgba(26, 29, 46, 0.55) 0%, rgba(35, 38, 59, 0.35) 50%, rgba(35, 38, 59, 0.55) 100%);
 }
 
 .home-hero .container {
   width: 100%;
+}
+
+.home-hero h1,
+.home-hero .hero-lede,
+.home-hero .eyebrow {
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.home-hero .stat {
+  background-color: rgba(26, 29, 46, 0.55);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.home-hero .stat-num {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.home-hero .stat-label {
+  color: #DFE2EB;
 }
 
 .home-logo {
