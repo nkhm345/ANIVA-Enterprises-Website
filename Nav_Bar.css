@@ -75,12 +75,12 @@
 /*Logo image beside the brand name*/
 .brand-logo {
   display: inline-block !important;
-  height: 30px;
+  height: 28px;
   width: auto;
   vertical-align: middle;
   position: relative;
-  top: -6px;
-  margin-right: 10px;
+  top: -5px;
+  margin-right: 8px;
   background-color: white;
   border-radius: 6px;
   padding: 2px 4px;
