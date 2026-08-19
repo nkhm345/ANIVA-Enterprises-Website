@@ -1663,3 +1663,12 @@ body {
 .journey-nav button:hover { background-color: orange; border-color: orange; color: #1A1D2E; }
 .journey-dots i { background-color: rgba(255, 255, 255, 0.3); }
 .journey-dots i.on { background-color: orange; }
+/* Compact work-plan strip + no orphan words */
+.workplan-strip { margin-top: 34px; }
+.workplan-note-short { margin: 14px 0 0 0; }
+.phase-text b, .phase-text small, .section-head h2, .journey-title, .journey-detail h3 {
+  text-wrap: balance;
+}
+.section-lede, .journey-summary, .journey-detail li, .phase-map, .workplan-note, .panel-intro, .eng-summary {
+  text-wrap: pretty;
+}
