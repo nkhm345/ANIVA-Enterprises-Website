@@ -486,7 +486,7 @@ body {
   border: 1px #E1E5EC solid;
   border-radius: 14px;
   box-shadow: 0 6px 22px rgba(35, 38, 59, 0.07);
-  overflow: visible;
+  overflow: hidden;
   width: 93%;
   max-width: 1200px;
   margin: 60px auto 0 auto;
@@ -1347,26 +1347,4 @@ body {
 .chart-section {
   background-color: white;
   padding: 56px 0 64px 0;
-}
-/* Panel bands run edge-to-edge across the page */
-html {
-  overflow-x: hidden;
-}
-.titlerow {
-  border-radius: 14px 14px 0 0;
-}
-.strategic .navy-sub, .tactical .navy-sub {
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  padding-left: calc(50vw - 50%);
-  padding-right: calc(50vw - 50%);
-  padding-top: 6px;
-  padding-bottom: 40px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.strategic .navy-sub .row, .tactical .navy-sub .row {
-  max-width: 1200px;
-  margin-left: auto !important;
-  margin-right: auto !important;
 }
