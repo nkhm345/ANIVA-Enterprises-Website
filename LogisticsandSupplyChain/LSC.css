@@ -1305,7 +1305,7 @@ body {
 .costs-band .line2 { background-color: orange; }
 
 /* the rule that used to separate this block is now the band edge */
-.tactical .costs-band + .line3 { display: none; }
+.costs-band + .line3 { display: none; }
 /* Explore: equal-height tab cards */
 @media (min-width: 768px) {
   .tacstr .row {
@@ -1324,3 +1324,22 @@ body {
     display: none;
   }
 }
+/* How It Works / Data Requirements lists on the navy bands */
+.navy-sub {
+  margin-top: 0;
+  padding: 6px 0 36px 0;
+}
+.navy-sub .subtitle { color: white; }
+.navy-sub .strategic ol, .navy-sub .tactical ol,
+.strategic .navy-sub ol, .tactical .navy-sub ol { color: white; }
+.strategic .navy-sub ol ul, .tactical .navy-sub ol ul { color: #DFE2EB; }
+.strategic .navy-sub ul li ul, .tactical .navy-sub ul li ul { color: #DFE2EB; }
+.strategic .navy-sub .col-md-8, .tactical .navy-sub .col-md-8 {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+.navy-sub .line3 { background-color: rgba(255, 255, 255, 0.18); }
+.navy-sub .expandall, .navy-sub .collapseall { color: #B1B6C7; }
+.navy-sub .expandall:hover, .navy-sub .collapseall:hover { background-color: transparent !important; color: orange; }
+.navy-sub .caret, .navy-sub .caret-up { color: #F5C56B; }
+.navy-sub .costs-note { color: #DFE2EB; }
