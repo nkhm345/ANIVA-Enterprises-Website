@@ -107,6 +107,16 @@ $(document).ready(function() {
 		$("#costs b").removeClass("caret-up");
 	});
 
+	/* Six-move process stepper */
+	function showMove(n) {
+		n = ((n - 1 + 6) % 6) + 1;
+		$('.journey-step').removeClass('active').filter('[data-step="' + n + '"]').addClass('active');
+		$('.journey-detail').removeClass('active').filter('[data-step="' + n + '"]').addClass('active');
+		$('.journey-dots i').removeClass('on').eq(n - 1).addClass('on');
+	}
+	$('.journey-step').click(function() { showMove(parseInt($(this).data('step'), 10)); });
+	$('.journey-prev').click(function() { showMove(parseInt($('.journey-step.active').data('step'), 10) - 1); });
+	$('.journey-next').click(function() { showMove(parseInt($('.journey-step.active').data('step'), 10) + 1); });
 	/* Customer Engagements: per-card toggle and expand / collapse all */
 	$('.eng-toggle').click(function() {
 		$(this).next('.eng-details').slideToggle(300);
