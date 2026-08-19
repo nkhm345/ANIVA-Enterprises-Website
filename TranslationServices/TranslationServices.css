@@ -69,27 +69,81 @@
   color: #23263B;
 }
 
-.ts-clients {
+/*******************Trusted by band**************/
+.ts-trusted {
+  position: relative;
+  padding: 70px 0 66px 0;
   text-align: center;
-  max-width: 860px;
-  margin: 10px auto 0 auto;
-  font-size: 17px;
-  line-height: 1.6;
-  color: #4A4F63;
-  background-color: #FFF4E0;
-  border: 1px solid #FFE1A8;
-  border-radius: 12px;
-  padding: 16px 22px;
+  background-image:
+    radial-gradient(ellipse at 20% 30%, rgba(255, 165, 0, 0.22) 0%, rgba(255, 165, 0, 0) 45%),
+    radial-gradient(ellipse at 85% 80%, rgba(120, 140, 255, 0.18) 0%, rgba(120, 140, 255, 0) 50%),
+    linear-gradient(135deg, #1A1D2E 0%, #23263B 55%, #2E3352 100%);
 }
 
-.ts-clients-label {
-  display: inline-block;
-  font-size: 12px;
+.ts-trusted:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.025) 0 2px, transparent 2px 14px);
+  pointer-events: none;
+}
+
+.ts-trusted .container {
+  position: relative;
+}
+
+.ts-watermark-left {
+  right: auto;
+  left: 3%;
+}
+
+.ts-trusted .eyebrow {
+  margin-bottom: 14px;
+}
+
+.ts-trusted-name {
+  font-family: Georgia, serif;
+  font-size: 52px;
   font-weight: bold;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  color: white;
+  margin: 0 0 6px 0;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.45);
+}
+
+.ts-trusted-sub {
+  font-size: 15px;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  color: #D98C00;
-  margin-right: 8px;
+  color: #F5C56B;
+  margin: 0;
+}
+
+.ts-trusted-rule {
+  width: 80px;
+  height: 3px;
+  background-color: orange;
+  border-radius: 2px;
+  margin: 24px auto 22px auto;
+}
+
+.ts-trusted-lede {
+  font-size: 19px;
+  line-height: 1.6;
+  color: #DFE2EB;
+  max-width: 760px;
+  margin: 0 auto 24px auto;
+}
+
+.ts-trusted-chips .ts-point {
+  font-size: 14px;
+  padding: 8px 16px;
+}
+
+@media (max-width: 767px) {
+  .ts-trusted-name {
+    font-size: 36px;
+  }
 }
 
 @media (min-width: 992px) {
