@@ -1,3 +1,27 @@
+/* Valora announcement ribbon: show unless dismissed this session */
+(function () {
+  var KEY = 'anivaValoraRibbonDismissed';
+  var dismissed = false;
+  try { dismissed = window.sessionStorage && sessionStorage.getItem(KEY) === '1'; } catch (e) {}
+  if (!dismissed) { document.documentElement.className += ' ribbon-on'; }
+  function measure() {
+    var el = document.querySelector('.announce');
+    if (!el) { return; }
+    document.documentElement.style.setProperty('--ribbon-h', el.offsetHeight + 'px');
+  }
+  function wire() {
+    measure();
+    window.addEventListener('resize', measure);
+    setTimeout(measure, 300);
+    var btn = document.querySelector('.announce-close');
+    if (!btn) { return; }
+    btn.addEventListener('click', function () {
+      document.documentElement.className = document.documentElement.className.replace(/\sribbon-on\b/, '');
+      try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
+    });
+  }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', wire); } else { wire(); }
+})();
 /* ANIVA Enterprises - shared page behaviour
    1) Gentle reveal-on-scroll for cards and tiles (no-JS safe: without
       this script everything is simply visible).

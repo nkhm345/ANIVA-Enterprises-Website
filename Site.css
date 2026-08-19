@@ -431,3 +431,81 @@ body {
     transition: none;
   }
 }
+/**************Valora announcement ribbon*********/
+.announce {
+  display: none;
+  position: fixed;
+  top: 61px;
+  left: 0;
+  right: 0;
+  z-index: 8;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  padding: 10px 52px 10px 16px;
+  background-color: #1A1D2E;
+  border-bottom: 2px solid orange;
+  color: #FFFFFF;
+  font-family: 'Ubuntu', Tahoma, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+.ribbon-on .announce { display: flex; }
+.announce-pill {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-color: orange;
+  color: #1A1D2E;
+  border-radius: 12px;
+  padding: 3px 10px;
+}
+.announce-text b { color: #FFFFFF; }
+.announce-short { display: none; }
+.announce-link {
+  color: #F5C56B !important;
+  font-weight: bold;
+  text-decoration: underline !important;
+  white-space: nowrap;
+}
+.announce-link:hover { color: orange !important; }
+.announce-close {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #B1B6C7;
+  font-size: 22px;
+  line-height: 1;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+.announce-close:hover { color: #FFFFFF; }
+.announce-close:focus { outline: none; }
+
+/* make room for the ribbon under the fixed navbar (height measured by Site.js) */
+.ribbon-on .hero { padding-top: calc(135px + var(--ribbon-h, 44px)); }
+.ribbon-on .home-hero { padding-top: calc(120px + var(--ribbon-h, 44px)); }
+.ribbon-on .section-nav { top: calc(61px + var(--ribbon-h, 44px)); }
+@media (max-width: 991px) {
+  .announce { font-size: 13px; padding: 9px 46px 9px 14px; }
+}
+@media (max-width: 767px) {
+  .announce { font-size: 13px; line-height: 1.35; gap: 4px 10px; padding: 8px 40px 8px 12px; }
+  .announce-long { display: none; }
+  .announce-short { display: inline; }
+  .announce-pill { display: none; }
+  .ribbon-on .hero { padding-top: calc(105px + var(--ribbon-h, 60px)); }
+  .ribbon-on .home-hero { padding-top: calc(100px + var(--ribbon-h, 60px)); }
+}
+
+/* Valora hero button */
+.cta-valora { border-color: orange; color: #F5C56B !important; }
+.cta-valora:hover { border-color: orange; background-color: rgba(255, 165, 0, 0.15); }
