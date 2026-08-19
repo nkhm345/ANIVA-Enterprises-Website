@@ -1348,3 +1348,25 @@ body {
   background-color: white;
   padding: 56px 0 64px 0;
 }
+
+/* Six-move process diagram */
+.process-diagram {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.process-detail-link {
+  text-align: center;
+  font-size: 16px;
+  color: #636363;
+  max-width: 860px;
+  margin: 30px auto 0 auto;
+  line-height: 1.6;
+}
+.process-detail-link a {
+  color: #23263B;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 2px solid orange;
+}
+.process-detail-link a:hover { color: orange; }

@@ -11,6 +11,7 @@ $(document).ready(function() {
 
 	/* Flow chart keeps its aspect ratio at any width */
 	function sizeChart() {
+		if (!$(".jumbotron").length) { return; }
 		$(".jumbotron").css("height", parseInt($(".jumbotron").css("width")) * 657 / 883);
 	}
 	sizeChart();
