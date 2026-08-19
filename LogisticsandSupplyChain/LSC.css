@@ -1260,7 +1260,7 @@ body {
 .process {
   border-top: none;
   border-bottom: none;
-  padding: 70px 0 76px 0;
+  padding: 70px 0 56px 0;
 }
 
 .process .section-head h2 { color: white; }
@@ -1343,3 +1343,8 @@ body {
 .navy-sub .expandall:hover, .navy-sub .collapseall:hover { background-color: transparent !important; color: orange; }
 .navy-sub .caret, .navy-sub .caret-up { color: #F5C56B; }
 .navy-sub .costs-note { color: #DFE2EB; }
+/* 16-step chart sits on white, directly under the navy process band */
+.chart-section {
+  background-color: white;
+  padding: 56px 0 64px 0;
+}
