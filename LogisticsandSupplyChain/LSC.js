@@ -14,12 +14,22 @@ $(document).ready(function() {
 	$('.announce-close').on('click', function() { setTimeout(syncScrollPadding, 50); });
 
 	var animating = false;
-	function scrollToTarget(selector, duration) {
+	/* fitSelector (optional): make sure that block's bottom is on screen, without scrolling past its top */
+	function scrollToTarget(selector, duration, fitSelector, nudge) {
 		var $t = $(selector);
 		if (!$t.length) { return; }
+		var header = headerOffset();
+		var want = parseInt($t.offset().top) - header - 12;
+		if (fitSelector && $(fitSelector).length) {
+			var $f = $(fitSelector);
+			var fitTop = parseInt($f.offset().top) - header - 12;
+			var need = parseInt($f.offset().top) + $f.outerHeight() + 24 - $(window).height();
+			want = Math.max(want, Math.min(need, fitTop));
+		}
+		want += parseInt(nudge, 10) || 0;
 		animating = true;
 		$('html, body').stop(true).animate( {
-			scrollTop: parseInt($t.offset().top) - headerOffset() - 12
+			scrollTop: want
 		}, duration || 700, function() { animating = false; if (typeof updateActive === 'function') { updateActive(); } });
 	}
 
@@ -38,7 +48,7 @@ $(document).ready(function() {
 			e.preventDefault();
 			pinned = $navLinks.index(this);
 			$('.section-nav a').removeClass('active'); $(this).addClass('active');
-			scrollToTarget(href, 700);
+			scrollToTarget(href, 700, $(this).data('fit'), $(this).data('nudge'));
 		}
 	});
 
@@ -71,6 +81,7 @@ $(document).ready(function() {
 	$("#strbutton").click(function() { scrollToTarget(".strategic", 700); });
 	$("#tacbutton").click(function() { scrollToTarget(".tactical", 900); });
 	$("#engbutton").click(function() { scrollToTarget(".engagements", 700); });
+	$('.cta-valora').click(function(e) { e.preventDefault(); e.stopImmediatePropagation(); scrollToTarget('#valora', 800, '.valora', $(this).data('nudge')); });
 
 	$('.caret').click(function() {
 		$(this).next().slideToggle(300);
