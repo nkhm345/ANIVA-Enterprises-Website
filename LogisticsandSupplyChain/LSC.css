@@ -1237,3 +1237,84 @@ body {
     min-height: 0;
   }
 }
+
+/**************Navy bands (process, explore, costs)*************/
+.process,
+.tacstr,
+.costs-band {
+  position: relative;
+  color: #DFE2EB;
+  background-color: #23263B;
+  background-image:
+    radial-gradient(ellipse at 15% 20%, rgba(255, 165, 0, 0.20) 0%, rgba(255, 165, 0, 0) 45%),
+    radial-gradient(ellipse at 85% 80%, rgba(120, 140, 255, 0.18) 0%, rgba(120, 140, 255, 0) 50%),
+    linear-gradient(135deg, #1A1D2E 0%, #23263B 55%, #2E3352 100%);
+  overflow: hidden;
+}
+
+.process:before,
+.tacstr:before,
+.costs-band:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.025) 0 2px, transparent 2px 14px);
+  pointer-events: none;
+}
+
+.process > .container,
+.tacstr > .container,
+.costs-band > * {
+  position: relative;
+}
+
+/* Process ("How we work") on navy */
+.process {
+  border-top: none;
+  border-bottom: none;
+  padding: 70px 0 76px 0;
+}
+
+.process .section-head h2 { color: white; }
+.process .section-lede { color: #DFE2EB; }
+.process .phase-note { color: #B1B6C7; }
+.process .phase-arrow { color: rgba(255, 255, 255, 0.45); }
+.process .chart-caption { color: #B1B6C7; }
+.process .chart-frame:hover .chart-caption { color: orange; }
+.process .chart-frame { border-color: rgba(255, 255, 255, 0.25); box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35); }
+.process .phase { box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25); border-color: rgba(255, 255, 255, 0.25); }
+
+/* Explore (tab cards) on navy */
+.tacstr {
+  padding: 70px 0 60px 0;
+  margin-bottom: 10px;
+}
+
+.tacstr .section-head h2 { color: white; }
+.tacstr .tab-card { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.30); border-color: rgba(255, 255, 255, 0.25); }
+
+/* Focus on Immediate Cost Reduction on navy (inside the Tactical panel) */
+.costs-band {
+  margin-top: 50px;
+  padding: 10px 0 30px 0;
+}
+
+.costs-band .subtitle { color: white; margin-top: 45px; }
+.costs-band .expandall, .costs-band .collapseall { color: #B1B6C7; }
+.costs-band .expandall:hover, .costs-band .collapseall:hover { background-color: transparent !important; color: orange; }
+.costs-band #costs {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+.costs-band .tactical h6, .costs-band h6 { color: white; }
+.costs-band #costs p { color: white; }
+.costs-band #costs ul { color: #DFE2EB; }
+.costs-band #costs img { filter: invert(1) brightness(1.6); }
+.costs-band .caret { color: #F5C56B; }
+.costs-band .caret-up { color: #F5C56B; }
+.costs-band .costs-note { color: #DFE2EB; }
+.costs-band .line2 { background-color: orange; }
+
+/* the rule that used to separate this block is now the band edge */
+.tactical .costs-band + .line3 { display: none; }
