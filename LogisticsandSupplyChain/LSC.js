@@ -1,12 +1,26 @@
 $(document).ready(function() {
-	var NAV_OFFSET = 125; /* fixed navbar (61px) + sticky section navigator */
+	/* Height of everything fixed/sticky at the top: navbar + Valora ribbon (if shown) + section navigator */
+	function headerOffset() {
+		var h = $('.navbar').outerHeight() || 61;
+		if ($('html').hasClass('ribbon-on')) { h += $('.announce').outerHeight() || 0; }
+		h += $('.section-nav').outerHeight() || 0;
+		return h;
+	}
+	function syncScrollPadding() {
+		document.documentElement.style.scrollPaddingTop = (headerOffset() + 10) + 'px';
+	}
+	syncScrollPadding();
+	$(window).on('resize', syncScrollPadding);
+	$('.announce-close').on('click', function() { setTimeout(syncScrollPadding, 50); });
 
+	var animating = false;
 	function scrollToTarget(selector, duration) {
 		var $t = $(selector);
 		if (!$t.length) { return; }
-		$('html, body').animate( {
-			scrollTop: parseInt($t.offset().top) - NAV_OFFSET + 20
-		}, duration || 700);
+		animating = true;
+		$('html, body').stop(true).animate( {
+			scrollTop: parseInt($t.offset().top) - headerOffset() - 12
+		}, duration || 700, function() { animating = false; if (typeof updateActive === 'function') { updateActive(); } });
 	}
 
 	/* Flow chart keeps its aspect ratio at any width */
@@ -22,23 +36,31 @@ $(document).ready(function() {
 		var href = $(this).attr('href');
 		if (href && href.charAt(0) === '#' && $(href).length) {
 			e.preventDefault();
+			pinned = $navLinks.index(this);
+			$('.section-nav a').removeClass('active'); $(this).addClass('active');
 			scrollToTarget(href, 700);
 		}
 	});
 
 	/* Highlight the section currently in view */
 	var $navLinks = $('.section-nav a');
+	var pinned = -1;
 	var sections = $navLinks.map(function() {
 		var href = $(this).attr('href');
 		return $(href).length ? $(href) : null;
 	}).get();
 
 	function updateActive() {
-		var pos = $(window).scrollTop() + NAV_OFFSET + 40;
+		if (animating) { return; }
+		var pos = $(window).scrollTop() + headerOffset() + 40;
 		var current = -1;
+		var lastTop = -1;
 		for (var i = 0; i < sections.length; i++) {
-			if (sections[i].offset().top <= pos) { current = i; }
+			var top = sections[i].offset().top;
+			if (top <= pos && top > lastTop) { current = i; lastTop = top; }
 		}
+		/* keep a clicked link highlighted while its target shares the position of another (side-by-side cards) */
+		if (pinned >= 0 && current >= 0 && Math.abs(sections[pinned].offset().top - sections[current].offset().top) < 2) { current = pinned; } else { pinned = -1; }
 		$navLinks.removeClass('active');
 		if (current >= 0) { $navLinks.eq(current).addClass('active'); }
 	}
