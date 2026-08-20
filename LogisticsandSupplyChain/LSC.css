@@ -93,9 +93,8 @@ body {
   border: 1px #E1E5EC solid;
   border-radius: 14px;
   box-shadow: 0 4px 18px rgba(35, 38, 59, 0.07);
-  padding: 34px 28px 26px 28px;
+  padding: 32px 28px 32px 28px;
   margin-bottom: 30px;
-  height: 100%;
   transition: all 0.25s ease 0s;
 }
 
@@ -174,14 +173,10 @@ body {
   .pillar-row {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
   }
   .pillar-row > [class*="col-"] {
-    display: flex;
     float: none;
-  }
-  .pillar-row .pillar-card {
-    flex: 1 1 auto;
-    width: 100%;
   }
 }
 
@@ -1672,3 +1667,6 @@ body {
 .section-lede, .journey-summary, .journey-detail li, .phase-map, .workplan-note, .panel-intro, .eng-summary {
   text-wrap: pretty;
 }
+/* cards hug their content; last element carries no extra bottom margin */
+.pillar-card > :last-child { margin-bottom: 0; }
+.pillar-card p:last-child { margin-bottom: 0; }
