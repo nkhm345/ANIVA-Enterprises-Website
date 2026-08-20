@@ -8,8 +8,9 @@
 .home-hero {
   background-image: url(main-page.jpg);
   background-position: center 30%;
-  padding-top: 120px;
-  min-height: 92vh;
+  padding-top: 110px;
+  padding-bottom: 34px;
+  min-height: 0;
   display: flex;
   align-items: center;
 }
@@ -330,4 +331,14 @@
   .trusted-logo { height: 28px; max-width: 150px; }
   .trusted-logo-tall { height: 34px; }
   .trusted-logo-xl { height: 54px; }
+}
+/* On shorter screens, compact the hero so the trusted strip is visible on the first screen */
+@media (max-height: 900px) and (min-width: 768px) {
+  .home-hero { padding-top: 96px; padding-bottom: 24px; }
+  .home-logo { width: 72px; padding: 10px; margin-bottom: 12px; }
+  .home-hero h1 { font-size: 44px; margin-bottom: 12px; }
+  .home-slogan { font-size: 18px; margin-bottom: 18px; }
+  .home-hero .hero-actions { margin-bottom: 26px; }
+  .home-hero .stat { padding: 12px 12px 10px 12px; }
+  .home-hero .stat-num { font-size: 30px; }
 }
