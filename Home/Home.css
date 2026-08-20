@@ -323,11 +323,11 @@
   .trusted-set { flex-wrap: wrap; justify-content: center; row-gap: 8px; }
 }
 .trusted-logo-tall { height: 46px; }
-.trusted-logo-xl { height: 58px; max-width: 240px; }
+.trusted-logo-xl { height: 72px; max-width: 280px; }
 @media (max-width: 767px) {
   .trusted-item { padding: 0 18px; }
   .trusted-name { font-size: 17px; }
   .trusted-logo { height: 28px; max-width: 150px; }
   .trusted-logo-tall { height: 34px; }
-  .trusted-logo-xl { height: 44px; }
+  .trusted-logo-xl { height: 54px; }
 }
