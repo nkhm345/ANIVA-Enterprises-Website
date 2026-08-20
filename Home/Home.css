@@ -254,7 +254,7 @@
 .trusted {
   background-color: white;
   border-bottom: 1px solid #E1E5EC;
-  padding: 26px 0 22px 0;
+  padding: 26px 0 38px 0;
 }
 .trusted-head {
   text-align: center;
@@ -306,14 +306,9 @@
   height: 30px;
   width: auto;
   max-width: 170px;
-  filter: grayscale(1);
-  opacity: 0.75;
   transition: all 0.25s ease 0s;
 }
-.trusted-item:hover .trusted-logo {
-  filter: none;
-  opacity: 1;
-}
+
 .trusted-dot {
   color: orange;
   font-size: 14px;
