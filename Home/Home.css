@@ -249,3 +249,86 @@
     text-align: center;
   }
 }
+
+/*****************Trusted-by strip***************/
+.trusted {
+  background-color: white;
+  border-bottom: 1px solid #E1E5EC;
+  padding: 26px 0 22px 0;
+}
+.trusted-head {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #9AA0B3;
+  margin-bottom: 16px;
+}
+.trusted-viewport {
+  overflow: hidden;
+  position: relative;
+}
+.trusted-viewport:before, .trusted-viewport:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 70px;
+  z-index: 1;
+  pointer-events: none;
+}
+.trusted-viewport:before { left: 0; background: linear-gradient(90deg, white, rgba(255,255,255,0)); }
+.trusted-viewport:after { right: 0; background: linear-gradient(270deg, white, rgba(255,255,255,0)); }
+.trusted-track {
+  display: flex;
+  width: max-content;
+  animation: trustedScroll 45s linear infinite;
+}
+.trusted-viewport:hover .trusted-track { animation-play-state: paused; }
+.trusted-set {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.trusted-item {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 30px;
+}
+.trusted-name {
+  font-family: Georgia, serif;
+  font-size: 21px;
+  color: #3A3F58;
+  letter-spacing: 0.5px;
+}
+.trusted-logo {
+  height: 30px;
+  width: auto;
+  max-width: 170px;
+  filter: grayscale(1);
+  opacity: 0.75;
+  transition: all 0.25s ease 0s;
+}
+.trusted-item:hover .trusted-logo {
+  filter: none;
+  opacity: 1;
+}
+.trusted-dot {
+  color: orange;
+  font-size: 14px;
+}
+@keyframes trustedScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .trusted-track { animation: none; flex-wrap: wrap; justify-content: center; width: auto; }
+  .trusted-set[aria-hidden="true"] { display: none; }
+  .trusted-set { flex-wrap: wrap; justify-content: center; row-gap: 8px; }
+}
+@media (max-width: 767px) {
+  .trusted-item { padding: 0 18px; }
+  .trusted-name { font-size: 17px; }
+  .trusted-logo { height: 24px; max-width: 130px; }
+}
