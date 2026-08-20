@@ -254,7 +254,7 @@
 .trusted {
   background-color: white;
   border-bottom: 1px solid #E1E5EC;
-  padding: 26px 0 52px 0;
+  padding: 16px 0 64px 0;
 }
 .trusted-head {
   text-align: center;
@@ -323,8 +323,11 @@
   .trusted-set { flex-wrap: wrap; justify-content: center; row-gap: 8px; }
 }
 .trusted-logo-tall { height: 38px; }
+.trusted-logo-xl { height: 52px; max-width: 220px; }
 @media (max-width: 767px) {
   .trusted-item { padding: 0 18px; }
   .trusted-name { font-size: 17px; }
   .trusted-logo { height: 24px; max-width: 130px; }
+  .trusted-logo-tall { height: 30px; }
+  .trusted-logo-xl { height: 40px; }
 }
