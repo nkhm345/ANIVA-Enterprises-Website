@@ -254,7 +254,7 @@
 .trusted {
   background-color: white;
   border-bottom: 1px solid #E1E5EC;
-  padding: 26px 0 38px 0;
+  padding: 26px 0 52px 0;
 }
 .trusted-head {
   text-align: center;
@@ -322,6 +322,7 @@
   .trusted-set[aria-hidden="true"] { display: none; }
   .trusted-set { flex-wrap: wrap; justify-content: center; row-gap: 8px; }
 }
+.trusted-logo-tall { height: 38px; }
 @media (max-width: 767px) {
   .trusted-item { padding: 0 18px; }
   .trusted-name { font-size: 17px; }
