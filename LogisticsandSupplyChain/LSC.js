@@ -78,67 +78,10 @@ $(document).ready(function() {
 	updateActive();
 
 	/* Tab cards: Learn More */
-	$("#strbutton").click(function() { scrollToTarget(".strategic", 700); });
-	$("#tacbutton").click(function() { scrollToTarget(".tactical", 900); });
+	$("#strbutton").click(function() { scrollToTarget("#strategic", 700); });
+	$("#tacbutton").click(function() { scrollToTarget("#tactical", 900); });
 	$("#engbutton").click(function() { scrollToTarget(".engagements", 700); });
 	$('.cta-valora').click(function(e) { e.preventDefault(); e.stopImmediatePropagation(); scrollToTarget('#valora', 800, '.valora', $(this).data('nudge')); });
-
-	$('.caret').click(function() {
-		$(this).next().slideToggle(300);
-        $(this).toggleClass("caret caret-up");
-	});
-
-	$('#costs .caret').click(function() {
-		$(this).parent().next().slideToggle(300);
-	});
-
-	$('#strhowitworksexpand').click(function() {
-		$(".strhowitworks b").next().slideDown(300);
-		$(".strhowitworks b").addClass("caret-up");
-		$(".strhowitworks b").removeClass("caret");
-	});
-
-	$('#strhowitworkscollapse').click(function() {
-		$(".strhowitworks b").next().slideUp(300);
-		$(".strhowitworks b").addClass("caret");
-		$(".strhowitworks b").removeClass("caret-up");
-	});
-
-	$('#dataexpand').click(function() {
-		$(".strdata b").next().slideDown(300);
-		$(".strdata b").addClass("caret-up");
-		$(".strdata b").removeClass("caret");
-	});
-
-	$('#datacollapse').click(function() {
-		$(".strdata b").next().slideUp(300);
-		$(".strdata b").addClass("caret");
-		$(".strdata b").removeClass("caret-up");
-	});
-
-	$('#tachowitworksexpand').click(function() {
-		$(".tachowitworks b").next().slideDown(300);
-		$(".tachowitworks b").addClass("caret-up");
-		$(".tachowitworks b").removeClass("caret");
-	});
-
-	$('#tachowitworkscollapse').click(function() {
-		$(".tachowitworks b").next().slideUp(300);
-		$(".tachowitworks b").addClass("caret");
-		$(".tachowitworks b").removeClass("caret-up");
-	});
-
-	$("#taccostsexpand").click(function() {
-		$("#costs p").next().slideDown(300);
-		$("#costs b").addClass("caret-up");
-		$("#costs b").removeClass("caret");
-	});
-
-	$("#taccostscollapse").click(function() {
-		$("#costs p").next().slideUp(300);
-		$("#costs b").addClass("caret");
-		$("#costs b").removeClass("caret-up");
-	});
 
 	/* Six-move process stepper */
 	function showMove(n) {
@@ -150,6 +93,19 @@ $(document).ready(function() {
 	$('.journey-step').click(function() { showMove(parseInt($(this).data('step'), 10)); });
 	$('.journey-prev').click(function() { showMove(parseInt($('.journey-step.active').data('step'), 10) - 1); });
 	$('.journey-next').click(function() { showMove(parseInt($('.journey-step.active').data('step'), 10) + 1); });
+	/* Cost-lever cards */
+	$('.lever-toggle').click(function() {
+		$(this).next('.lever-list').slideToggle(300);
+		$(this).closest('.dp-lever').toggleClass('open');
+	});
+
+	/* 'See engagements like this' - jump and pre-select the theme filter */
+	$('.dp-see').click(function(e) {
+		e.preventDefault();
+		var theme = $(this).data('theme') || 'all';
+		$('.eng-filter[data-theme="' + theme + '"]').click();
+		scrollToTarget('.engagements', 800);
+	});
 	/* Customer Engagements: per-card toggle and expand / collapse all */
 	$('.eng-toggle').click(function() {
 		$(this).next('.eng-details').slideToggle(300);

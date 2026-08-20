@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="../Nav_Bar.css?v=2"/>
     <link rel="stylesheet" href="../Footer.css"/>
     <link rel="stylesheet" href="../Site.css?v=3"/>
-    <link rel="stylesheet" href="LSC.css?v=5"/>
+    <link rel="stylesheet" href="LSC.css?v=6"/>
   </head>
 
   <body>
@@ -873,183 +873,151 @@
       </div>
 
 
-      <div class="strategic" id="strategic">
+      <div class="design-panel" id="strategic">
         <div class="container">
           <div class="row titlerow">
             <div class="col-xs-12">
               <h3 class="title">Strategic Logistics &amp; Supply Chain Design</h3>
+              <p class="panel-sub">Design the least-cost network for the next three to five years &mdash; modeled, simulated and agreed with your team before a single move is made.</p>
+              <div class="panel-chips">
+                <span class="ts-point">3&ndash;5 years horizon</span>
+                <span class="ts-point">Network-level design</span>
+                <span class="ts-point">Modeled &amp; simulated</span>
+              </div>
             </div>
           </div>
+
           <h5 class="subtitle">How It Works</h5>
-          <div class="row">
-            <div class="col-xs-6" style="text-align: right">
-              <button class="expandall" id="strhowitworksexpand">Expand All</button>
+          <div class="row card-row dp-steps">
+            <div class="col-md-4">
+              <div class="site-card dp-step">
+                <span class="dp-num">1</span>
+                <h4>Perform Current State Analysis</h4>
+                <ul>
+                  <li>Gather, analyze and validate data</li>
+                  <li>Existing warehouse locations and operations</li>
+                  <li>Warehouse / DC operating policies and constraints</li>
+                  <li>Shipment flow data and available pertinent costs</li>
+                  <li>Opportunities for consolidation or deconsolidation</li>
+                </ul>
+              </div>
             </div>
-            <div class="col-xs-6" style="text-align: left">
-              <button class="collapseall" id="strhowitworkscollapse">Collapse All</button>
+            <div class="col-md-4">
+              <div class="site-card dp-step">
+                <span class="dp-num">2</span>
+                <h4>Perform Network Redesign</h4>
+                <ul>
+                  <li>Optimize the number and locations of warehouses</li>
+                  <li>Based on current supply base and demand points</li>
+                  <li>Based on product flows and optimum opportunities</li>
+                  <li>Optimum allocation of products to warehouses</li>
+                  <li>Review and refine the design with stakeholder feedback</li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="row" style="margin-left: 1%; margin-right: 1%;">
-            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" style="border-top: 1px #D1D1D1 solid;">
-              <ol class="strhowitworks">
-                <li value="1">
-                  Perform Current State Analysis
-                  <b class="caret"></b>
-                  <ul>
-                    <li>Gather, analyze and validate data</li>
-                    <li>Gather data on existing warehouse locations / operations</li>
-                    <li>Gather warehouse / DC operating policies / constraints</li>
-                    <li>Gather shipment flow data and (available) pertinent costs</li>
-                    <li>Explore opportunities for consolidation or deconsolidation</li>
-                  </ul>
-                </li>
-              </ol>
-            </div>
-            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-              <ol class="strhowitworks">
-                <li value="2">
-                  Perform Network Redesign
-                  <b class="caret"></b>
-                  <ul>
-                    <li>Optimize the number and locations of warehouses</li>
-                    <li>Based on current supply base and demand points</li>
-                    <li>Based on product flows &amp; optimum opportunities</li>
-                    <li>Generate optimum allocation of products to warehouses</li>
-                    <li>Review &amp; refine final design based on stake-holder feedback</li>
-                  </ul>
-                </li>
-              </ol>
-            </div>
-          </div>
-          <div class="row" style="margin-left: 1%; margin-right: 1%;">
-            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" style="border-bottom: 1px #D1D1D1 solid;">
-              <ol class="strhowitworks">
-                <li value="3">Develop an Implementation Cadence and Timeline</li>
-              </ol>
+            <div class="col-md-4">
+              <div class="site-card dp-step">
+                <span class="dp-num">3</span>
+                <h4>Develop an Implementation Cadence and Timeline</h4>
+                <ul>
+                  <li>Phased rollout with milestones and owners</li>
+                  <li>Tracking cadence agreed with your team</li>
+                  <li>Value measured against the agreed baseline</li>
+                </ul>
+              </div>
             </div>
           </div>
 
-          <div class="line3"></div>
-
-          <h5 class="subtitle">Data Requirements</h5>
-          <div class="row">
-            <div class="col-xs-6" style="text-align: right">
-              <button class="expandall" id="dataexpand">Expand All</button>
+          <h5 class="subtitle">What We Will Ask You For</h5>
+          <p class="dp-lede">Data requirements are defined up front &mdash; six categories, and nothing more than the design needs.</p>
+          <div class="row card-row dp-data">
+            <div class="col-sm-6 col-md-4">
+              <div class="site-card dp-tile">
+                <h4>Facility Data</h4>
+                <ul>
+                  <li>Warehouse locations (address, DUNS, lat / long)</li>
+                  <li>Supply locations and demand / customer locations</li>
+                  <li>Operating parameters and constraints</li>
+                </ul>
+              </div>
             </div>
-            <div class="col-xs-6" style="text-align: left">
-              <button class="collapseall" id="datacollapse">Collapse All</button>
+            <div class="col-sm-6 col-md-4">
+              <div class="site-card dp-tile">
+                <h4>Supply Chain Cost Data</h4>
+                <ul>
+                  <li>Warehouse operating costs (fixed and variable)</li>
+                  <li>Transportation costs ($ / mile or $ / cwt by region)</li>
+                  <li>Product value, carrying and pipeline costs; packaging</li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="row" style="margin-left: 1%; margin-right: 1%;">
-            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" style="border-top: 1px #D1D1D1 solid;">
-              <ol class="strdata">
-                <li value="1">
-                  Facility Data
-                  <b class="caret"></b>
-                  <ul>
-                    <li>Current warehouse location data (Address, DUNS code, Latitude / Longitude codes)</li>
-                    <li>Current supply locations (Physical address, DUNS Code, Latitude / Longitude codes)</li>
-                    <li>Current destination / customer / demand location data (same as above)</li>
-                    <li>Operation parameters &amp; constraints for the warehouses and customer locations</li>
-                  </ul>
-                </li>
-              </ol>
+            <div class="col-sm-6 col-md-4">
+              <div class="site-card dp-tile">
+                <h4>Product Data</h4>
+                <ul>
+                  <li>Type and number of products</li>
+                  <li>Volumes shipped from each supplier</li>
+                  <li>Volumes required at final customer locations</li>
+                </ul>
+              </div>
             </div>
-            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-              <ol class="strdata">
-                <li value="2">
-                  Supply Chain Cost Data
-                  <b class="caret"></b>
-                  <ul>
-                    <li>Existing warehouse operating costs (fixed and variable costs)</li>
-                    <li>Transportation costs from / to warehouses and other facilities
-                      <ul>
-                        <li>$ / mile or $ / hundred weight that may vary by facility or geographic regions</li>
-                      </ul>
-                    </li>
-                    <li>Value of products by type (inventory carrying value, supply chain pipeline costs)</li>
-                    <li>Packaging and other costs (at product / shipment level, if available)</li>
-                  </ul>
-                </li>
-              </ol>
+            <div class="col-sm-6 col-md-4">
+              <div class="site-card dp-tile">
+                <h4>Capacity &amp; Restrictions</h4>
+                <ul>
+                  <li>Warehouse sizes (square feet)</li>
+                  <li>Weight, volume, SKU and storage limitations</li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="row" style="margin-left: 1%; margin-right: 1%;">
-            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-              <ol class="strdata">
-                <li value="3">
-                  Product Data
-                  <b class="caret"></b>
-                  <ul>
-                    <li>Type and number of products</li>
-                    <li>Quantities / volume of products shipped from each supplier</li>
-                    <li>Quantities / volume of products produced or required at the final customer location</li>
-                  </ul>
-                </li>
-              </ol>
+            <div class="col-sm-6 col-md-4">
+              <div class="site-card dp-tile">
+                <h4>Material Flow Data</h4>
+                <ul>
+                  <li>Supplier-to-warehouse flows (who ships where, how much)</li>
+                  <li>Warehouse-to-customer flows by weight, volume and mode</li>
+                </ul>
+              </div>
             </div>
-            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-              <ol class="strdata">
-                <li value="4">
-                  Capacity Limitations/Operation Restrictions
-                  <b class="caret"></b>
-                  <ul>
-                    <li>Warehouse sizes (square feet)</li>
-                    <li>Weight, Volumes, SKUs and Other storage limitations</li>
-                  </ul>
-                </li>
-              </ol>
-            </div>
-          </div>
-          <div class="row" style="margin-left: 1%; margin-right: 1%;">
-            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-              <ol class="strdata">
-                <li value="5">
-                  Material Flow Data
-                  <b class="caret"></b>
-                  <ul>
-                    <li>Supplier to warehouses (who supplies to which warehouse and how much)</li>
-                    <li>Warehouses to end customer (warehouse to customer and how much)
-                      <ul>
-                        <li>Weight, Volume, Number of truckloads or products moving in any other modes</li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-              </ol>
-            </div>
-            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" style="border-bottom: 1px #D1D1D1 solid;">
-              <ol class="strdata">
-                <li value="6">
-                  Other supply chain design data
-                  <b class="caret"></b>
-                  <ul>
-                    <li>Preferred Warehouse / Candidate sites and pertinent data</li>
-                  </ul>
-                </li>
-              </ol>
+            <div class="col-sm-6 col-md-4">
+              <div class="site-card dp-tile">
+                <h4>Other Design Data</h4>
+                <ul>
+                  <li>Preferred warehouse / candidate sites</li>
+                  <li>Any pertinent site or policy data</li>
+                </ul>
+              </div>
             </div>
           </div>
 
-
-          <div class="line3"></div>
-
-          <div class="row sample-row">
+          <h5 class="subtitle">What We Analyze</h5>
+          <div class="row dp-analyze">
             <div class="col-lg-5">
-              <p class="sample">Sample Strategic Supply Chain Analysis</p>
-              <div class="line2"></div>
-              <ul>
-                <li>Origin-based network design vs. destination-based network design</li>
-                <li>Integrated inbound transportation, warehousing, production planning &amp; inventory control</li>
-                <li>Supplier / customer assignment to cross docks / warehouses / distribution centers to reduce transportation costs</li>
-                <li>Multi-plant / Multi-warehouse drop-off network design</li>
-                <li>Truck vs. rail optimization between suppliers, warehouses &amp; customers</li>
-                <li>Optimize number &amp; location of warehouses / DC's / cross docks</li>
-              </ul>
+              <div class="site-card dp-checklist">
+                <ul>
+                  <li>Origin-based vs. destination-based network design</li>
+                  <li>Integrated inbound transportation, warehousing, production planning &amp; inventory control</li>
+                  <li>Supplier / customer assignment to cross docks, warehouses and DCs to reduce transportation costs</li>
+                  <li>Multi-plant / multi-warehouse drop-off network design</li>
+                  <li>Truck vs. rail optimization between suppliers, warehouses and customers</li>
+                  <li>Optimize the number and location of warehouses, DCs and cross docks</li>
+                </ul>
+              </div>
             </div>
             <div class="col-lg-7">
-              <img src="strategic.png" alt="Strategic Graph" style="width: 93%; margin: auto"/>
+              <a class="chart-frame dp-chart" href="strategic-analysis.svg" target="_blank" rel="noopener" title="Open full size">
+                <img src="strategic-analysis.svg" alt="Strategic network design: baseline network with four DCs and crossing lanes versus an optimized network with a right-sized DC footprint" style="display:block;width:100%;max-width:100%;height:auto;"/>
+                <span class="chart-caption">Baseline vs. optimized network (illustrative) &mdash; click to open full size</span>
+              </a>
             </div>
+          </div>
+
+          <div class="dp-deliver">
+            <span class="dp-deliver-label">You get</span>
+            <span class="eng-chip">Least-cost network design</span>
+            <span class="eng-chip">Savings estimate vs. baseline</span>
+            <span class="eng-chip">Implementation roadmap</span>
+            <a class="dp-see" href="#engagements" data-theme="network">See engagements like this &rarr;</a>
           </div>
         </div>
       </div>
@@ -1063,219 +1031,132 @@
       </div>
 
 
-      <div class="tactical" id="tactical">
+      <div class="design-panel" id="tactical">
         <div class="container">
           <div class="row titlerow">
             <div class="col-xs-12">
               <h3 class="title">Tactical Logistics &amp; Supply Chain Design</h3>
-            </div>
-          </div>
-          <h5 class="subtitle">How It Works</h5>
-          <div class="row">
-            <div class="col-xs-6" style="text-align: right">
-              <button class="expandall" id="tachowitworksexpand">Expand All</button>
-            </div>
-            <div class="col-xs-6" style="text-align: left">
-              <button class="collapseall" id="tachowitworkscollapse">Collapse All</button>
-            </div>
-          </div>
-          <div class="row" style="margin-left: 1%; margin-right: 1%;">
-            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" style="border-top: 1px #D1D1D1 solid;">
-              <ol class="tachowitworks">
-                <li value="1">Map the current state logistics processes and understand the gap</li>
-              </ol>
-            </div>
-            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-              <ol class="tachowitworks">
-                <li value="2">Develop the scope and gather data</li>
-              </ol>
-            </div>
-          </div>
-          <div class="row" style="margin-left: 1%; margin-right: 1%;">
-            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-              <ol class="tachowitworks">
-                <li value="3">Study existing 3PL / core carriers and estimate current inbound route costs</li>
-              </ol>
-            </div>
-            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-              <ol class="tachowitworks">
-                <li value="4">Get complete control of inbound shipment data from suppliers and review all inbound shipments for consolidation opportunities</li>
-              </ol>
-            </div>
-          </div>
-          <div class="row" style="margin-left: 1%; margin-right: 1%;">
-            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-              <ol class="tachowitworks">
-                <li value="5">
-                  Understand and analyze the inbound logistics practices and identify opportunities for optimization (route, cube, mode)
-                  <b class="caret"></b>
-                    <ul>
-                      <li>Use an industry-standard route optimization software</li>
-                      <li>
-                        Pick constraints and optimization time buckets judiciously
-                        <ul>
-                          <li>Production constraints</li>
-                          <li>Demand / supply constraints</li>
-                          <li>Equipment capacity constraints</li>
-                          <li>Facility storage availability</li>
-                          <li>Carrier restrictions / DOT regulations</li>
-                          <li>Backhaul opportunities</li>
-                          <li>Carrier options / constraints, etc.</li>
-                        </ul>
-                      </li>
-                    </ul>
-                </li>
-              </ol>
-            </div>
-            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-              <ol class="tachowitworks">
-                <li value="6">Conduct route optimization using commercial logistics planning software</li>
-              </ol>
-            </div>
-          </div>
-          <div class="row" style="margin-left: 1%; margin-right: 1%;">
-            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-              <ol class="tachowitworks">
-                <li value="7">Map the proposed state logistics processes</li>
-              </ol>
-            </div>
-            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-              <ol class="tachowitworks">
-                <li value="8">Implement the proposed network design and logistics processes</li>
-              </ol>
-            </div>
-          </div>
-          <div class="row" style="margin-left: 1%; margin-right: 1%;">
-            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-              <ol class="tachowitworks">
-                <li value="9">
-                  Perform ongoing continuous improvement studies to ensure that the inbound costs are within the budget
-                  <b class="caret"></b>
-                  <ul>
-                    <li>Cube improvement and route redesigns</li>
-                    <li>Frequency and mode changes</li>
-                    <li>Multi-plant drop off</li>
-                    <li>Review and revise the logistics operating rules</li>
-                    <li>Constraint elimination at supply and delivery locations</li>
-                  </ul>
-                </li>
-              </ol>
-            </div>
-            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" style="border-bottom: 1px #D1D1D1 solid;">
-              <ol class="tachowitworks">
-                <li value="10">
-                  Measure and report key performance metrics
-                  <b class="caret"></b>
-                  <ul>
-                    <li>Operational metrics (daily, weekly, quarterly, yearly)</li>
-                    <li>Financial metrics (daily, weekly, quarterly, yearly)</li>
-                    <li>Compliance metrics (3PL, plants, suppliers)</li>
-                  </ul>
-                </li>
-              </ol>
+              <p class="panel-sub">Quick-win cost reduction on the network you run today &mdash; route, cube, frequency and mode, delivered in weeks.</p>
+              <div class="panel-chips">
+                <span class="ts-point">1&ndash;3 months horizon</span>
+                <span class="ts-point">Quick-win savings</span>
+                <span class="ts-point">Route, cube &amp; mode</span>
+              </div>
             </div>
           </div>
 
-          <div class="line3"></div>
+          <h5 class="subtitle">How It Works</h5>
+          <div class="row card-row dp-steps">
+            <div class="col-md-4">
+              <div class="site-card dp-step">
+                <span class="dp-num">A</span>
+                <h4>Assess <small>steps 1&ndash;4</small></h4>
+                <ul>
+                  <li>Map the current-state logistics processes and understand the gap</li>
+                  <li>Develop the scope and gather data</li>
+                  <li>Study existing 3PL / core carriers and estimate current inbound route costs</li>
+                  <li>Take control of inbound shipment data and review every shipment for consolidation opportunities</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="site-card dp-step">
+                <span class="dp-num">B</span>
+                <h4>Optimize <small>steps 5&ndash;7</small></h4>
+                <ul>
+                  <li>Analyze inbound practices and identify optimization opportunities &mdash; route, cube and mode</li>
+                  <li>Pick constraints and time buckets judiciously: production, demand / supply, equipment capacity, facility storage, carrier / DOT rules, backhaul opportunities</li>
+                  <li>Run route optimization using commercial logistics planning software</li>
+                  <li>Map the proposed-state logistics processes</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="site-card dp-step">
+                <span class="dp-num">C</span>
+                <h4>Implement &amp; Sustain <small>steps 8&ndash;10</small></h4>
+                <ul>
+                  <li>Implement the proposed network design and logistics processes</li>
+                  <li>Continuous improvement to keep inbound costs within budget: cube improvement, route redesigns, frequency and mode changes, multi-plant drop-off, operating-rule revisions, constraint elimination</li>
+                  <li>Measure and report operational, financial and compliance KPIs</li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
           <h5 class="subtitle">Focus on Immediate Cost Reduction</h5>
-          <div class="row">
-            <div class="col-xs-6" style="text-align: right">
-              <button class="expandall" id="taccostsexpand">Expand All</button>
+          <p class="dp-lede">Four logistics cost levers &mdash; open each to see the cost elements we attack.</p>
+          <div class="row card-row dp-levers">
+            <div class="col-sm-6 col-md-3">
+              <div class="site-card dp-lever">
+                <span class="dp-lever-num">1</span>
+                <h4>Freight</h4>
+                <button class="eng-toggle lever-toggle">Cost elements <span class="eng-chevron">&#9662;</span></button>
+                <ul class="lever-list">
+                  <li>Transportation costs</li><li>Cross dock charges</li><li>Cross border charges</li><li>Invoicing expenses</li><li>Freight pay &amp; audit costs</li><li>Receiving costs</li><li>Loading / unloading costs</li><li>EDI costs / IT expenses</li><li>Management charges</li>
+                </ul>
+              </div>
             </div>
-            <div class="col-xs-6" style="text-align: left">
-              <button class="collapseall" id="taccostscollapse">Collapse All</button>
+            <div class="col-sm-6 col-md-3">
+              <div class="site-card dp-lever">
+                <span class="dp-lever-num">2</span>
+                <h4>Warehousing</h4>
+                <button class="eng-toggle lever-toggle">Cost elements <span class="eng-chevron">&#9662;</span></button>
+                <ul class="lever-list">
+                  <li>Startup costs</li><li>Facility costs</li><li>Labor costs</li><li>Equipment costs</li><li>Maintenance costs</li><li>Utilities / trash removal</li><li>Materials / supplies</li><li>IT expenses (WMS)</li><li>Supervisory expenses</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="site-card dp-lever">
+                <span class="dp-lever-num">3</span>
+                <h4>Inventory</h4>
+                <button class="eng-toggle lever-toggle">Cost elements <span class="eng-chevron">&#9662;</span></button>
+                <ul class="lever-list">
+                  <li>Ordering costs</li><li>Carrying costs</li><li>Pipeline costs</li><li>Scrap expenses</li><li>Insurance charges</li><li>Cost of capital / money</li><li>Taxes / liabilities</li><li>IT expenses (ERP)</li><li>Management costs</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="site-card dp-lever">
+                <span class="dp-lever-num">4</span>
+                <h4>Packaging</h4>
+                <button class="eng-toggle lever-toggle">Cost elements <span class="eng-chevron">&#9662;</span></button>
+                <ul class="lever-list">
+                  <li>Design costs</li><li>Equipment costs</li><li>Handling charges</li><li>Storage costs</li><li>Repair expenses</li><li>Loading / unloading costs</li><li>Distribution costs</li><li>IT expenses (CMS)</li><li>Management costs</li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="row" id="costs" style="margin-left: 1%; margin-right: 1%;">
-            <div class="col-xs-12">
-              <h6>Logistics Costs</h6>
-              <div class="line2"></div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <img src="one.png" alt="One"/>
-              <p>Freight <b class="caret"></b></p>
-              <ul style="display: none">
-                <li>Transportation costs</li>
-                <li>Cross dock charges</li>
-                <li>Cross border charges</li>
-                <li>Invoicing expenses</li>
-                <li>Freight pay &amp; Audit costs</li>
-                <li>Receiving costs</li>
-                <li>Loading / unloading costs</li>
-                <li>EDI costs / IT expenses</li>
-                <li>Management charges</li>
-              </ul>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <img src="two.png" alt="Two"/>
-              <p>Warehousing <b class="caret"></b></p>
-              <ul style="display: none">
-                <li>Startup costs</li>
-                <li>Facility costs</li>
-                <li>Labor costs</li>
-                <li>Equipment costs</li>
-                <li>Maintenance costs</li>
-                <li>Utilities / Trash removal</li>
-                <li>Materials/supplies</li>
-                <li>IT expenses (WMS)</li>
-                <li>Supervisory expenses</li>
-              </ul>
-            </div>
-            <div class="clearfix visible-sm"></div>
-            <div class="col-sm-6 col-md-3">
-              <img src="three.png" alt="Three"/>
-              <p>Inventory <b class="caret"></b></p>
-              <ul style="display: none">
-                <li>Ordering costs</li>
-                <li>Carrying costs</li>
-                <li>Pipeline costs</li>
-                <li>Scrap expenses</li>
-                <li>Insurance charges</li>
-                <li>Cost of capital / money</li>
-                <li>Taxes / liabilities</li>
-                <li>IT expenses (ERP)</li>
-                <li>Management costs</li>
-              </ul>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <img src="four.png" alt="Four"/>
-              <p>Packaging <b class="caret"></b></p>
-              <ul style="display: none">
-                <li>Design costs</li>
-                <li>Equipment costs</li>
-                <li>Handling charges</li>
-                <li>Storage costs</li>
-                <li>Repair expenses</li>
-                <li>Loading / unloading costs</li>
-                <li>Distribution costs</li>
-                <li>IT expenses (CMS)</li>
-                <li>Management costs</li>
-              </ul>
-            </div>
-          </div>
-          <h2 class="description-text costs-note">
-            Data collection involves part packaging info., supplier, plant location data, delivery needs, dock constraints, transportation modes, truck capacity, and other critical information
-          </h2>
+          <p class="dp-note">Data collection involves part packaging information, supplier and plant location data, delivery needs, dock constraints, transportation modes, truck capacity and other critical information.</p>
 
-
-          <div class="line3"></div>
-
-          <div class="row sample-row">
+          <h5 class="subtitle">What We Analyze</h5>
+          <div class="row dp-analyze">
             <div class="col-lg-5">
-              <p class="sample">Sample Tactical Supply Chain Analysis</p>
-              <div class="line2"></div>
-              <ul>
-                <li>Route, cube, frequency &amp; mode optimization</li>
-                <li>Evaluate opportunities for (new) service provider agreements &amp; existing carrier contracts to achieve cost reduction</li>
-                <li>Optimize material flows to (and within): warehouses, distribution centers, sequencing, subassembly, cross docks</li>
-                <li>Operating plan creation and validation of inbound logistics designs</li>
-                <li>Redesign by challenging existing policies, work rules, and other operational / design processes</li>
-              </ul>
+              <div class="site-card dp-checklist">
+                <ul>
+                  <li>Route, cube, frequency &amp; mode optimization</li>
+                  <li>Opportunities in new service-provider agreements and existing carrier contracts to reduce cost</li>
+                  <li>Optimized material flows to and within warehouses, DCs, sequencing, subassembly and cross docks</li>
+                  <li>Operating plan creation and validation of inbound logistics designs</li>
+                  <li>Redesign by challenging existing policies, work rules and other operational / design processes</li>
+                </ul>
+              </div>
             </div>
             <div class="col-lg-7">
-              <img src="tactical.png" alt="Tactical Graph" style="width: 93%; margin: auto"/>
+              <a class="chart-frame dp-chart" href="tactical-analysis.svg" target="_blank" rel="noopener" title="Open full size">
+                <img src="tactical-analysis.svg" alt="Tactical inbound optimization: six direct part-full shipments consolidated into two milk runs with fuller trucks" style="display:block;width:100%;max-width:100%;height:auto;"/>
+                <span class="chart-caption">Direct shipments vs. consolidated milk runs (illustrative) &mdash; click to open full size</span>
+              </a>
             </div>
+          </div>
+
+          <div class="dp-deliver">
+            <span class="dp-deliver-label">You get</span>
+            <span class="eng-chip">Quick-win savings list</span>
+            <span class="eng-chip">Route, cube &amp; mode plan</span>
+            <span class="eng-chip">KPI &amp; cost-control tracker</span>
+            <a class="dp-see" href="#engagements" data-theme="all">See engagements like this &rarr;</a>
           </div>
         </div>
       </div>
@@ -1374,7 +1255,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="LSC.js?v=6"></script>
+    <script src="LSC.js?v=7"></script>
     <script src="../Site.js?v=3"></script>
   </body>
 </html>

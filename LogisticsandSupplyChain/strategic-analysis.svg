@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" width="980" height="560" font-family="Ubuntu, 'Segoe UI', Tahoma, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#9AA0B3"/>
+    </marker>
+    <marker id="arrO" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#F5A623"/>
+    </marker>
+  </defs>
+  <rect width="980" height="560" fill="#FFFFFF"/>
+  <text x="490" y="42" text-anchor="middle" font-size="21" font-weight="700" fill="#23263B">Strategic network design &#8212; baseline vs. optimized</text>
+  <text x="490" y="66" text-anchor="middle" font-size="13" fill="#636363">Illustrative &#8212; optimize the number, location and role of warehouses / DCs against total landed cost and service</text>
+
+  <!-- ===== LEFT: current network ===== -->
+  <rect x="40" y="92" width="430" height="380" rx="14" fill="#F7F8FB" stroke="#E1E5EC"/>
+  <text x="255" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="#636363" letter-spacing="1">CURRENT NETWORK</text>
+
+  <!-- tangled lanes -->
+  <g stroke="#C4C9D6" stroke-width="1.6" fill="none" marker-end="url(#arr)">
+    <path d="M110 170 L215 205"/><path d="M110 170 L200 290"/><path d="M110 170 L230 365"/>
+    <path d="M100 275 L215 205"/><path d="M100 275 L200 290"/><path d="M100 275 L230 365"/><path d="M100 275 L300 250"/>
+    <path d="M115 385 L230 365"/><path d="M115 385 L200 290"/><path d="M115 385 L300 250"/>
+    <path d="M215 205 L365 165"/><path d="M215 205 L395 235"/><path d="M215 205 L380 320"/>
+    <path d="M200 290 L365 165"/><path d="M200 290 L395 235"/><path d="M200 290 L355 415"/>
+    <path d="M300 250 L395 235"/><path d="M300 250 L380 320"/><path d="M300 250 L355 415"/>
+    <path d="M230 365 L380 320"/><path d="M230 365 L355 415"/><path d="M230 365 L365 165"/>
+  </g>
+  <!-- suppliers -->
+  <g fill="#23263B"><rect x="98" y="158" width="24" height="24" rx="4"/><rect x="88" y="263" width="24" height="24" rx="4"/><rect x="103" y="373" width="24" height="24" rx="4"/></g>
+  <!-- DCs (too many) -->
+  <g fill="#F5A623" stroke="#D98C00" stroke-width="1.5">
+    <circle cx="215" cy="205" r="13"/><circle cx="200" cy="290" r="13"/><circle cx="300" cy="250" r="13"/><circle cx="230" cy="365" r="13"/>
+  </g>
+  <!-- customers -->
+  <g fill="#6B7390"><path d="M365 165 l8 14 h-16 z"/><path d="M395 235 l8 14 h-16 z"/><path d="M380 320 l8 14 h-16 z"/><path d="M355 415 l8 14 h-16 z"/></g>
+  <g font-size="11.5" fill="#9AA0B3">
+    <text x="255" y="445" text-anchor="middle">4 DCs &#183; overlapping territories &#183; crossing lanes</text>
+  </g>
+
+  <!-- big arrow between maps -->
+  <g>
+    <path d="M482 275 h30" stroke="#F5A623" stroke-width="5" fill="none" marker-end="url(#arrO)"/>
+  </g>
+
+  <!-- ===== RIGHT: optimized network ===== -->
+  <rect x="530" y="92" width="410" height="380" rx="14" fill="#FFFFFF" stroke="#F5A623" stroke-width="2"/>
+  <text x="735" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="#23263B" letter-spacing="1">OPTIMIZED NETWORK</text>
+
+  <g stroke="#23263B" stroke-width="2" fill="none" marker-end="url(#arr)">
+    <path d="M600 170 L695 225"/><path d="M590 275 L695 225"/><path d="M605 385 L710 340"/><path d="M590 275 L710 340"/>
+    <path d="M695 225 L845 170"/><path d="M695 225 L870 245"/>
+    <path d="M710 340 L855 325"/><path d="M710 340 L830 420"/>
+  </g>
+  <g fill="#23263B"><rect x="588" y="158" width="24" height="24" rx="4"/><rect x="578" y="263" width="24" height="24" rx="4"/><rect x="593" y="373" width="24" height="24" rx="4"/></g>
+  <g fill="#F5A623" stroke="#D98C00" stroke-width="1.5">
+    <circle cx="695" cy="225" r="15"/><circle cx="710" cy="340" r="15"/>
+  </g>
+  <g fill="#6B7390"><path d="M845 170 l8 14 h-16 z"/><path d="M870 245 l8 14 h-16 z"/><path d="M855 325 l8 14 h-16 z"/><path d="M830 420 l8 14 h-16 z"/></g>
+  <g font-size="11.5" fill="#636363">
+    <text x="735" y="445" text-anchor="middle">Right-sized DC footprint &#183; clean territories &#183; lower total landed cost</text>
+  </g>
+
+  <!-- legend -->
+  <g font-size="12.5" fill="#636363">
+    <rect x="285" y="505" width="16" height="16" rx="3" fill="#23263B"/><text x="308" y="518">Suppliers / plants</text>
+    <circle cx="453" cy="513" r="8" fill="#F5A623" stroke="#D98C00" stroke-width="1.5"/><text x="470" y="518">Warehouses / DCs</text>
+    <path d="M600 506 l8 14 h-16 z" fill="#6B7390"/><text x="617" y="518">Customers / demand</text>
+  </g>
+</svg>
