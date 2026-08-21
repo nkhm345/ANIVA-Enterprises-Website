@@ -48,6 +48,31 @@
   font-size: 15px;
 }
 
+/* Equal-height segment cards with the highlight boxes and links aligned */
+@media (min-width: 992px) {
+  .card-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .card-row > [class*="col-"] {
+    float: none;
+  }
+  .card-row .site-card {
+    height: 100%;
+  }
+  .segment-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .segment-card .segment-lede {
+    flex: 1 0 auto;
+  }
+  .segment-card .segment-link {
+    margin-top: auto;
+    padding-top: 22px;
+  }
+}
+
 /*****************Founder profile****************/
 .founder-intro {
   margin-bottom: 10px;
