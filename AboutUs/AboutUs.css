@@ -48,6 +48,22 @@
   font-size: 15px;
 }
 
+/* Tighter first screen: hero + both full segment cards on a laptop */
+.hero-compact { padding-top: 90px; padding-bottom: 16px; }
+.ribbon-on .hero-compact { padding-top: calc(76px + var(--ribbon-h, 44px)); }
+.hero-compact h1 { font-size: 34px; }
+.hero-compact .hero-lede { font-size: 17px; margin-bottom: 12px; }
+#segments { padding: 18px 0 44px 0; }
+#segments .section-head { margin-bottom: 10px; }
+#segments .section-head h2 { font-size: 28px; }
+.segment-card { padding-top: 20px; }
+.segment-card h3 { font-size: 21px; margin-bottom: 10px; }
+.segment-card .icon-circle { width: 54px; height: 54px; margin-bottom: 10px; }
+.segment-card .icon-circle img { max-width: 30px; max-height: 30px; }
+.segment-card .segment-lede { font-size: 15.5px; margin-bottom: 8px; }
+.segment-highlight { margin-top: 10px; font-size: 15px; }
+.segment-link { margin-top: 12px; }
+
 /* Equal-height segment cards with the highlight boxes and links aligned */
 @media (min-width: 992px) {
   .card-row {
@@ -69,7 +85,7 @@
   }
   .segment-card .segment-link {
     margin-top: auto;
-    padding-top: 22px;
+    padding-top: 12px;
   }
 }
 
