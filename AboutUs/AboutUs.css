@@ -66,9 +66,14 @@
 
 /* Equal-height segment cards with the highlight boxes and links aligned */
 @media (min-width: 992px) {
-  /* First screen = hero + the two cards; Leadership starts below the fold */
-  #segments {
-    min-height: calc(100vh - 350px);
+  /* First screen = hero + the two cards, edge to edge: the hero band
+     absorbs any extra viewport height so no white gap sits under the
+     cards, and Leadership starts below the fold */
+  .hero-compact {
+    min-height: calc(100vh - 565px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .card-row {
     display: flex;
