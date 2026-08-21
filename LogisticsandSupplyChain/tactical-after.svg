@@ -32,20 +32,20 @@
   <rect x="70" y="220" width="28" height="10" rx="1.5" fill="#5A5F7D"/>
   <text x="85" y="266" text-anchor="middle" font-size="14" fill="#636363">Plant / DC</text>
 
-  <!-- run 1 stops -->
+  <!-- run 1 stops (on the navy loop) -->
   <g fill="#FFFFFF" stroke="#23263B" stroke-width="2.2" filter="url(#taShadow)">
-    <circle cx="230" cy="103" r="14"/><circle cx="352" cy="82" r="14"/><circle cx="336" cy="182" r="14"/>
+    <circle cx="213" cy="125" r="14"/><circle cx="325" cy="95" r="14"/><circle cx="336" cy="182" r="14"/>
   </g>
   <g fill="#23263B" font-size="12" font-weight="700" text-anchor="middle">
-    <text x="230" y="107">S1</text><text x="352" y="86">S2</text><text x="336" y="186">S3</text>
+    <text x="213" y="129">S1</text><text x="325" y="99">S2</text><text x="336" y="186">S3</text>
   </g>
 
-  <!-- run 2 stops -->
+  <!-- run 2 stops (on the orange loop) -->
   <g fill="#FFFFFF" stroke="#D98C00" stroke-width="2.2" filter="url(#taShadow)">
-    <circle cx="232" cy="330" r="14"/><circle cx="354" cy="356" r="14"/><circle cx="334" cy="268" r="14"/>
+    <circle cx="225" cy="321" r="14"/><circle cx="351" cy="353" r="14"/><circle cx="334" cy="268" r="14"/>
   </g>
   <g fill="#D98C00" font-size="12" font-weight="700" text-anchor="middle">
-    <text x="232" y="334">S4</text><text x="354" y="360">S5</text><text x="334" y="272">S6</text>
+    <text x="225" y="325">S4</text><text x="351" y="357">S5</text><text x="334" y="272">S6</text>
   </g>
 
 </svg>

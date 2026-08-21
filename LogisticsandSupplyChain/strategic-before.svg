@@ -42,6 +42,12 @@
     <circle cx="303" cy="200" r="17"/>
     <circle cx="229" cy="320" r="17"/>
   </g>
+  <g fill="#FFFFFF" font-size="12" font-weight="700" text-anchor="middle">
+    <text x="211" y="149">DC</text>
+    <text x="197" y="244">DC</text>
+    <text x="303" y="204">DC</text>
+    <text x="229" y="324">DC</text>
+  </g>
 
   <!-- customers -->
   <g fill="#6B7390" filter="url(#sbShadow)">
