@@ -72,3 +72,18 @@
 .contact-more a:hover {
   color: orange;
 }
+
+/* Compact hero matching About Us; first screen = hero + contact cards */
+.hero-compact { padding-top: 74px; padding-bottom: 10px; }
+.ribbon-on .hero-compact { padding-top: calc(60px + var(--ribbon-h, 44px)); }
+.hero-compact h1 { margin-bottom: 8px; }
+.hero-compact .hero-lede { margin-bottom: 4px; }
+.contact-section { padding-top: 26px; }
+@media (min-width: 992px) {
+  .hero-compact {
+    min-height: calc(100vh - 520px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
