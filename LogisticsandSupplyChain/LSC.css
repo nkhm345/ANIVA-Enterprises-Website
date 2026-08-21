@@ -170,13 +170,16 @@ body {
 }
 
 @media (min-width: 992px) {
+  /* Equal-height pillar cards: columns stretch to the tallest */
   .pillar-row {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
   }
   .pillar-row > [class*="col-"] {
     float: none;
+  }
+  .pillar-row .pillar-card {
+    height: 100%;
   }
 }
 
