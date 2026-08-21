@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 395" width="480" height="395" font-family="Ubuntu, 'Segoe UI', Tahoma, sans-serif">
+  <defs>
+    <marker id="saArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#23263B"/>
+    </marker>
+    <linearGradient id="saBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#FFF9EE"/>
+    </linearGradient>
+    <linearGradient id="saDc" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F7B733"/>
+      <stop offset="1" stop-color="#F5A623"/>
+    </linearGradient>
+    <radialGradient id="saGlow">
+      <stop offset="0" stop-color="#F5A623" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#F5A623" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="saShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#23263B" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <rect width="480" height="395" rx="12" fill="url(#saBg)"/>
+
+  <!-- glow behind the two right-sized DCs -->
+  <circle cx="230" cy="150" r="58" fill="url(#saGlow)"/>
+  <circle cx="245" cy="300" r="58" fill="url(#saGlow)"/>
+
+  <!-- clean territories: each supplier and customer served by one DC -->
+  <g stroke="#23263B" stroke-width="2.6" fill="none" stroke-linecap="round" marker-end="url(#saArr)">
+    <path d="M80 95 L206 142"/>
+    <path d="M68 210 L206 152"/>
+    <path d="M68 222 L222 292"/>
+    <path d="M84 332 L222 304"/>
+    <path d="M254 145 L382 100"/>
+    <path d="M254 152 L412 180"/>
+    <path d="M269 296 L398 268"/>
+    <path d="M266 306 L372 356"/>
+  </g>
+
+  <!-- suppliers / plants -->
+  <g fill="#23263B" filter="url(#saShadow)">
+    <rect x="64" y="79" width="32" height="32" rx="6"/>
+    <rect x="52" y="200" width="32" height="32" rx="6"/>
+    <rect x="68" y="316" width="32" height="32" rx="6"/>
+  </g>
+
+  <!-- two right-sized DCs -->
+  <g fill="url(#saDc)" stroke="#D98C00" stroke-width="2.4" filter="url(#saShadow)">
+    <circle cx="230" cy="150" r="21"/>
+    <circle cx="245" cy="300" r="21"/>
+  </g>
+  <g fill="#FFFFFF" font-size="13" font-weight="700" text-anchor="middle">
+    <text x="230" y="155">DC</text>
+    <text x="245" y="305">DC</text>
+  </g>
+
+  <!-- customers -->
+  <g fill="#6B7390" filter="url(#saShadow)">
+    <path d="M382 92 l11 19 h-22 z"/>
+    <path d="M412 172 l11 19 h-22 z"/>
+    <path d="M398 260 l11 19 h-22 z"/>
+    <path d="M372 348 l11 19 h-22 z"/>
+  </g>
+
+</svg>

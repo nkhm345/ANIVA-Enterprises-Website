@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="../Nav_Bar.css?v=2"/>
     <link rel="stylesheet" href="../Footer.css"/>
     <link rel="stylesheet" href="../Site.css?v=3"/>
-    <link rel="stylesheet" href="LSC.css?v=8"/>
+    <link rel="stylesheet" href="LSC.css?v=9"/>
   </head>
 
   <body>
@@ -1145,7 +1145,7 @@
 
           <h5 class="subtitle">What We Analyze</h5>
           <div class="row dp-analyze">
-            <div class="col-lg-5">
+            <div class="col-lg-12">
               <div class="site-card dp-checklist">
                 <ul>
                   <li>Origin-based vs. destination-based network design</li>
@@ -1157,11 +1157,28 @@
                 </ul>
               </div>
             </div>
-            <div class="col-lg-7">
-              <a class="chart-frame dp-chart" href="strategic-analysis.svg" target="_blank" rel="noopener" title="Open full size">
-                <img src="strategic-analysis.svg" alt="Strategic network design: baseline network with four DCs and crossing lanes versus an optimized network with a right-sized DC footprint" style="display:block;width:100%;max-width:100%;height:auto;"/>
-                <span class="chart-caption">Baseline vs. optimized network (illustrative) &mdash; click to open full size</span>
-              </a>
+          </div>
+
+          <div class="ba-block">
+            <p class="ba-title">Strategic network design &#8212; baseline vs. optimized</p>
+            <p class="ba-sub">Illustrative &#8212; optimize the number, location and role of warehouses / DCs against total landed cost and service</p>
+            <div class="ba-row">
+              <figure class="ba-panel ba-before">
+                <figcaption class="ba-tag">Current network</figcaption>
+                <img src="strategic-before.svg" alt="Baseline network: three plants shipping through four overlapping DCs with crossing lanes to four customer zones"/>
+                <p class="ba-note">4 DCs &#183; overlapping territories &#183; crossing lanes</p>
+              </figure>
+              <div class="ba-arrow" aria-hidden="true"><span>&#10132;</span></div>
+              <figure class="ba-panel ba-after">
+                <figcaption class="ba-tag ba-tag-gold">Optimized network</figcaption>
+                <img src="strategic-after.svg" alt="Optimized network: the same plants and customers served by two right-sized DCs with clean, single-assignment lanes"/>
+                <p class="ba-note">Right-sized DC footprint &#183; clean territories &#183; lower total landed cost</p>
+              </figure>
+            </div>
+            <div class="ba-legend">
+              <span class="ba-leg"><span class="ba-swatch ba-sq"></span>Suppliers / plants</span>
+              <span class="ba-leg"><span class="ba-swatch ba-ci"></span>Warehouses / DCs</span>
+              <span class="ba-leg"><span class="ba-swatch ba-tri"></span>Customers / demand</span>
             </div>
           </div>
 
@@ -1285,7 +1302,7 @@
 
           <h5 class="subtitle">What We Analyze</h5>
           <div class="row dp-analyze">
-            <div class="col-lg-5">
+            <div class="col-lg-12">
               <div class="site-card dp-checklist">
                 <ul>
                   <li>Route, cube, frequency &amp; mode optimization</li>
@@ -1296,12 +1313,30 @@
                 </ul>
               </div>
             </div>
-            <div class="col-lg-7">
-              <a class="chart-frame dp-chart" href="tactical-analysis.svg" target="_blank" rel="noopener" title="Open full size">
-                <img src="tactical-analysis.svg" alt="Tactical inbound optimization: six direct part-full shipments consolidated into two milk runs with fuller trucks" style="display:block;width:100%;max-width:100%;height:auto;"/>
-                <span class="chart-caption">Direct shipments vs. consolidated milk runs (illustrative) &mdash; click to open full size</span>
-              </a>
+          </div>
+
+          <div class="ba-block">
+            <p class="ba-title">Tactical inbound optimization &#8212; route, cube &amp; mode</p>
+            <p class="ba-sub">Illustrative &#8212; consolidate direct shipments into milk runs, fill the cube, and pick the right mode</p>
+            <div class="ba-row">
+              <figure class="ba-panel ba-before">
+                <figcaption class="ba-tag">Before &#8212; direct, one-off shipments</figcaption>
+                <img src="tactical-before.svg" alt="Before: six suppliers each sending a part-full truck directly to the plant"/>
+                <p class="ba-note">6 suppliers &#183; 6 part-full trucks &#183; empty miles</p>
+              </figure>
+              <div class="ba-arrow" aria-hidden="true"><span>&#10132;</span></div>
+              <figure class="ba-panel ba-after">
+                <figcaption class="ba-tag ba-tag-gold">After &#8212; consolidated milk runs</figcaption>
+                <img src="tactical-after.svg" alt="After: the same six suppliers served by two consolidated milk-run loops with fuller trucks"/>
+                <p class="ba-note">2 milk runs &#183; full cube &#183; right mode &#183; fewer trucks</p>
+              </figure>
             </div>
+            <div class="ba-chips">
+              <span class="ba-chip ba-chip-warm">Trucks required &#9660;</span>
+              <span class="ba-chip">Cube utilization &#9650;</span>
+              <span class="ba-chip ba-chip-warm">Cost per unit &#9660;</span>
+            </div>
+            <p class="ba-foot">Route &#183; cube &#183; frequency &#183; mode &#8212; optimized with commercial planning software, within production and dock constraints</p>
           </div>
 
           <div class="dp-deliver">

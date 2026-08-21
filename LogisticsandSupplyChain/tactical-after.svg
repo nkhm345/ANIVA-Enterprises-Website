@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 395" width="480" height="395" font-family="Ubuntu, 'Segoe UI', Tahoma, sans-serif">
+  <defs>
+    <marker id="tnArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#23263B"/>
+    </marker>
+    <marker id="toArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#F5A623"/>
+    </marker>
+    <linearGradient id="taBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#FFF9EE"/>
+    </linearGradient>
+    <filter id="taShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#23263B" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <rect width="480" height="395" rx="12" fill="url(#taBg)"/>
+
+  <!-- milk run 1: north loop -->
+  <path d="M116 200 C 190 110, 330 70, 408 110 C 448 138, 400 172, 336 182 C 265 193, 185 205, 118 210"
+        stroke="#23263B" stroke-width="3.4" fill="none" stroke-linecap="round" marker-end="url(#tnArr)"/>
+  <!-- milk run 2: south loop -->
+  <path d="M116 234 C 190 322, 320 380, 408 340 C 448 312, 398 280, 334 268 C 263 255, 185 242, 118 226"
+        stroke="#F5A623" stroke-width="3.4" fill="none" stroke-linecap="round" marker-end="url(#toArr)"/>
+
+  <!-- plant / DC -->
+  <g filter="url(#taShadow)">
+    <rect x="58" y="190" width="54" height="54" rx="8" fill="#23263B"/>
+  </g>
+  <rect x="70" y="204" width="12" height="10" rx="1.5" fill="#F5A623"/>
+  <rect x="86" y="204" width="12" height="10" rx="1.5" fill="#F5A623"/>
+  <rect x="70" y="220" width="28" height="10" rx="1.5" fill="#5A5F7D"/>
+  <text x="85" y="266" text-anchor="middle" font-size="14" fill="#636363">Plant / DC</text>
+
+  <!-- run 1 stops -->
+  <g fill="#FFFFFF" stroke="#23263B" stroke-width="2.2" filter="url(#taShadow)">
+    <circle cx="230" cy="103" r="14"/><circle cx="352" cy="82" r="14"/><circle cx="336" cy="182" r="14"/>
+  </g>
+  <g fill="#23263B" font-size="12" font-weight="700" text-anchor="middle">
+    <text x="230" y="107">S1</text><text x="352" y="86">S2</text><text x="336" y="186">S3</text>
+  </g>
+
+  <!-- run 2 stops -->
+  <g fill="#FFFFFF" stroke="#D98C00" stroke-width="2.2" filter="url(#taShadow)">
+    <circle cx="232" cy="330" r="14"/><circle cx="354" cy="356" r="14"/><circle cx="334" cy="268" r="14"/>
+  </g>
+  <g fill="#D98C00" font-size="12" font-weight="700" text-anchor="middle">
+    <text x="232" y="334">S4</text><text x="354" y="360">S5</text><text x="334" y="272">S6</text>
+  </g>
+
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 395" width="480" height="395" font-family="Ubuntu, 'Segoe UI', Tahoma, sans-serif">
+  <defs>
+    <marker id="sbArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#AEB4C4"/>
+    </marker>
+    <linearGradient id="sbBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FAFBFD"/>
+      <stop offset="1" stop-color="#F1F3F8"/>
+    </linearGradient>
+    <linearGradient id="sbDc" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F7B733"/>
+      <stop offset="1" stop-color="#F5A623"/>
+    </linearGradient>
+    <filter id="sbShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#23263B" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <rect width="480" height="395" rx="12" fill="url(#sbBg)"/>
+
+  <!-- tangled lanes: every supplier feeds several DCs, DCs cross-cover customers -->
+  <g stroke="#C4C9D6" stroke-width="2" fill="none" stroke-linecap="round" marker-end="url(#sbArr)">
+    <path d="M78 88 L204 145"/><path d="M78 88 L190 240"/><path d="M78 88 L222 320"/>
+    <path d="M66 208 L204 145"/><path d="M66 208 L190 240"/><path d="M66 208 L222 320"/><path d="M66 208 L296 200"/>
+    <path d="M82 330 L222 320"/><path d="M82 330 L190 240"/><path d="M82 330 L296 200"/>
+    <path d="M218 145 L382 100"/><path d="M218 145 L412 178"/><path d="M218 145 L398 268"/>
+    <path d="M204 240 L382 100"/><path d="M204 240 L412 178"/><path d="M204 240 L372 358"/>
+    <path d="M310 200 L412 178"/><path d="M310 200 L398 268"/><path d="M310 200 L372 358"/>
+    <path d="M236 320 L398 268"/><path d="M236 320 L372 358"/><path d="M236 320 L382 100"/>
+  </g>
+
+  <!-- suppliers / plants -->
+  <g fill="#23263B" filter="url(#sbShadow)">
+    <rect x="62" y="72" width="32" height="32" rx="6"/>
+    <rect x="50" y="192" width="32" height="32" rx="6"/>
+    <rect x="66" y="314" width="32" height="32" rx="6"/>
+  </g>
+
+  <!-- four overlapping DCs -->
+  <g fill="url(#sbDc)" stroke="#D98C00" stroke-width="2" filter="url(#sbShadow)">
+    <circle cx="211" cy="145" r="17"/>
+    <circle cx="197" cy="240" r="17"/>
+    <circle cx="303" cy="200" r="17"/>
+    <circle cx="229" cy="320" r="17"/>
+  </g>
+
+  <!-- customers -->
+  <g fill="#6B7390" filter="url(#sbShadow)">
+    <path d="M382 92 l11 19 h-22 z"/>
+    <path d="M412 170 l11 19 h-22 z"/>
+    <path d="M398 260 l11 19 h-22 z"/>
+    <path d="M372 350 l11 19 h-22 z"/>
+  </g>
+
+</svg>

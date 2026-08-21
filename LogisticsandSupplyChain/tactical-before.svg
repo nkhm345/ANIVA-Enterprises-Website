@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 395" width="480" height="395" font-family="Ubuntu, 'Segoe UI', Tahoma, sans-serif">
+  <defs>
+    <marker id="tbArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#AEB4C4"/>
+    </marker>
+    <linearGradient id="tbBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FAFBFD"/>
+      <stop offset="1" stop-color="#F1F3F8"/>
+    </linearGradient>
+    <filter id="tbShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#23263B" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <rect width="480" height="395" rx="12" fill="url(#tbBg)"/>
+
+  <!-- six one-off direct lanes, each its own part-full truck -->
+  <g stroke="#C4C9D6" stroke-width="2.4" fill="none" stroke-linecap="round" marker-end="url(#tbArr)">
+    <path d="M352 78 C 260 95, 175 150, 122 196"/>
+    <path d="M400 140 C 305 155, 205 180, 124 208"/>
+    <path d="M428 215 L126 218"/>
+    <path d="M406 288 C 315 275, 210 248, 124 228"/>
+    <path d="M354 352 C 270 328, 185 275, 120 240"/>
+    <path d="M262 372 C 218 336, 172 290, 116 248"/>
+  </g>
+
+  <!-- plant / DC -->
+  <g filter="url(#tbShadow)">
+    <rect x="58" y="190" width="54" height="54" rx="8" fill="#23263B"/>
+  </g>
+  <rect x="70" y="204" width="12" height="10" rx="1.5" fill="#F5A623"/>
+  <rect x="86" y="204" width="12" height="10" rx="1.5" fill="#F5A623"/>
+  <rect x="70" y="220" width="28" height="10" rx="1.5" fill="#5A5F7D"/>
+  <text x="85" y="266" text-anchor="middle" font-size="14" fill="#636363">Plant / DC</text>
+
+  <!-- six suppliers -->
+  <g fill="#FFFFFF" stroke="#6B7390" stroke-width="2" filter="url(#tbShadow)">
+    <circle cx="362" cy="76" r="14"/>
+    <circle cx="410" cy="139" r="14"/>
+    <circle cx="438" cy="215" r="14"/>
+    <circle cx="416" cy="289" r="14"/>
+    <circle cx="363" cy="353" r="14"/>
+    <circle cx="269" cy="374" r="14"/>
+  </g>
+  <g fill="#6B7390" font-size="12" font-weight="700" text-anchor="middle">
+    <text x="362" y="80">S1</text><text x="410" y="143">S2</text><text x="438" y="219">S3</text>
+    <text x="416" y="293">S4</text><text x="363" y="357">S5</text><text x="269" y="378">S6</text>
+  </g>
+
+</svg>
