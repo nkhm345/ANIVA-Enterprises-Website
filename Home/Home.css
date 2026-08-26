@@ -367,3 +367,41 @@
   .trusted-logo-tall { height: 38px; }
   .trusted-logo-xl { height: 56px; }
 }
+/*************Network-in-motion teaser************/
+.motion-teaser {
+  text-align: center;
+  margin: 26px 0 0 0;
+  font-size: 15px;
+}
+.motion-teaser a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 22px;
+  border: 1px solid #E1E5EC;
+  border-radius: 999px;
+  background-color: #F7F8FB;
+  color: #23263B;
+  font-weight: bold;
+  text-decoration: none !important;
+  transition: all 0.25s ease 0s;
+}
+.motion-teaser a:hover {
+  border-color: orange;
+  color: orange;
+  box-shadow: 0 6px 18px rgba(35, 38, 59, 0.10);
+}
+.motion-teaser-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #5FA8D8;
+  animation: teaserPulse 2s ease-in-out infinite;
+}
+@keyframes teaserPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.75); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-teaser-dot { animation: none; }
+}
