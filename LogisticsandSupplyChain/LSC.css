@@ -1965,3 +1965,11 @@ body {
   .motion-card { padding: 12px 12px 10px 12px; }
   .motion-count { margin-left: 0; width: 100%; }
 }
+/* On laptop-height screens, size the motion card so its header, map,
+   controls and footnote all fit in one view below the sticky headers */
+@media (min-width: 992px) and (max-height: 900px) {
+  .motion-card { max-width: 680px; padding: 14px 18px 10px 18px; }
+  .motion-top { margin-bottom: 8px; }
+  .motion-controls { padding-top: 10px; }
+  .motion-note { font-size: 12px; margin-top: 10px; padding-top: 10px; }
+}
