@@ -1973,3 +1973,11 @@ body {
   .motion-controls { padding-top: 10px; }
   .motion-note { font-size: 12px; margin-top: 10px; padding-top: 10px; }
 }
+/* Phones: tighter motion band so the heading sits high and the map fits */
+@media (max-width: 767px) {
+  .motion-band { padding: 22px 0 40px 0; }
+  .motion-band .section-head { margin-bottom: 10px; }
+  .motion-band .section-head h2 { font-size: 22px; }
+  .motion-band .section-lede { font-size: 14px; margin-bottom: 0; }
+  .motion-top { margin-bottom: 6px; }
+}
