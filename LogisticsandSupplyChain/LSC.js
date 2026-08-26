@@ -55,7 +55,10 @@ $(document).ready(function() {
 			e.preventDefault();
 			pinned = $navLinks.index(this);
 			$('.section-nav a').removeClass('active'); $(this).addClass('active');
-			scrollToTarget(href, 700, $(this).data('fit'), $(this).data('nudge'));
+			var fit = $(this).data('fit');
+			/* On phones, links marked data-mobile-nofit land on the section heading instead */
+			if ($(window).width() < 768 && this.hasAttribute('data-mobile-nofit')) { fit = null; }
+			scrollToTarget(href, 700, fit, $(this).data('nudge'));
 		}
 	});
 
