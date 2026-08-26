@@ -22,9 +22,16 @@ $(document).ready(function() {
 		var want = parseInt($t.offset().top) - header - 12;
 		if (fitSelector && $(fitSelector).length) {
 			var $f = $(fitSelector);
+			var avail = $(window).height() - header;
+			var fh = $f.outerHeight();
 			var fitTop = parseInt($f.offset().top) - header - 12;
-			var need = parseInt($f.offset().top) + $f.outerHeight() + 24 - $(window).height();
-			want = Math.max(want, Math.min(need, fitTop));
+			if (fh + 24 >= avail) {
+				/* Block taller than the space below the headers: pin its top just under them */
+				want = fitTop;
+			} else {
+				/* It fits: center it in the space below the headers */
+				want = parseInt($f.offset().top) - header - (avail - fh) / 2;
+			}
 		}
 		want += parseInt(nudge, 10) || 0;
 		animating = true;
