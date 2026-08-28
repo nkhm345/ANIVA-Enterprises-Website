@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="../Nav_Bar.css?v=2"/>
     <link rel="stylesheet" href="../Footer.css"/>
     <link rel="stylesheet" href="../Site.css?v=3"/>
-    <link rel="stylesheet" href="LSC.css?v=18"/>
+    <link rel="stylesheet" href="LSC.css?v=19"/>
   </head>
 
   <body>
@@ -1375,9 +1375,6 @@
               <span class="motion-title">Network in motion &#8212; sample view</span>
               <span class="motion-clock" id="nm-clk">day 1 of 28</span>
             </div>
-            <div class="motion-map">
-              <canvas id="nm-cv" class="motion-canvas" width="1800" height="1120" role="img" aria-label="Animated map: a sample month of truckload movement between U.S. markets, showing loaded and empty tractors in motion"></canvas>
-            </div>
             <div class="motion-weeks" role="group" aria-label="Show all four weeks or a single week">
               <span class="motion-speed-label">Week</span>
               <button class="motion-week-btn active" data-week="-1" type="button">All 28 days</button>
@@ -1401,6 +1398,9 @@
                 <button class="motion-speed-btn" data-speed="2" type="button">2&#215;</button>
               </span>
               <span class="motion-count" id="nm-ct">&#8212;</span>
+            </div>
+            <div class="motion-map">
+              <canvas id="nm-cv" class="motion-canvas" width="1800" height="1120" role="img" aria-label="Animated map: a sample month of truckload movement between U.S. markets, showing loaded and empty tractors in motion"></canvas>
             </div>
             <p class="motion-note">Straight lines between markets, not road routes &#8212; the data holds an origin, a destination and a duration, and drawing curves that imply routing would be inventing geography. Switch to <em>Empty only</em> to see what the network costs when nothing is paying for the move &#8212; the movement data Valora turns into network value.</p>
           </div>
