@@ -2018,3 +2018,19 @@ body {
 .motion-filter-btn.active { background-color: rgba(255, 255, 255, 0.18); border-color: white; color: white; }
 /* Canvas version of the motion card */
 .motion-canvas { display: block; width: 100%; height: auto; border-radius: 8px; }
+/* Week selector */
+.motion-weeks { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; padding-top: 12px; }
+.motion-week-btn {
+  padding: 5px 12px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #DFE2EB;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  transition: all 0.2s ease 0s;
+}
+.motion-week-btn:hover { border-color: orange; color: orange; }
+.motion-week-btn.active { background-color: orange; border-color: orange; color: #23263B; }
