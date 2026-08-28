@@ -1981,3 +1981,5 @@ body {
   .motion-band .section-lede { font-size: 14px; margin-bottom: 0; }
   .motion-top { margin-bottom: 6px; }
 }
+/* Video version of the motion card */
+.motion-video { display: block; width: 100%; height: auto; border-radius: 8px; }
