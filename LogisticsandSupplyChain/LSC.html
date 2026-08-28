@@ -1508,7 +1508,11 @@
        when the loaded-only and empty-only files are published */
     var SRC={both:"network-in-motion.mp4",loaded:"network-in-motion-loaded.mp4",empty:"network-in-motion-empty.mp4"};
     var mf=document.getElementById("nm-filter");
-    function head(u){return fetch(u,{method:"HEAD"}).then(function(r){return r.ok;}).catch(function(){return false;});}
+    function head(u){return fetch(u,{method:"HEAD"}).then(function(r){
+      if(!r.ok)return false;
+      var ct=r.headers.get("content-type")||"";
+      return ct.indexOf("video/")===0;
+    }).catch(function(){return false;});}
     if(mf&&window.fetch&&window.Promise){
       Promise.all([head(SRC.loaded),head(SRC.empty)]).then(function(ok){
         if(!ok[0]||!ok[1])return;
