@@ -2016,3 +2016,5 @@ body {
 }
 .motion-filter-btn:hover { border-color: white; color: white; }
 .motion-filter-btn.active { background-color: rgba(255, 255, 255, 0.18); border-color: white; color: white; }
+/* Canvas version of the motion card */
+.motion-canvas { display: block; width: 100%; height: auto; border-radius: 8px; }

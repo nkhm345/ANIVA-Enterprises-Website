@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="../Nav_Bar.css?v=2"/>
     <link rel="stylesheet" href="../Footer.css"/>
     <link rel="stylesheet" href="../Site.css?v=3"/>
-    <link rel="stylesheet" href="LSC.css?v=16"/>
+    <link rel="stylesheet" href="LSC.css?v=17"/>
   </head>
 
   <body>
@@ -1371,12 +1371,16 @@
             <p class="section-lede">A sample month of real truckload movement across U.S. markets. Every dot is a tractor traveling between two markets &#8212; blue when loaded, orange when running empty.</p>
           </div>
           <div class="motion-card">
+            <div class="motion-top">
+              <span class="motion-title">Network in motion &#8212; sample view</span>
+              <span class="motion-clock" id="nm-clk">day 1 of 28</span>
+            </div>
             <div class="motion-map">
-              <video id="nm-video" class="motion-video" src="network-in-motion.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Animated map: a sample month of truckload movement between U.S. markets, showing loaded and empty tractors in motion"></video>
+              <canvas id="nm-cv" class="motion-canvas" width="1800" height="1120" role="img" aria-label="Animated map: a sample month of truckload movement between U.S. markets, showing loaded and empty tractors in motion"></canvas>
             </div>
             <div class="motion-controls">
               <button id="nm-pp" class="motion-btn" type="button">Pause</button>
-              <span class="motion-filter" id="nm-filter" role="group" aria-label="Show loaded, empty or all moves" style="display:none">
+              <span class="motion-filter" role="group" aria-label="Show loaded, empty or all moves">
                 <button class="motion-filter-btn active" data-mode="both" type="button">Both</button>
                 <button class="motion-filter-btn" data-mode="loaded" type="button"><span class="motion-dot-loaded">&#9679;</span> Loaded</button>
                 <button class="motion-filter-btn" data-mode="empty" type="button"><span class="motion-dot-empty">&#9679;</span> Empty</button>
@@ -1388,8 +1392,9 @@
                 <button class="motion-speed-btn active" data-speed="1" type="button">1&#215;</button>
                 <button class="motion-speed-btn" data-speed="2" type="button">2&#215;</button>
               </span>
+              <span class="motion-count" id="nm-ct">&#8212;</span>
             </div>
-            <p class="motion-note">Each dot is positioned by its own start time and duration. Illustrative of the network visibility behind every ANIVA engagement &#8212; and the movement data Valora turns into network value.</p>
+            <p class="motion-note">Straight lines between markets, not road routes &#8212; the data holds an origin, a destination and a duration, and drawing curves that imply routing would be inventing geography. Switch to <em>Empty only</em> to see what the network costs when nothing is paying for the move &#8212; the movement data Valora turns into network value.</p>
           </div>
         </div>
       </section>
@@ -1481,58 +1486,81 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="LSC.js?v=9"></script>
     <script src="../Site.js?v=3"></script>
+    <script src="network-in-motion-data.js?v=1"></script>
     <script>
-    /* Network in motion - video controls */
+    /* Network in motion - canvas engine (28 days, filterable) */
     (function(){
-    var v=document.getElementById("nm-video"),b=document.getElementById("nm-pp");
-    if(!v||!b)return;
-    if(window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches){
-      v.removeAttribute("autoplay");v.pause();b.textContent="Play";
+    var D=window.NM;
+    var cv=document.getElementById("nm-cv");
+    if(!D||!cv||!cv.getContext)return;
+    var cx=cv.getContext("2d");
+    var SW=1800,SH=1120,KX=SW/900,KY=SH/560;
+    /* state outlines and market anchors, drawn once to an offscreen layer */
+    var bg=document.createElement("canvas");bg.width=SW;bg.height=SH;
+    var bc=bg.getContext("2d");
+    bc.fillStyle="#0E1A26";bc.fillRect(0,0,SW,SH);
+    bc.save();bc.scale(KX,KY);
+    for(var k in D.PATHS){
+      var p2=new Path2D(D.PATHS[k]);
+      bc.fillStyle="#1B2C3C";bc.fill(p2);
+      bc.strokeStyle="#2C4459";bc.lineWidth=0.6;bc.stroke(p2);
     }
-    b.onclick=function(){
-      if(v.paused){v.play();b.textContent="Pause";}
-      else{v.pause();b.textContent="Play";}
-    };
-    var speed=1;
+    bc.restore();
+    bc.fillStyle="#2C4459";
+    D.M.forEach(function(m){bc.beginPath();bc.arc(m[0]*KX,m[1]*KY,3,0,6.284);bc.fill();});
+    var SPAN=D.DAYS*24,DUR=26000;
+    var mode="both",speed=1;
+    var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var playing=!reduce,acc=reduce?DUR*0.3:0,last=null,visible=true;
+    var pp=document.getElementById("nm-pp");
+    if(reduce)pp.textContent="Play";
+    function frame(ts){
+      if(last===null)last=ts;
+      if(playing&&visible)acc+=(ts-last)*speed;
+      last=ts;
+      var hr=(acc/DUR*SPAN)%SPAN;
+      cx.drawImage(bg,0,0);
+      var live=0,L=D.L,M=D.M;
+      for(var i=0;i<L.length;i++){
+        var l=L[i];
+        if(mode==="loaded"&&l[4])continue;
+        if(mode==="empty"&&!l[4])continue;
+        var p=(hr-l[2])/l[3];
+        if(p<0||p>1)continue;
+        live++;
+        var a=M[l[0]],b=M[l[1]];
+        cx.globalAlpha=0.55+0.45*Math.sin(Math.PI*p);
+        cx.fillStyle=l[4]?"#E8734A":"#5FA8D8";
+        cx.beginPath();
+        cx.arc((a[0]+(b[0]-a[0])*p)*KX,(a[1]+(b[1]-a[1])*p)*KY,4.6,0,6.284);
+        cx.fill();
+      }
+      cx.globalAlpha=1;
+      document.getElementById("nm-clk").textContent="day "+(Math.floor(hr/24)+1)+" of "+D.DAYS;
+      document.getElementById("nm-ct").textContent=live+" tractors moving";
+      window.requestAnimationFrame(frame);
+    }
+    pp.onclick=function(){playing=!playing;pp.textContent=playing?"Pause":"Play";};
     var sb=document.querySelectorAll(".motion-speed-btn");
-    for(var i=0;i<sb.length;i++){
-      sb[i].onclick=function(){
+    for(var si=0;si<sb.length;si++){
+      sb[si].onclick=function(){
         speed=parseFloat(this.getAttribute("data-speed"));
-        v.playbackRate=speed;
         for(var j=0;j<sb.length;j++){sb[j].className="motion-speed-btn";}
         this.className="motion-speed-btn active";
       };
     }
-    /* Loaded / Empty / Both: switches between three renders of the same
-       timeline, keeping the playback position - the buttons appear only
-       when the loaded-only and empty-only files are published */
-    var SRC={both:"network-in-motion.mp4",loaded:"network-in-motion-loaded.mp4",empty:"network-in-motion-empty.mp4"};
-    var mf=document.getElementById("nm-filter");
-    function head(u){return fetch(u,{method:"HEAD"}).then(function(r){
-      if(!r.ok)return false;
-      var ct=r.headers.get("content-type")||"";
-      return ct.indexOf("video/")===0;
-    }).catch(function(){return false;});}
-    if(mf&&window.fetch&&window.Promise){
-      Promise.all([head(SRC.loaded),head(SRC.empty)]).then(function(ok){
-        if(!ok[0]||!ok[1])return;
-        mf.style.display="inline-flex";
-        var fb=mf.querySelectorAll(".motion-filter-btn");
-        for(var i=0;i<fb.length;i++){
-          fb[i].onclick=function(){
-            var t=v.currentTime,was=!v.paused;
-            v.src=SRC[this.getAttribute("data-mode")];
-            v.addEventListener("loadedmetadata",function h(){
-              v.removeEventListener("loadedmetadata",h);
-              v.currentTime=t;v.playbackRate=speed;
-              if(was)v.play();
-            });
-            for(var j=0;j<fb.length;j++){fb[j].className="motion-filter-btn";}
-            this.className="motion-filter-btn active";
-          };
-        }
-      });
+    var fb=document.querySelectorAll(".motion-filter-btn");
+    for(var fi=0;fi<fb.length;fi++){
+      fb[fi].onclick=function(){
+        mode=this.getAttribute("data-mode");
+        for(var j=0;j<fb.length;j++){fb[j].className="motion-filter-btn";}
+        this.className="motion-filter-btn active";
+      };
     }
+    if("IntersectionObserver" in window){
+      new IntersectionObserver(function(es){visible=es[0].isIntersecting;}).observe(cv);
+    }
+    window.requestAnimationFrame(frame);
     })();
     </script>
   </body>
