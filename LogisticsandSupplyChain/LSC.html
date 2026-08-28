@@ -1387,9 +1387,9 @@
               </span>
               <span class="motion-speed-label">Speed</span>
               <span class="motion-speed" role="group" aria-label="Playback speed">
-                <button class="motion-speed-btn" data-speed="0.25" type="button">&#188;&#215;</button>
+                <button class="motion-speed-btn active" data-speed="0.25" type="button">&#188;&#215;</button>
                 <button class="motion-speed-btn" data-speed="0.5" type="button">&#189;&#215;</button>
-                <button class="motion-speed-btn active" data-speed="1" type="button">1&#215;</button>
+                <button class="motion-speed-btn" data-speed="1" type="button">1&#215;</button>
                 <button class="motion-speed-btn" data-speed="2" type="button">2&#215;</button>
               </span>
               <span class="motion-count" id="nm-ct">&#8212;</span>
@@ -1509,7 +1509,7 @@
     bc.fillStyle="#2C4459";
     D.M.forEach(function(m){bc.beginPath();bc.arc(m[0]*KX,m[1]*KY,3,0,6.284);bc.fill();});
     var SPAN=D.DAYS*24,DUR=26000;
-    var mode="both",speed=1;
+    var mode="both",speed=0.25;
     var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var playing=!reduce,acc=reduce?DUR*0.3:0,last=null,visible=true;
     var pp=document.getElementById("nm-pp");
