@@ -1503,6 +1503,25 @@
     if(!D||!cv||!cv.getContext)return;
     var cx=cv.getContext("2d");
     var SW=1800,SH=1120,KX=SW/900,KY=SH/560;
+    /* pull any on-canvas market that falls outside the drawn states onto
+       the nearest land, so no dot sits in the ocean or a lake */
+    (function(){
+      var tc=document.createElement("canvas");tc.width=900;tc.height=560;
+      var tg=tc.getContext("2d");
+      var ps=[];for(var k in D.PATHS){ps.push(new Path2D(D.PATHS[k]));}
+      function onLand(x,y){for(var i=0;i<ps.length;i++){if(tg.isPointInPath(ps[i],x,y))return true;}return false;}
+      D.M.forEach(function(m){
+        if(m[0]<0||m[1]<0||m[0]>900||m[1]>560)return;
+        if(onLand(m[0],m[1]))return;
+        for(var r=2;r<=64;r+=2){
+          for(var a=0;a<16;a++){
+            var x=m[0]+r*Math.cos(a*Math.PI/8),y=m[1]+r*Math.sin(a*Math.PI/8);
+            if(x<0||y<0||x>900||y>560)continue;
+            if(onLand(x,y)){m[0]=Math.round(x*10)/10;m[1]=Math.round(y*10)/10;return;}
+          }
+        }
+      });
+    })();
     /* state outlines and market anchors, drawn once to an offscreen layer */
     var bg=document.createElement("canvas");bg.width=SW;bg.height=SH;
     var bc=bg.getContext("2d");
