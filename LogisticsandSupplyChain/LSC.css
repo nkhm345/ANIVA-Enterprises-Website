@@ -1983,3 +1983,20 @@ body {
 }
 /* Video version of the motion card */
 .motion-video { display: block; width: 100%; height: auto; border-radius: 8px; }
+/* Playback speed controls */
+.motion-speed-label { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: #B1B6C7; margin-left: 6px; }
+.motion-speed { display: inline-flex; gap: 6px; }
+.motion-speed-btn {
+  padding: 5px 12px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #DFE2EB;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  transition: all 0.2s ease 0s;
+}
+.motion-speed-btn:hover { border-color: orange; color: orange; }
+.motion-speed-btn.active { background-color: orange; border-color: orange; color: #23263B; }

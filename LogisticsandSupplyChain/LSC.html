@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="../Nav_Bar.css?v=2"/>
     <link rel="stylesheet" href="../Footer.css"/>
     <link rel="stylesheet" href="../Site.css?v=3"/>
-    <link rel="stylesheet" href="LSC.css?v=13"/>
+    <link rel="stylesheet" href="LSC.css?v=14"/>
   </head>
 
   <body>
@@ -1376,6 +1376,13 @@
             </div>
             <div class="motion-controls">
               <button id="nm-pp" class="motion-btn" type="button">Pause</button>
+              <span class="motion-speed-label">Speed</span>
+              <span class="motion-speed" role="group" aria-label="Playback speed">
+                <button class="motion-speed-btn" data-speed="0.25" type="button">&#188;&#215;</button>
+                <button class="motion-speed-btn" data-speed="0.5" type="button">&#189;&#215;</button>
+                <button class="motion-speed-btn active" data-speed="1" type="button">1&#215;</button>
+                <button class="motion-speed-btn" data-speed="2" type="button">2&#215;</button>
+              </span>
             </div>
             <p class="motion-note">Each dot is positioned by its own start time and duration; lanes are straight lines, not road routes. Illustrative of the network visibility behind every ANIVA engagement &#8212; and the movement data Valora turns into network value.</p>
           </div>
@@ -1481,6 +1488,14 @@
       if(v.paused){v.play();b.textContent="Pause";}
       else{v.pause();b.textContent="Play";}
     };
+    var sb=document.querySelectorAll(".motion-speed-btn");
+    for(var i=0;i<sb.length;i++){
+      sb[i].onclick=function(){
+        v.playbackRate=parseFloat(this.getAttribute("data-speed"));
+        for(var j=0;j<sb.length;j++){sb[j].className="motion-speed-btn";}
+        this.className="motion-speed-btn active";
+      };
+    }
     })();
     </script>
   </body>
