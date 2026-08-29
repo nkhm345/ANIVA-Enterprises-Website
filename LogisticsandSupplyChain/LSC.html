@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="../Nav_Bar.css?v=2"/>
     <link rel="stylesheet" href="../Footer.css"/>
     <link rel="stylesheet" href="../Site.css?v=3"/>
-    <link rel="stylesheet" href="LSC.css?v=19"/>
+    <link rel="stylesheet" href="LSC.css?v=20"/>
   </head>
 
   <body>
@@ -1401,6 +1401,7 @@
             </div>
             <div class="motion-map">
               <canvas id="nm-cv" class="motion-canvas" width="1800" height="1120" role="img" aria-label="Animated map: a sample month of truckload movement between U.S. markets, showing loaded and empty tractors in motion"></canvas>
+              <div class="motion-tip" id="nm-tip" aria-hidden="true"></div>
             </div>
             <p class="motion-note">Straight lines between markets, not road routes &#8212; bending only to round the Great Lakes &#8212; the data holds an origin, a destination and a duration. Switch to <em>Empty only</em> to see what the network costs when nothing is paying for the move &#8212; the movement data Valora turns into network value.</p>
           </div>
@@ -1558,8 +1559,15 @@
         bc.fillText(sk,cx0*5*KX,cy0*5*KY);
       }
     })();
+    /* market anchors sized by how busy each market is over the month */
+    var DEP=[],ARR=[],mi;
+    for(mi=0;mi<D.M.length;mi++){DEP[mi]=0;ARR[mi]=0;}
+    D.L.forEach(function(l){DEP[l[0]]++;ARR[l[1]]++;});
     bc.fillStyle="#2C4459";
-    D.M.forEach(function(m){bc.beginPath();bc.arc(m[0]*KX,m[1]*KY,3,0,6.284);bc.fill();});
+    D.M.forEach(function(m,i2){
+      var r2=2+Math.min(4,Math.sqrt(DEP[i2]+ARR[i2])*0.35);
+      bc.beginPath();bc.arc(m[0]*KX,m[1]*KY,r2,0,6.284);bc.fill();
+    });
     /* Bend any leg whose straight path crosses Great Lakes water into a
        quadratic dip below the lakes, the way interstates round them;
        every other leg stays a straight line */
@@ -1625,14 +1633,14 @@
       var wspan=week<0?SPAN:168,wbase=week<0?0:week*168;
       var hr=wbase+(acc/DUR*SPAN)%wspan;
       cx.drawImage(bg,0,0);
-      var live=0,L=D.L,M=D.M;
+      var live=0,lv=0,ev=0,L=D.L,M=D.M;
       for(var i=0;i<L.length;i++){
         var l=L[i];
         if(mode==="loaded"&&l[4])continue;
         if(mode==="empty"&&!l[4])continue;
         var p=(hr-l[2])/l[3];
         if(p<0||p>1)continue;
-        live++;
+        live++;if(l[4])ev++;else lv++;
         var a=M[l[0]],b=M[l[1]],q=CTRL[i],dx,dy;
         if(q){var uu=1-p;dx=uu*uu*a[0]+2*uu*p*q[0]+p*p*b[0];dy=uu*uu*a[1]+2*uu*p*q[1]+p*p*b[1];}
         else{dx=a[0]+(b[0]-a[0])*p;dy=a[1]+(b[1]-a[1])*p;}
@@ -1644,7 +1652,7 @@
       }
       cx.globalAlpha=1;
       document.getElementById("nm-clk").textContent="day "+(Math.floor(hr/24)+1)+" of "+D.DAYS;
-      document.getElementById("nm-ct").textContent=live+" tractors moving";
+      document.getElementById("nm-ct").textContent=live+" tractors moving"+(mode==="both"?" · "+lv+" loaded · "+ev+" empty":"");
       window.requestAnimationFrame(frame);
     }
     pp.onclick=function(){playing=!playing;pp.textContent=playing?"Pause":"Play";};
@@ -1672,6 +1680,26 @@
         for(var j=0;j<wb.length;j++){wb[j].className="motion-week-btn";}
         this.className="motion-week-btn active";
       };
+    }
+    /* hover a market for its monthly pickup / delivery counts */
+    var tip=document.getElementById("nm-tip");
+    if(tip){
+      cv.addEventListener("mousemove",function(e){
+        var r=cv.getBoundingClientRect();
+        var x=(e.clientX-r.left)*900/r.width,y=(e.clientY-r.top)*560/r.height;
+        var best=-1,bd=150,i2,dx2,dy2,d2;
+        for(i2=0;i2<D.M.length;i2++){
+          dx2=D.M[i2][0]-x;dy2=D.M[i2][1]-y;d2=dx2*dx2+dy2*dy2;
+          if(d2<bd){bd=d2;best=i2;}
+        }
+        if(best<0){tip.style.display="none";return;}
+        var code=(D.K&&D.K[best])?D.K[best]:"Market";
+        tip.textContent=code+" · "+DEP[best]+" pickups · "+ARR[best]+" deliveries in "+D.DAYS+" days";
+        tip.style.display="block";
+        tip.style.left=Math.round(D.M[best][0]*r.width/900)+"px";
+        tip.style.top=Math.round(D.M[best][1]*r.height/560-10)+"px";
+      });
+      cv.addEventListener("mouseleave",function(){tip.style.display="none";});
     }
     if("IntersectionObserver" in window){
       new IntersectionObserver(function(es){visible=es[0].isIntersecting;}).observe(cv);
