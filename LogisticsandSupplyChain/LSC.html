@@ -1533,6 +1533,31 @@
       bc.strokeStyle="#2C4459";bc.lineWidth=0.6;bc.stroke(p2);
     }
     bc.restore();
+    /* two-letter state names at each state's own centroid */
+    (function(){
+      var lc=document.createElement("canvas");lc.width=180;lc.height=112;
+      var lg=lc.getContext("2d");
+      bc.textAlign="center";bc.textBaseline="middle";
+      bc.fillStyle="#3D5C77";
+      for(var sk in D.PATHS){
+        if(sk==="DC"||sk==="RI"||sk==="DE")continue;
+        lg.clearRect(0,0,180,112);
+        lg.save();lg.scale(0.2,0.2);lg.fill(new Path2D(D.PATHS[sk]));lg.restore();
+        var id=lg.getImageData(0,0,180,112).data;
+        var sx=0,sy=0,n=0,xx,yy;
+        for(yy=0;yy<112;yy++){for(xx=0;xx<180;xx++){if(id[((yy*180)+xx)*4+3]>128){sx+=xx;sy+=yy;n++;}}}
+        if(!n)continue;
+        var cx0=sx/n,cy0=sy/n;
+        if(id[(((cy0|0)*180)+(cx0|0))*4+3]<=128){
+          var best=1e9,bx=cx0,by=cy0,d2;
+          for(yy=0;yy<112;yy++){for(xx=0;xx<180;xx++){
+            if(id[((yy*180)+xx)*4+3]>128){d2=(xx-cx0)*(xx-cx0)+(yy-cy0)*(yy-cy0);if(d2<best){best=d2;bx=xx;by=yy;}}}}
+          cx0=bx;cy0=by;
+        }
+        bc.font="700 "+(n>140?22:15)+"px Ubuntu, Tahoma, sans-serif";
+        bc.fillText(sk,cx0*5*KX,cy0*5*KY);
+      }
+    })();
     bc.fillStyle="#2C4459";
     D.M.forEach(function(m){bc.beginPath();bc.arc(m[0]*KX,m[1]*KY,3,0,6.284);bc.fill();});
     /* Bend any leg whose straight path crosses Great Lakes water into a
