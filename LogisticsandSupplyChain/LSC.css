@@ -2051,3 +2051,9 @@ body {
   white-space: nowrap;
   z-index: 2;
 }
+/* Zone color key */
+.motion-zonekey { font-size: 12px; color: #B1B6C7; margin: 8px 0 0 0; line-height: 1.5; }
+.zk { font-size: 11px; }
+.zk-g { color: #58B368; }
+.zk-y { color: #D9B54A; }
+.zk-r { color: #C05555; }
