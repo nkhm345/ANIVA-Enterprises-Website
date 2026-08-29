@@ -2057,3 +2057,11 @@ body {
 .zk-g { color: #58B368; }
 .zk-y { color: #D9B54A; }
 .zk-r { color: #C05555; }
+/* Week pills fit one row on phones */
+.wk-s { display: none; }
+@media (max-width: 767px) {
+  .wk-l { display: none; }
+  .wk-s { display: inline; }
+  .motion-weeks { flex-wrap: nowrap; }
+  .motion-week-btn { padding: 5px 11px; }
+}
