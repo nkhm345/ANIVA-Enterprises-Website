@@ -1402,7 +1402,7 @@
             <div class="motion-map">
               <canvas id="nm-cv" class="motion-canvas" width="1800" height="1120" role="img" aria-label="Animated map: a sample month of truckload movement between U.S. markets, showing loaded and empty tractors in motion"></canvas>
             </div>
-            <p class="motion-note">Straight lines between markets, not road routes &#8212; the data holds an origin, a destination and a duration, and drawing curves that imply routing would be inventing geography. Switch to <em>Empty only</em> to see what the network costs when nothing is paying for the move &#8212; the movement data Valora turns into network value.</p>
+            <p class="motion-note">Straight lines between markets, not road routes &#8212; bending only to round the Great Lakes &#8212; the data holds an origin, a destination and a duration. Switch to <em>Empty only</em> to see what the network costs when nothing is paying for the move &#8212; the movement data Valora turns into network value.</p>
           </div>
         </div>
       </section>
@@ -1535,6 +1535,58 @@
     bc.restore();
     bc.fillStyle="#2C4459";
     D.M.forEach(function(m){bc.beginPath();bc.arc(m[0]*KX,m[1]*KY,3,0,6.284);bc.fill();});
+    /* Bend any leg whose straight path crosses Great Lakes water into a
+       quadratic dip below the lakes, the way interstates round them;
+       every other leg stays a straight line */
+    var CTRL=(function(){
+      /* rasterized land mask: every land test is one pixel lookup */
+      var tc2=document.createElement("canvas");tc2.width=900;tc2.height=560;
+      var tg2=tc2.getContext("2d");
+      tg2.fillStyle="#000";tg2.fillRect(0,0,900,560);
+      tg2.fillStyle="#fff";
+      for(var k2 in D.PATHS){tg2.fill(new Path2D(D.PATHS[k2]));}
+      var RD=tg2.getImageData(0,0,900,560).data;
+      function raw(x,y){x=x|0;y=y|0;if(x<0||y<0||x>899||y>559)return false;return RD[(y*900+x)*4]>128;}
+      function land(x,y){return raw(x,y)||raw(x+4,y)||raw(x-4,y)||raw(x,y+4)||raw(x,y-4);}
+      var X0=545,X1=765,Y0=40,Y1=205;
+      /* lakeshore markets first: settle each onto solid drawn ground */
+      function solid(x,y){return raw(x,y)&&raw(x+8,y)&&raw(x-8,y)&&raw(x,y+8)&&raw(x,y-8);}
+      D.M.forEach(function(m){
+        if(m[0]<X0-20||m[0]>X1+20||m[1]<Y0||m[1]>Y1+25)return;
+        if(solid(m[0],m[1]))return;
+        for(var r=2;r<=44;r+=2){for(var a2=0;a2<16;a2++){
+          var x=m[0]+r*Math.cos(a2*Math.PI/8),y=m[1]+r*Math.sin(a2*Math.PI/8);
+          if(solid(x,y)){m[0]=Math.round(x*10)/10;m[1]=Math.round(y*10)/10;return;}
+        }}
+      });
+      function wetQ(a,b,qx,qy){
+        for(var t=0.12;t<0.89;t+=0.04){
+          var u=1-t,x,y;
+          if(qx===null){x=a[0]+(b[0]-a[0])*t;y=a[1]+(b[1]-a[1])*t;}
+          else{x=u*u*a[0]+2*u*t*qx+t*t*b[0];y=u*u*a[1]+2*u*t*qy+t*t*b[1];}
+          if(x>=X0&&x<=X1&&y>=Y0&&y<=Y1&&!land(x,y))return true;
+        }
+        return false;
+      }
+      var out=new Array(D.L.length);
+      for(var i=0;i<D.L.length;i++){
+        var l=D.L[i],a=D.M[l[0]],b=D.M[l[1]];
+        out[i]=null;
+        if(Math.max(a[0],b[0])<X0||Math.min(a[0],b[0])>X1)continue;
+        if(Math.max(a[1],b[1])<Y0||Math.min(a[1],b[1])>Y1)continue;
+        if(!wetQ(a,b,null,null))continue;
+        var mx=(a[0]+b[0])/2,my=(a[1]+b[1])/2;
+        var DX=[0,-60,60,-110,110,-160,160],done=false;
+        for(var k=0.3;k<=2.85&&!done;k+=0.15){
+          var qy=my+k*(216-my);
+          for(var di=0;di<DX.length;di++){
+            out[i]=[mx+DX[di],qy];
+            if(!wetQ(a,b,mx+DX[di],qy)){done=true;break;}
+          }
+        }
+      }
+      return out;
+    })();
     var SPAN=D.DAYS*24,DUR=26000;
     var mode="both",speed=0.25,week=-1;
     var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -1556,11 +1608,13 @@
         var p=(hr-l[2])/l[3];
         if(p<0||p>1)continue;
         live++;
-        var a=M[l[0]],b=M[l[1]];
+        var a=M[l[0]],b=M[l[1]],q=CTRL[i],dx,dy;
+        if(q){var uu=1-p;dx=uu*uu*a[0]+2*uu*p*q[0]+p*p*b[0];dy=uu*uu*a[1]+2*uu*p*q[1]+p*p*b[1];}
+        else{dx=a[0]+(b[0]-a[0])*p;dy=a[1]+(b[1]-a[1])*p;}
         cx.globalAlpha=0.55+0.45*Math.sin(Math.PI*p);
         cx.fillStyle=l[4]?"#E8734A":"#5FA8D8";
         cx.beginPath();
-        cx.arc((a[0]+(b[0]-a[0])*p)*KX,(a[1]+(b[1]-a[1])*p)*KY,4.6,0,6.284);
+        cx.arc(dx*KX,dy*KY,4.6,0,6.284);
         cx.fill();
       }
       cx.globalAlpha=1;
