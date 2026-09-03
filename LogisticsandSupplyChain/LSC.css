@@ -2065,3 +2065,60 @@ body {
   .motion-weeks { flex-wrap: nowrap; }
   .motion-week-btn { padding: 5px 11px; }
 }
+
+/*****************Optara band********************/
+.optara {
+  margin-top: 0;
+  background-image:
+    radial-gradient(ellipse at 12% 18%, rgba(95, 168, 216, 0.18) 0%, rgba(95, 168, 216, 0) 45%),
+    linear-gradient(225deg, #1A1D2E 0%, #23263B 55%, #2E3352 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+.optara .valora-kicker { color: #5FA8D8; }
+.optara .step-num { background-color: #5FA8D8; }
+.optara .valora-cta a:hover { color: #5FA8D8; }
+.optara-flow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px 6px;
+  margin: 30px auto 0 auto;
+  max-width: 1080px;
+}
+.of-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 15px;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 13.5px;
+  color: #DFE2EB;
+  white-space: nowrap;
+}
+.of-step b { color: #5FA8D8; font-size: 12px; }
+.of-arrow { color: rgba(255, 255, 255, 0.4); }
+.optara-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin: 36px 0 6px 0;
+}
+.o-stat {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+  padding: 14px 24px 12px 24px;
+  min-width: 160px;
+}
+.o-num { display: block; font-size: 30px; font-weight: bold; color: white; }
+.o-lab { display: block; font-size: 11.5px; letter-spacing: 1.5px; text-transform: uppercase; color: #B1B6C7; margin-top: 3px; }
+.o-note { text-align: center; font-size: 12px; color: #9AA0B3; margin: 10px 0 0 0; }
+@media (max-width: 767px) {
+  .of-arrow { display: none; }
+  .o-stat { min-width: 42%; }
+}

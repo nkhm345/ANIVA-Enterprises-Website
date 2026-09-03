@@ -405,3 +405,65 @@
 @media (prefers-reduced-motion: reduce) {
   .motion-teaser-dot { animation: none; }
 }
+
+/**************AI products band******************/
+.ai-band {
+  padding: 64px 0 70px 0;
+  background-color: #23263B;
+  background-image:
+    radial-gradient(ellipse at 82% 12%, rgba(255, 165, 0, 0.14) 0%, rgba(255, 165, 0, 0) 45%),
+    radial-gradient(ellipse at 15% 85%, rgba(95, 168, 216, 0.14) 0%, rgba(95, 168, 216, 0) 45%),
+    linear-gradient(135deg, #1A1D2E 0%, #23263B 55%, #2E3352 100%);
+  scroll-margin-top: 110px;
+}
+.ai-band .section-head h2 { color: white; }
+.ai-band .section-lede { color: #DFE2EB; }
+.ai-row { margin-top: 8px; }
+.ai-card {
+  display: block;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  padding: 30px 30px 24px 30px;
+  color: #DFE2EB;
+  text-decoration: none !important;
+  transition: all 0.25s ease 0s;
+  margin-bottom: 24px;
+}
+.ai-card:hover {
+  transform: translateY(-4px);
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #DFE2EB;
+}
+.ai-valora:hover { border-color: orange; box-shadow: 0 14px 40px rgba(255, 165, 0, 0.18); }
+.ai-optara:hover { border-color: #5FA8D8; box-shadow: 0 14px 40px rgba(95, 168, 216, 0.18); }
+.ai-kicker {
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.ai-valora .ai-kicker { color: orange; }
+.ai-optara .ai-kicker { color: #5FA8D8; }
+.ai-card h3 {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  margin: 0 0 10px 0;
+}
+.ai-card h3 span { font-size: 15px; font-weight: normal; letter-spacing: 1px; color: #B1B6C7; }
+.ai-tag { font-size: 16.5px; line-height: 1.55; color: white; margin-bottom: 14px; }
+.ai-card ul { padding-left: 18px; margin-bottom: 18px; }
+.ai-card li { font-size: 14.5px; line-height: 1.6; margin-bottom: 6px; color: #DFE2EB; }
+.ai-card b { color: white; }
+.ai-link { font-size: 14px; font-weight: bold; letter-spacing: 0.5px; }
+.ai-valora .ai-link { color: #F5C56B; }
+.ai-optara .ai-link { color: #8FC3E8; }
+@media (min-width: 992px) {
+  .ai-row { display: flex; flex-wrap: wrap; }
+  .ai-row > [class*="col-"] { float: none; }
+  .ai-card { display: flex; flex-direction: column; }
+  .ai-card .ai-link { margin-top: auto; }
+}
