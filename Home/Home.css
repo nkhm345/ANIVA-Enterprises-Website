@@ -438,6 +438,8 @@
 }
 .ai-valora:hover { border-color: orange; box-shadow: 0 14px 40px rgba(255, 165, 0, 0.18); }
 .ai-optara:hover { border-color: #5FA8D8; box-shadow: 0 14px 40px rgba(95, 168, 216, 0.18); }
+.ai-labora:hover { border-color: #58B368; box-shadow: 0 14px 40px rgba(88, 179, 104, 0.18); }
+.ai-gustora:hover { border-color: #E0795A; box-shadow: 0 14px 40px rgba(224, 121, 90, 0.18); }
 .ai-kicker {
   font-size: 12px;
   letter-spacing: 2.5px;
@@ -446,6 +448,8 @@
 }
 .ai-valora .ai-kicker { color: orange; }
 .ai-optara .ai-kicker { color: #5FA8D8; }
+.ai-labora .ai-kicker { color: #58B368; }
+.ai-gustora .ai-kicker { color: #E0795A; }
 .ai-card h3 {
   color: white;
   font-size: 32px;
@@ -461,6 +465,8 @@
 .ai-link { font-size: 14px; font-weight: bold; letter-spacing: 0.5px; }
 .ai-valora .ai-link { color: #F5C56B; }
 .ai-optara .ai-link { color: #8FC3E8; }
+.ai-labora .ai-link { color: #7FCB92; }
+.ai-gustora .ai-link { color: #EB9D85; }
 @media (min-width: 992px) {
   .ai-row { display: flex; flex-wrap: wrap; }
   .ai-row > [class*="col-"] { float: none; }

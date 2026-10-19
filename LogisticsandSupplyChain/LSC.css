@@ -2122,3 +2122,71 @@ body {
   .of-arrow { display: none; }
   .o-stat { min-width: 42%; }
 }
+
+/*****************ANIVA AI teaser****************/
+.ai-teaser-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 34px;
+}
+
+.ai-teaser-card {
+  flex: 1 1 240px;
+  max-width: 262px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+  padding: 22px 20px 18px 20px;
+  text-decoration: none !important;
+  color: #DFE2EB;
+  transition: all 0.25s ease 0s;
+}
+
+.ai-teaser-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.45);
+  background-color: rgba(255, 255, 255, 0.09);
+}
+
+.ai-teaser-card h4 {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: 0 0 10px 0;
+}
+
+.ai-teaser-card .ai-star {
+  margin-right: 8px;
+}
+
+.ai-teaser-card p {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #C7CBD9;
+  margin: 0 0 14px 0;
+}
+
+.tz-more {
+  margin-top: auto;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.tz-valora .ai-star, .tz-valora .tz-more { color: #F5C56B; }
+.tz-optara .ai-star, .tz-optara .tz-more { color: #5FA8D8; }
+.tz-labora .ai-star, .tz-labora .tz-more { color: #58B368; }
+.tz-gustora .ai-star, .tz-gustora .tz-more { color: #E0795A; }
+
+@media (max-width: 767px) {
+  .ai-teaser-card {
+    flex-basis: 100%;
+    max-width: 420px;
+  }
+}
