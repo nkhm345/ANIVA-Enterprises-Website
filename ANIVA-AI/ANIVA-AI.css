@@ -72,6 +72,95 @@
 .gustora .step-num { background-color: #E0795A; }
 .gustora .valora-cta a:hover { color: #E0795A; }
 
+/*************Gustora two-door funnel************/
+.gd-doors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 38px;
+}
+
+.gd-door {
+  flex: 1 1 340px;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+  padding: 26px 26px 22px 26px;
+}
+
+.gd-kicker {
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #E0795A;
+  margin: 0 0 8px 0;
+}
+
+.gd-door h4 {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+.gd-door p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #DFE2EB;
+  margin-bottom: 16px;
+}
+
+.gd-door ul {
+  padding-left: 18px;
+  margin-bottom: 18px;
+}
+
+.gd-door li {
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+.gd-btn {
+  margin-top: auto;
+  align-self: flex-start;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border-radius: 30px;
+  background-color: #E0795A;
+  color: #1A1D2E !important;
+  border: 2px solid #E0795A;
+  text-decoration: none !important;
+  transition: all 0.25s ease 0s;
+}
+
+.gd-btn:hover {
+  background-color: white;
+  border-color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+.gd-btn-ghost {
+  background-color: transparent;
+  color: #EB9D85 !important;
+}
+
+.gd-btn-ghost:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: #EB9D85;
+  color: white !important;
+  box-shadow: none;
+}
+
 /*******************Mobile***********************/
 @media (max-width: 767px) {
   .ai-hero-actions .cta {
