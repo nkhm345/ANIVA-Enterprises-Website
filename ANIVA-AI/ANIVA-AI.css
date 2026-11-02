@@ -295,6 +295,20 @@
 .gc-faq h5 { color: white; font-size: 17px; font-weight: bold; margin: 22px 0 6px 0; }
 .gc-faq p { color: #DFE2EB; font-size: 15px; line-height: 1.65; margin: 0; }
 
+/* "Early pilot" under a product's name. */
+.pilot-pill {
+  display: inline-block;
+  margin: 4px 0 6px 0;
+  padding: 4px 14px;
+  border-radius: 999px;
+  border: 1px solid #E0795A;
+  color: #EB9D85;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+.gc-pilot-card { max-width: 760px; }
+.gc-link { color: #EB9D85; font-weight: bold; }
+
 /*******************Mobile***********************/
 @media (max-width: 767px) {
   .ai-hero-actions .cta {
