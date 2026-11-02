@@ -288,6 +288,7 @@
 .gc-step { display: flex; gap: 12px; align-items: flex-start; }
 .gc-step p { color: #DFE2EB; font-size: 15px; line-height: 1.6; margin: 4px 0 0 0; }
 .gc-step a { color: #EB9D85; }
+.gc-fine { font-size: 14px !important; font-style: italic; }
 .gc-faq { max-width: 760px; margin: 18px auto 0 auto; }
 .gc-faq h5 { color: white; font-size: 17px; font-weight: bold; margin: 22px 0 6px 0; }
 .gc-faq p { color: #DFE2EB; font-size: 15px; line-height: 1.65; margin: 0; }
