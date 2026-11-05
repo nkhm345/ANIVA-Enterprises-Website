@@ -255,6 +255,11 @@
   box-shadow: none;
 }
 
+/* The smallest phones: a little less spacing, so each button stays on one line. */
+@media (max-width: 359px) {
+  .gd-btn { letter-spacing: 1px; padding: 12px 18px; }
+}
+
 /*************Gustora for communities************/
 .gc-page { padding-bottom: 60px; }
 .gc-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
